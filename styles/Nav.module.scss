@@ -1,0 +1,59 @@
+@import './globalVariable.scss';
+
+.nav {
+    display: flex;
+    // Logo
+    & > div{
+        margin: 1rem;
+        margin-top: 2rem;
+        &:first-of-type {
+            flex: 2;
+            max-width: 20rem;
+            min-width: 100px;
+            margin-right: 0rem;
+            display: grid;
+            place-items: center;
+        }
+
+        // Search bar
+        &:nth-of-type(2) {
+            flex: 6;
+            background-color: $primary-color-light;
+            border-radius: 0.5rem;
+            margin-left: 5vw;
+            margin-right: 5vw;
+        }
+
+        // Other
+        &:last-of-type {
+            flex: 1;
+            display: flex;
+            min-width: 80px;
+            margin-left: 0px;
+            & > div {
+                flex: 1;
+                font-size: 20px;
+                margin: 2px;
+                display: grid;
+                place-content: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px){
+
+    .nav {
+        display: flex;
+        // Logo
+        & > div{
+            margin-top: 1rem;
+            // Other
+            &:last-of-type {
+                & > div {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
