@@ -39,11 +39,13 @@
     }
 }
 
+// Question Post
 .postQ {
     background-color: $primary-color-light;
     display: flex;
     flex-direction: column;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
     & > div {
         flex: 1;
         &:first-of-type{
@@ -51,7 +53,7 @@
             border-radius: 1.5rem;
             border: solid $WHITE 2px;
             margin: 2rem;
-            font-size: 2rem;
+            font-size: 1.5rem;
             padding: 1rem;
             place-items: center;
         }
@@ -59,11 +61,12 @@
             display: flex;
             margin: 2rem;
             margin-top: 0px;
-            font-size: 1.25rem;
+            font-size: 1rem;
             & > span {
                 flex: 1;
                 max-width: 100px;
-                margin-left: 4rem;
+                // This part needs to decreases for smaller screen
+                margin-left: 1rem;
             }
         }
     }
