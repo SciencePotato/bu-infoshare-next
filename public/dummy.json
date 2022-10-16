@@ -10,6 +10,38 @@
         {
             "course": "Analysis of Algorithms",
             "courseid": "CS 330"
+        },
+        {
+            "course": "Software Engineering",
+            "courseid": "CS 411"
+        },
+        {
+            "course": "Full-Stack Application Design and Development",
+            "courseid": "CS 412"
+        },
+        {
+            "course": "Computer Systems",
+            "courseid": "CS 210"
+        },
+        {
+            "course": "Introduction to Computer Science I",
+            "courseid": "CS 111"
+        },
+        {
+            "course": "Introduction to Computer Science II",
+            "courseid": "CS 112"
+        },
+        {
+            "course": "Combinatoric Structures",
+            "courseid": "CS 131"
+        },
+        {
+            "course": "Geometric Algorithms",
+            "courseid": "CS 132"
+        },
+        {
+            "course": "Probability in Computing",
+            "courseid": "CS 237"
         }
     ],
 
