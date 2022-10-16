@@ -1,0 +1,157 @@
+{
+    "majors": ["Computer Science", "Statistics and Computer Science", "Mathematics and Computer Science", "Data Science"],
+    "courses": [
+
+        {
+            "course": "Principals of Programming Languages",
+            "courseid": "CS 320"
+        },
+
+        {
+            "course": "Analysis of Algorithms",
+            "courseid": "CS 330"
+        }
+    ],
+
+    "posts": [
+
+        {
+            "postid": 1,
+            "op": "Anonymous Hippo",
+            "time": "30 mins ago",
+            "title": "Question about Difficulty of Class CS330",
+            "body": "Hello, my name is Joe and I am a rising junior planning to take CS 330 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 330 and its difficulty compared to previous courses. Thanks!",
+            "comments": [
+
+                {
+                    "user": "Anonymous Bee",
+                    "time": "5 mins ago",
+                    "comment": "CS330 is the the hardest cs class i took."
+                },
+
+                {
+                    "user": "Anonymous Cow",
+                    "time": "20 mins ago",
+                    "comment": "CS330 wasn't that bad."
+                },
+
+                {
+                    "user": "Anonymous Tree",
+                    "time": "25 mins ago",
+                    "comment": "CS330 was awful"
+                }
+            ]
+        },
+
+        {
+            "postid": 2,
+            "op": "Anonymous Hippo",
+            "time": "35 mins ago",
+            "title": "Clarifying time complexity of this algorithm",
+            "body": "",
+            "comments": [
+
+                {
+                    "user": "Anonymous Bee",
+                    "time": "15 mins ago",
+                    "comment": "Should be O(n^2)"
+                },
+
+                {
+                    "user": "Anonymous Cow",
+                    "time": "20 mins ago",
+                    "comment": "Check lecture 7 slide 78"
+                },
+
+                {
+                    "user": "Anonymous Tree",
+                    "time": "25 mins ago",
+                    "comment": "I think it's O(n) because blahblahblah."
+                }
+            ]
+        },
+        {
+            "postid": 3,
+            "op": "Anonymous Bear",
+            "time": "1 hour ago",
+            "title": "BFS vs DFS",
+            "body": "When should I use BFS over DFS in graph problems?",
+            "comments": [
+
+                {
+                    "user": "Anonymous Lizard",
+                    "time": "1 mins ago",
+                    "comment": "Use BFS to find shortest path"
+                },
+
+                {
+                    "user": "Anonymous Deer",
+                    "time": "25 mins ago",
+                    "comment": "BFS searches adjacent nodes, so it will find the shortest path quicker, since we will run out of nodes to add to the queue sooner for that path."
+                },
+
+                {
+                    "user": "Anonymous Lion",
+                    "time": "45 mins ago",
+                    "comment": "DFS is better for decision based problems and is quicker than BFS, since it doesn't search all neighbors."
+                }
+            ]
+        },
+
+        {
+            "postid": 4,
+            "op": "Anonymous Tiger",
+            "time": "2 hours ago",
+            "title": "Stack vs Queue",
+            "body": "How do I decide when to use a stack vs queue?",
+            "comments": [
+
+                {
+                    "user": "Anonymous Gorilla",
+                    "time": "1 mins ago",
+                    "comment": "Use BFS to find shortest path"
+                },
+
+                {
+                    "user": "Anonymous Jaguar",
+                    "time": "25 mins ago",
+                    "comment": "BFS searches adjacent nodes, so it will find the shortest path quicker, since we will run out of nodes to add to the queue sooner for that path."
+                },
+
+                {
+                    "user": "Anonymous Whale",
+                    "time": "45 mins ago",
+                    "comment": "DFS is better for decision based problems and is quicker than BFS, since it doesn't search all neighbors."
+                }
+            ]
+        },
+
+        {
+            "postid": 5,
+            "op": "Anonymous Moose",
+            "time": "3 hours ago",
+            "title": "Stack vs Queue",
+            "body": "How do I decide when to use a stack vs queue?",
+            "comments": [
+
+                {
+                    "user": "Anonymous Bean",
+                    "time": "4 mins ago",
+                    "comment": "stack is fifo"
+                },
+
+                {
+                    "user": "Anonymous Snail",
+                    "time": "22 mins ago",
+                    "comment": "queue is lifo"
+                },
+
+                {
+                    "user": "Anonymous Fish",
+                    "time": "35 mins ago",
+                    "comment": "stack and queue are implemented the same way in python"
+                }
+            ]
+        }
+    ]
+}
