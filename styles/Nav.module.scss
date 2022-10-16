@@ -20,8 +20,24 @@
             flex: 6;
             background-color: $primary-color-light;
             border-radius: 0.5rem;
-            margin-left: 5vw;
+            height: 3rem;
+            margin-left: 7.5vw;
             margin-right: 5vw;
+        }
+        
+        // Other
+        &:last-of-type {
+            flex: 1;
+            min-width: 80px;
+            margin-left: 0px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            & > div {
+                font-size: 15px;
+                margin-left: 10px;
+                display: inline;
+            }
         }
 
         // Other
