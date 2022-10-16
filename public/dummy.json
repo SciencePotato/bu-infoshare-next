@@ -86,7 +86,7 @@
                 {
                     "user": "Anonymous Bee",
                     "time": "15 mins ago",
-                    "comment": "Should be O(n^2)"
+                    "comment": "Should be O(n)"
                 },
 
                 {
@@ -98,7 +98,7 @@
                 {
                     "user": "Anonymous Tree",
                     "time": "25 mins ago",
-                    "comment": "I think it's O(n) because blahblahblah."
+                    "comment": "I think it's O(n) because we are traversing through each element at most once."
                 }
             ]
         },
