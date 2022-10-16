@@ -2,6 +2,7 @@
 
 .home {
     display: flex;
+    margin-bottom: 10rem;
     & > aside {
         margin: 1rem;
         // Left side
@@ -47,7 +48,6 @@
     flex-direction: column;
     border-radius: 0.5rem;
     margin-top: 2rem;
-    border-radius: 0.25rem;
     & > div {
         flex: 1;
         &:first-of-type{
