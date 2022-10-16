@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar/navbar'
 import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
 
+
 const Home: NextPage = () => {
   return (
     <>
@@ -36,9 +37,11 @@ const Home: NextPage = () => {
                 <span> Photo </span>
               </div>
           </div>
+          
           <Post></Post>
           <Post></Post>
           <Post></Post>
+          
         </section>
 
         {/* Courses? */}
