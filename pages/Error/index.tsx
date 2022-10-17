@@ -1,5 +1,8 @@
 import type { NextPage } from 'next'
 import Navbar from '../../components/navbar/navbar'
+import styles from '../../styles/error.module.scss'
+import Milk from '../../public/milk.png'
+import Image from 'next/image'
 import Head from 'next/head'
 
 const Error: NextPage = () => {
@@ -12,10 +15,18 @@ const Error: NextPage = () => {
         </Head>
 
         <Navbar/>
-
-        <div>
-            Hello
-        </div>
+        <section className={styles.error}>
+          <div>
+            <Image src={Milk}/>
+          </div>
+          <div>
+            <div> 
+              <h1> 404 Error Page</h1>
+              <h2> Something went wrong, please go back</h2>
+              <button onClick={() => history.back()}> Back </button>
+            </div>
+          </div>
+        </section>
       </>
   )
 }

@@ -1,1 +1,49 @@
 @import './globalVariable.scss';
+
+.error {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    & > div {
+        flex: 1;
+        min-width: 400px;
+        padding: 2rem;
+        &:first-of-type{
+            display: grid;
+            place-items: center;
+        }
+        &:last-of-type {
+            display: grid;
+            place-items: center start;
+            & > div {
+                &:first-of-type {
+                    & > h1 {
+                        font-size: 3.5rem;
+                        margin: 0px;
+                    }
+                    & > h2 {
+                        font-size: 2rem;
+                        margin: 0px;
+                    }
+                    & > button {
+                        margin-top: 8rem;
+                        border: $primary-color-superLight 1px solid;
+                        color: $primary-color;
+                        background-color: $primary-color-superLight;
+                        padding: 1rem 2rem;
+                        border-radius: 0.5rem;
+                        font-weight: 600;
+                        font-size: 2rem;
+                        cursor: pointer;
+                        transition: all ease-out 0.25s;
+                        &:hover {
+                            background-color: $primary-color;
+                            color: $primary-color-superLight;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
