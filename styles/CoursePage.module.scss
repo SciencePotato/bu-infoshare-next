@@ -1,0 +1,44 @@
+@import './globalVariable.scss';
+
+.home {
+    display: flex;
+    & > aside {
+        margin: 1rem;
+        // Left side
+        &:first-of-type {
+            flex: 2;
+            max-width: 20rem;
+            min-width: 100px;
+            margin-right: 0rem;
+            & > h2 {
+                margin-top: 0px;
+                color: rgba($WHITE, $alpha: 0.75);
+            }
+            // List of Helps
+            & > div {
+                & > div {
+                    margin: 0.5rem 0rem; 
+                }
+            }
+        }
+
+        // Right Side
+        &:last-of-type {
+            flex: 1;
+            min-width: 80px;
+            display: flex;
+            margin-left: 0px;
+        }
+    }
+
+    & > section {
+        flex: 6;
+        position: relative;
+        margin: 1rem;
+        margin-left: 7.5vw;
+        margin-right: 5vw;
+    }
+}
+
+
+
