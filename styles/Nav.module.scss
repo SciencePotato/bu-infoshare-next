@@ -18,7 +18,7 @@
 
         // Search bar
         &:nth-of-type(2) {
-            flex: 6;
+            flex: 9;
             background-color: $primary-color-light;
             border-radius: 0.5rem;
             height: 3rem;
@@ -28,7 +28,7 @@
         
         // Other
         &:last-of-type {
-            flex: 1;
+            flex: 2;
             min-width: 80px;
             margin-left: 0px;
             display: flex;

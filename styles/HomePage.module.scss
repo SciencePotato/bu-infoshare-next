@@ -25,7 +25,7 @@
 
         // Right Side
         &:last-of-type {
-            flex: 1;
+            flex: 2;
             min-width: 80px;
             display: flex;
             margin-left: 0px;
@@ -33,7 +33,7 @@
     }
 
     & > section {
-        flex: 6;
+        flex: 9;
         position: relative;
         margin: 1rem;
         margin-left: 7.5vw;

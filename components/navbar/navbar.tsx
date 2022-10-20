@@ -22,7 +22,7 @@ export default function Navbar () {
                 <div>
                     <div> Course </div>
                     <div> Majors </div>
-                    <div> Sign out </div>
+                    <div> Login </div>
                 </div>
             </nav>
         </>
