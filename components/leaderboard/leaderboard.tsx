@@ -45,7 +45,7 @@ export default function courseHeader() {
 
                     <div className={styles.container5}>
                         <div className={styles.rank}> 5 </div>
-                        <div className={styles.username}> Nickname </div>
+                        <div className={styles.username}> Nick </div>
                         <div className={styles.points}> 33 </div>
                     </div>
 
