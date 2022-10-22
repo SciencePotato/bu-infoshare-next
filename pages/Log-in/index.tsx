@@ -4,8 +4,12 @@ import Navbar from '../../components/navbar/navbar'
 import Head from 'next/head'
 import brick from '../../public/brick.png'
 import styles from '../../styles/LogIn.module.scss'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const Login: NextPage = () => {
+  const router = useRouter()
+
   return (
       <>
         <Head>
@@ -20,22 +24,25 @@ const Login: NextPage = () => {
           <section>
             <div>
               <Image src={brick}/>
-              <h1> Sign In</h1>
+              <h1> Login </h1>
               <h2> Sign In and start exploring courses</h2>
             </div>
             <div>
-              <input type="text" placeholder={"Login"}/>
-              <input type="password" placeholder={"Password"}/>
+              <input type="text" placeholder={"Login"} name="email"/>
+              <input type="password" placeholder={"Password"} name="password"/>
               <div> 
                 <div>
-                  <p> Don't have an account </p>
+                  <Link href={"/SignUp"}>
+                    <p> Don't have an account </p>
+                  </Link>
                 </div>
+                {/* Do Nothing for now; since there isn't anything for this part */}
                 <div>
                   <p> Forget your password? </p>
                 </div>
               </div>
             </div>
-            <button>
+            <button onClick={() => router.push('/HomePage')}>
               Login
             </button>
           </section>

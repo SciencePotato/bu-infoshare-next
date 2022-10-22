@@ -24,7 +24,9 @@ export default function Navbar () {
                 <div>
                     <div> Course </div>
                     <div> Majors </div>
-                    <div> Login </div>
+                    <Link href={"/Log-in"}>
+                        <div> Login </div>
+                    </Link>
                 </div>
             </nav>
         </>
