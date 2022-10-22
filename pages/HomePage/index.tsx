@@ -4,6 +4,8 @@ import Navbar from '../../components/navbar/navbar'
 import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
 import PostQ from '../../components/postQ/postquestion'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+
 
 
 const Home: NextPage = () => {
@@ -39,8 +41,9 @@ const Home: NextPage = () => {
           
         </section>
 
-        {/* Courses? */}
+        {/* Leaderboard */}
         <aside>
+          <Leaderboard></Leaderboard>
         </aside>
       </main>
     </>

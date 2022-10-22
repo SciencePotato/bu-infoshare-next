@@ -4,6 +4,7 @@ import Navbar from '../../../components/navbar/navbar'
 import Post from '../../../components/post/Post'
 import PostQ from '../../../components/postQ/postquestion'
 import CourseHeader from '../../../components/courseHeader/courseHeader'
+import Leaderboard from '../../../components/leaderboard/leaderboard'
 import styles from '../../../styles/CoursePage.module.scss'
 
 
@@ -47,6 +48,7 @@ const Course: NextPage = () => {
     
             {/* Leaderboard */}
             <aside>
+                <Leaderboard></Leaderboard>
             </aside>
           </main>
         </>
