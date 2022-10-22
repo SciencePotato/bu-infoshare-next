@@ -1,6 +1,9 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import Navbar from '../../components/navbar/navbar'
 import Head from 'next/head'
+import brick from '../../public/brick.png'
+import styles from '../../styles/LogIn.module.scss'
 
 const Login: NextPage = () => {
   return (
@@ -13,9 +16,30 @@ const Login: NextPage = () => {
 
         <Navbar/>
 
-        <div>
-            Hello
-        </div>
+        <main className={styles.loginPage}>
+          <section>
+            <div>
+              <Image src={brick}/>
+              <h1> Sign In</h1>
+              <h2> Sign In and start exploring courses</h2>
+            </div>
+            <div>
+              <input type="text" placeholder={"Login"}/>
+              <input type="password" placeholder={"Password"}/>
+              <div> 
+                <div>
+                  <p> Don't have an account </p>
+                </div>
+                <div>
+                  <p> Forget your password? </p>
+                </div>
+              </div>
+            </div>
+            <button>
+              Login
+            </button>
+          </section>
+        </main>
       </>
   )
 }
