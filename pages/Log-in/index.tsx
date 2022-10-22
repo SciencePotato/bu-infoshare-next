@@ -33,7 +33,7 @@ const Login: NextPage = () => {
               <div> 
                 <div>
                   <Link href={"/SignUp"}>
-                    <p> Don't have an account </p>
+                    <p> Don&apos;t have an account </p>
                   </Link>
                 </div>
                 {/* Do Nothing for now; since there isn't anything for this part */}
