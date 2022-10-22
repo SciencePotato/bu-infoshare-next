@@ -1,0 +1,55 @@
+@import './globalVariable.scss';
+
+.splashPage { 
+  display: grid;
+  place-items: center;
+  margin: auto;
+  width: 70vw;
+  height: 80vh;
+  & > div {
+    & > h2 {
+      font-size: 2.5rem;
+      margin: 0px;
+      font-weight: 800;
+    }
+
+    & > h3 {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    & > button {
+      margin-top: 5rem;
+      font-size: 2.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      border: solid 1px $primary-color-superLight;
+      font-weight: 500;
+      padding: 1rem 2rem;
+      background-color: $primary-color-superLight;
+      color: $primary-color;
+      transition: ease-out 0.25s;
+      &:hover {
+        color: $primary-color-superLight;
+        background-color: $primary-color;
+      }
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      & > h1 {
+        font-size: 8rem;     
+        margin: 0px;
+        font-weight: 800;
+        margin-right: 2rem;
+      }
+
+      & > div {
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+}
