@@ -6,9 +6,39 @@ import brick from '../../public/brick.png'
 import styles from '../../styles/LogIn.module.scss'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { initializeApp } from 'firebase/app'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login: NextPage = () => {
   const router = useRouter()
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
+    authDomain: "buinfoshare.firebaseapp.com",
+    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
+    projectId: "buinfoshare",
+    storageBucket: "buinfoshare.appspot.com",
+  };
+
+  const app = initializeApp(firebaseConfig)
+  const auth = getAuth()
+
+  const logIn = () => {
+    let email = document.getElementById("email") as HTMLInputElement | null
+    let password = document.getElementById("password") as HTMLInputElement | null
+
+    if (email != null && password != null) {
+      signInWithEmailAndPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          router.push('/HomePage')
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }
+  }
 
   return (
       <>
@@ -28,8 +58,8 @@ const Login: NextPage = () => {
               <h2> Sign In and start exploring courses</h2>
             </div>
             <div>
-              <input type="text" placeholder={"Login"} name="email"/>
-              <input type="password" placeholder={"Password"} name="password"/>
+              <input type="text" placeholder={"Login"} id="email"/>
+              <input type="password" placeholder={"Password"} id="password"/>
               <div> 
                 <div>
                   <Link href={"/SignUp"}>
@@ -42,7 +72,7 @@ const Login: NextPage = () => {
                 </div>
               </div>
             </div>
-            <button onClick={() => router.push('/HomePage')}>
+            <button onClick={logIn}>
               Login
             </button>
           </section>
