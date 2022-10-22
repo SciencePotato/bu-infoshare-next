@@ -16,6 +16,8 @@ export default function Navbar () {
 
                 {/* Search flex: 6 */}
                 <div>
+                    <input type={"text"} placeholder={"Search post"}> 
+                    </input>
                 </div>
 
                 {/* Others flex: 1-2? */}

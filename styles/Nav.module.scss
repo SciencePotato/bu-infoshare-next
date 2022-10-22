@@ -19,11 +19,27 @@
         // Search bar
         &:nth-of-type(2) {
             flex: 9;
-            background-color: $primary-color-light;
-            border-radius: 0.5rem;
-            height: 3rem;
             margin-left: 7.5vw;
             margin-right: 5vw;
+            display: flex;
+            & > input {
+                flex: 1;
+                background-color: $primary-color-light;
+                padding-left: 2.5rem;
+                border: none;
+                border-radius: 0.5rem;
+                height: 3rem;
+                color: $primary-color-superLight;
+                &:focus {
+                    outline: none !important;
+                    border: solid 1px $primary-color-superLight;
+                    box-shadow: 0px;
+                }
+                &::placeholder {
+                    color: $primary-color-superLight;
+                    font-weight: 500;
+                }
+            }
         }
         
         // Other
