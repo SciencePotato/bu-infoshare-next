@@ -13,11 +13,12 @@
             margin-right: 0rem;
             display: grid;
             place-items: center;
+            cursor: pointer;
         }
 
         // Search bar
         &:nth-of-type(2) {
-            flex: 6;
+            flex: 9;
             background-color: $primary-color-light;
             border-radius: 0.5rem;
             height: 3rem;
@@ -27,7 +28,7 @@
         
         // Other
         &:last-of-type {
-            flex: 1;
+            flex: 2;
             min-width: 80px;
             margin-left: 0px;
             display: flex;
@@ -37,21 +38,6 @@
                 font-size: 15px;
                 margin-left: 10px;
                 display: inline;
-            }
-        }
-
-        // Other
-        &:last-of-type {
-            flex: 1;
-            display: flex;
-            min-width: 80px;
-            margin-left: 0px;
-            & > div {
-                flex: 1;
-                font-size: 20px;
-                margin: 2px;
-                display: grid;
-                place-content: center;
             }
         }
     }

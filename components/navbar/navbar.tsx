@@ -1,5 +1,6 @@
 import styles  from '../../styles/Nav.module.scss';
 import logo from '../../public/infoshare.png';
+import Link from 'next/link';
 import Image from 'next/image'
 
 export default function Navbar () {
@@ -7,9 +8,11 @@ export default function Navbar () {
         <>
             <nav className={styles.nav}>
                 {/* Logo flex: 1 */}
-                <div>
-                    <Image src={logo}/>
-                </div>
+                <Link href={"/"}>
+                    <div>
+                        <Image src={logo}/>
+                    </div>
+                </Link>
 
                 {/* Search flex: 6 */}
                 <div>
@@ -19,7 +22,7 @@ export default function Navbar () {
                 <div>
                     <div> Courses </div>
                     <div> Majors </div>
-                    <div> Sign out </div>
+                    <div> Login </div>
                 </div>
             </nav>
         </>
