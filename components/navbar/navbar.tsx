@@ -20,7 +20,7 @@ export default function Navbar () {
 
                 {/* Others flex: 1-2? */}
                 <div>
-                    <div> Course </div>
+                    <div> Courses </div>
                     <div> Majors </div>
                     <div> Login </div>
                 </div>

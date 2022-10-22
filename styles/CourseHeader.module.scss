@@ -1,0 +1,17 @@
+@import './globalVariable.scss';
+
+.course_title {
+    
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    margin-top: -8rem;
+    margin-left: 2.5rem;
+}
+
+.line{
+    border-left: .7rem solid rgb(163, 199, 212);
+    height: 8.5rem;
+    border-top-left-radius: .7rem;
+    border-bottom-left-radius:.7rem;
+}
