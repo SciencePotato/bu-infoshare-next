@@ -3,6 +3,9 @@ import Head from 'next/head'
 import Navbar from '../../components/navbar/navbar'
 import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
+import PostQ from '../../components/postQ/postquestion'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+
 
 
 const Home: NextPage = () => {
@@ -30,13 +33,7 @@ const Home: NextPage = () => {
         {/* Posts */}
         <section>
           {/* Post a Question */}
-          <div className={styles.postQ}>
-              <div> Post a Question</div>
-              <div>
-                <span> Video </span>
-                <span> Photo </span>
-              </div>
-          </div>
+          <PostQ></PostQ>
           
           <Post></Post>
           <Post></Post>
@@ -44,8 +41,9 @@ const Home: NextPage = () => {
           
         </section>
 
-        {/* Courses? */}
+        {/* Leaderboard */}
         <aside>
+          <Leaderboard></Leaderboard>
         </aside>
       </main>
     </>

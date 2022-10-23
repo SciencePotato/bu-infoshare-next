@@ -49,7 +49,6 @@ const Login: NextPage = () => {
         </Head>
 
         <Navbar/>
-
         <main className={styles.loginPage}>
           <section>
             <div>

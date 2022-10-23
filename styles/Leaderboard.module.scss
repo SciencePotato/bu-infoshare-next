@@ -1,0 +1,69 @@
+@import './globalVariable.scss';
+
+.containerTitle {
+    margin-top:2rem;
+}
+
+.title1 {
+    margin-bottom: .8rem;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-top:2rem;
+
+}
+
+.containerTitle .containerScores {
+    background-color: $primary-color-light;
+    border-radius: 25px;
+    font-size: 15px;
+    width: 200px;
+    margin-left: -25px;
+}   
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container6 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.rank {
+    margin-right: -40px;
+    margin-left: 10px;
+}
+
+.points {
+    margin-right: 20px;
+}
+
