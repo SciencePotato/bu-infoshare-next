@@ -16,13 +16,17 @@ export default function Navbar () {
 
                 {/* Search flex: 6 */}
                 <div>
+                    <input type={"text"} placeholder={"Search post"}> 
+                    </input>
                 </div>
 
                 {/* Others flex: 1-2? */}
                 <div>
                     <div> Courses </div>
                     <div> Majors </div>
-                    <div> Login </div>
+                    <Link href={"/Log-in"}>
+                        <div> Login </div>
+                    </Link>
                 </div>
             </nav>
         </>
