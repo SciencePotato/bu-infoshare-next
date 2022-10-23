@@ -2,7 +2,7 @@
 
 
 // Question Post
-.postQ {
+.postContainer {
     background-color: $primary-color-light;
     display: flex;
     flex-direction: column;
@@ -10,14 +10,6 @@
     margin-top: 2rem;
     & > div {
         flex: 1;
-        &:first-of-type{
-            display: grid;
-            border-radius: 1.5rem;
-            border: solid $WHITE 2px;
-            margin: 2rem;
-            font-size: 1.5rem;
-            padding: 1rem;
-        }
         &:last-of-type {
             display: flex;
             margin: 2rem;
@@ -32,3 +24,28 @@
         }
     }
 }
+
+.postqText {
+    
+    color: white;
+    display: grid;
+    border-radius: 1.5rem;
+    background-color: $primary-color-light;
+    border: solid $WHITE 2px;
+    margin: 1.6rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-left: 2rem;
+    min-width: 93%;
+    font-weight: bold;
+
+}
+
+.postqText:focus{
+    outline:none;
+}
+
+.postqText::placeholder {
+    color: white;
+}
+

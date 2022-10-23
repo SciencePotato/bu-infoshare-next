@@ -1,7 +1,7 @@
 import styles  from '../../styles/Leaderboard.module.scss';
 import Image from 'next/image'
 
-export default function courseHeader() {
+export default function Leaderboard() {
     return (
         <>
 
