@@ -25,23 +25,32 @@ const SignUp: NextPage = () => {
   const auth = getAuth();
   
   const signUp = () => {
-    let email = document.getElementById("email") as HTMLInputElement | null
-    let password = document.getElementById("password") as HTMLInputElement | null
-    let passwordVer = document.getElementById("passwordVer") as HTMLInputElement | null
+    let email = document.getElementById("email") as HTMLInputElement | null;
+    let password = document.getElementById("password") as HTMLInputElement | null;
+    let passwordVer = document.getElementById("passwordVer") as HTMLInputElement | null;
+    let error = false;
      
     // We need function to verify if Email exists or not
-    if (email != null && password != null) {
-      createUserWithEmailAndPassword(auth, email?.value, password?.value) 
-        .then((userCredential) => {
-          const user = userCredential.user
-          router.push("/HomePage")
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode)
-          console.log(errorMessage)
-        }) 
+    if (email != null && password != null && passwordVer != null) {
+      if (email.value === "" || password.value === "" || passwordVer.value === "") error = true;
+      if (password.value != passwordVer.value) error = true;
+      
+      if (error) {
+        console.log("Error")
+        return;
+      } else {
+        createUserWithEmailAndPassword(auth, email?.value, password?.value) 
+          .then((userCredential) => {
+            const user = userCredential.user
+            router.push("/HomePage")
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode)
+            console.log(errorMessage)
+          }) 
+      }
     }
     
   }

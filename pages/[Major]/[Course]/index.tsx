@@ -6,9 +6,51 @@ import PostQ from '../../../components/postQ/postquestion'
 import CourseHeader from '../../../components/courseHeader/courseHeader'
 import Leaderboard from '../../../components/leaderboard/leaderboard'
 import styles from '../../../styles/CoursePage.module.scss'
+import { initializeApp } from 'firebase/app'
+import { getDatabase , ref, onValue } from "firebase/database"
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
+const firebaseConfig = {
+    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
+    authDomain: "buinfoshare.firebaseapp.com",
+    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
+    projectId: "buinfoshare",
+    storageBucket: "buinfoshare.appspot.com",
+}
+
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app);
 
 const Course: NextPage = () => {
+    const [course, setCourse] = useState(null)
+    const router = useRouter()
+
+    const getData = (path: string) => {
+      return onValue(ref(database, path), (snapshot) => {
+          const course = snapshot.val()
+          setCourse(course)
+      }, {
+          onlyOnce: true
+      });
+    }
+    
+    useEffect(() => {
+      if (!router.isReady) return;
+      const id = router.query;
+      let path = "/major"
+      path += "/" + id.Major!.toString().toLowerCase() + "/courses";
+      if (course === null) {
+        getData(path)
+      } else {
+        if (id.Course!.toString().toUpperCase() in course) {
+          // Do something 
+        } else{
+          router.push("/Error")
+        }
+      }
+    }, [router.isReady, course])
+
     return (
         <>
           <Head>

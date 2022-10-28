@@ -26,17 +26,25 @@ const Login: NextPage = () => {
   const logIn = () => {
     let email = document.getElementById("email") as HTMLInputElement | null
     let password = document.getElementById("password") as HTMLInputElement | null
+    let error = false
 
     if (email != null && password != null) {
-      signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          router.push('/HomePage')
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-        });
+      if (email.value === "" || password.value === "") error = true;
+
+      if (error) {
+        console.log("Error")
+        return;
+      } else {
+        signInWithEmailAndPassword(auth, email.value, password.value)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            router.push('/HomePage')
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+          });
+      }
     }
   }
 

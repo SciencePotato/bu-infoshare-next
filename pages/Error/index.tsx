@@ -23,7 +23,7 @@ const Error: NextPage = () => {
             <div> 
               <h1> 404 Error Page</h1>
               <h2> Something went wrong, please go back</h2>
-              <button onClick={() => history.back()}> Back </button>
+              <button onClick={() => history.go(-2)}> Back </button>
             </div>
           </div>
         </section>

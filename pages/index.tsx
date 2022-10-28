@@ -20,39 +20,8 @@ const firebaseConfig = {
 
 const app =  initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const auth = getAuth();
-
-const getLeaderboard = (setter: any) => {
-  return onValue(ref(database, '/leaderboard'), (snapshot) => {
-    const leaderboardDict = snapshot.val()
-    setter(leaderboardDict)
-  }, {
-    onlyOnce: true
-  });
-}
-
-
-// createUserWithEmailAndPassword(auth, "houchic@bu.edu", "abc123")
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
 
 const Home: NextPage = () => {
-  const [leaderboard, setLeaderboard] = useState(null)
-
-  getLeaderboard(setLeaderboard)
-
-  useEffect(() => {
-    console.log(leaderboard)
-  }, [leaderboard])
-
   return (
     <div className={styles.container}>
       <Head>
