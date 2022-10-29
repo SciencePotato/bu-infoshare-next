@@ -33,16 +33,28 @@ const Login: NextPage = () => {
   const app = initializeApp(firebaseConfig)
   const auth = getAuth()
 
+  const summonToast = () => {
+    const myToast = document.getElementById("toast")
+    if (myToast !== null) myToast.style.visibility = "initial";
+    setTimeout(() => {
+      if (myToast !== null) myToast.style.visibility = "hidden";
+    }, 1000);
+  }
+
   const logIn = () => {
     let email = document.getElementById("email") as HTMLInputElement | null
     let password = document.getElementById("password") as HTMLInputElement | null
     let error = false
 
     if (email != null && password != null) {
-      if (email.value === "" || password.value === "") error = true;
+      if (email.value === "" || password.value === "") {
+        if (email.value === "") setToastData({toastTitle: "None", toastContent: "Email Field cannot be blank", toastDelay: 500, appearMs: 500})
+        else if (password.value === "") setToastData({toastTitle: "None", toastContent: "Password Field cannot be blank", toastDelay: 500, appearMs: 500})
+
+        error = true;
+      }
 
       if (error) {
-        console.log("Error")
         return;
       } else {
         signInWithEmailAndPassword(auth, email.value, password.value)
@@ -53,6 +65,7 @@ const Login: NextPage = () => {
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            summonToast()
           });
       }
     }

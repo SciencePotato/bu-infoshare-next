@@ -1,6 +1,23 @@
 import styles  from '../../styles/Post.module.scss';
 import Image from 'next/image'
 
+interface commentType {
+    content: string,
+    user: string
+}
+
+interface dataType {
+    title: string,
+    op: string,
+    content: string,
+    comment: commentType [] | null
+}
+
+interface Props {
+    data: dataType | null
+    pathID: string
+}
+
 export default function Post() {
     return (
         <>

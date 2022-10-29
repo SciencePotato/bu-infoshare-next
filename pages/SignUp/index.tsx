@@ -32,6 +32,14 @@ const SignUp: NextPage = () => {
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
+
+  const summonToast = () => {
+    const myToast = document.getElementById("toast")
+    if (myToast !== null) myToast.style.visibility = "initial";
+    setTimeout(() => {
+      if (myToast !== null) myToast.style.visibility = "hidden";
+    }, 1000);
+  }
   
   const signUp = () => {
     let email = document.getElementById("email") as HTMLInputElement | null;
@@ -41,11 +49,21 @@ const SignUp: NextPage = () => {
      
     // We need function to verify if Email exists or not
     if (email != null && password != null && passwordVer != null) {
-      if (email.value === "" || password.value === "" || passwordVer.value === "") error = true;
-      if (password.value != passwordVer.value) error = true;
+      if (email.value === "" || password.value === "" || passwordVer.value === "") {
+        if (email.value === "") setToastData({toastTitle: "None", toastContent: "Email Field cannot be blank", toastDelay: 500, appearMs: 500})
+        else if (password.value === "") setToastData({toastTitle: "None", toastContent: "Password Field cannot be blank", toastDelay: 500, appearMs: 500})
+        else if (passwordVer.value === "") setToastData({toastTitle: "None", toastContent: "Password Field cannot be blank", toastDelay: 500, appearMs: 500})
+        error = true
+      }
+
+      if (password.value != passwordVer.value) {
+        if (error != true) {
+          setToastData({toastTitle: "None", toastContent: "Password and Email doesn't match", toastDelay: 500, appearMs: 500})
+          error = true;
+        }
+      }
       
       if (error) {
-        console.log("Error")
         return;
       } else {
         createUserWithEmailAndPassword(auth, email?.value, password?.value) 

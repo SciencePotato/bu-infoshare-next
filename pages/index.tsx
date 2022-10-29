@@ -7,7 +7,6 @@ import brick from '../public/brick.png'
 import { initializeApp } from 'firebase/app';
 import { getDatabase , ref, onValue } from "firebase/database"
 import Link from 'next/link'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from 'react';
 
 const firebaseConfig = {

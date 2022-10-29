@@ -14,7 +14,7 @@ interface Props {
 
 const Toast: NextPage<Props> = ({ data }) => {
   return (
-    <div className={styles.toastWrapper}>
+    <div className={styles.toastWrapper} id={"toast"}>
         <div className={styles.wrapper}>
             { data.toastContent }
         </div>
