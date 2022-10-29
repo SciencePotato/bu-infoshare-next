@@ -18,7 +18,6 @@ interface toastType {
     appearMs: number
 }
 
-
 const Login: NextPage = () => {
   const [toastData, setToastData] = useState<toastType>({toastTitle: "None", toastContent: "Lorem", toastDelay: 500, appearMs: 500});
   const router = useRouter()

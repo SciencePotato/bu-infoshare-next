@@ -76,7 +76,7 @@ const Course: NextPage = () => {
             {/* Posts/Feed */}
             <section>
 
-              <CourseHeader></CourseHeader>
+              <CourseHeader data={course} courseNum={router.isReady? router.query.Course!.toString().toUpperCase(): "1"}></CourseHeader>
 
               {/* Post a Question */}
 
