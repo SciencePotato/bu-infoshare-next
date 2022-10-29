@@ -8,8 +8,19 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import Toast from '../../components/toasts/toast'
+import { useState } from 'react'
+
+interface toastType {
+    toastTitle: string,
+    toastContent: string,
+    toastDelay: number,
+    appearMs: number
+}
+
 
 const Login: NextPage = () => {
+  const [toastData, setToastData] = useState<toastType>({toastTitle: "None", toastContent: "Lorem", toastDelay: 500, appearMs: 500});
   const router = useRouter()
 
   const firebaseConfig = {
@@ -57,6 +68,9 @@ const Login: NextPage = () => {
         </Head>
 
         <Navbar/>
+
+        <Toast data={toastData}/>
+
         <main className={styles.loginPage}>
           <section>
             <div>
