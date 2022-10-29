@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import Toast from '../../components/toasts/toast'
+import Toast from '../../components/toasts/Toasts'
 import { useState } from 'react'
 
 interface toastType {

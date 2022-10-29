@@ -9,7 +9,7 @@ import styles from '../../styles/SignUp.module.scss'
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import { useState } from 'react'
 import { initializeApp } from 'firebase/app'
-import Toast from '../../components/toasts/toast'
+import Toast from '../../components/toasts/Toasts'
 
 interface toastType {
     toastTitle: string,
