@@ -39,23 +39,23 @@ const Home: NextPage = () => {
     getData()
   }, [])
 
-  useEffect(() => {
-    if (data === null) return;
-    let tmpArray = []
+  // useEffect(() => {
+  //   if (data === null) return;
+  //   let tmpArray = []
 
-    for (const property in data) {
+  //   for (const property in data) {
 
-      let tmpObj = {
-        key: property,
-        value: data[property]
-      }
+  //     let tmpObj = {
+  //       key: property,
+  //       value: data[property]
+  //     }
 
-      tmpArray.push(tmpObj)
-    }
+  //     tmpArray.push(tmpObj)
+  //   }
 
-    console.log(data)
-    setDataArray(tmpArray)
-  }, [data])
+  //   console.log(data)
+  //   setDataArray(tmpArray)
+  // }, [data])
 
   return (
     <>
