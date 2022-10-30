@@ -15,16 +15,18 @@
 
 .containerTitle .containerScores {
     background-color: $primary-color-light;
-    border-radius: 25px;
+    border-radius: 0.5rem;
     font-size: 15px;
     width: 200px;
     margin-left: -25px;
+    padding: 1rem;
 }   
 
 .container1 {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 0.25rem;
 
 }
 

@@ -4,54 +4,14 @@ import Image from 'next/image'
 import styles from '../styles/Splash.module.scss'
 import Navbar from '../components/navbar/navbar'
 import brick from '../public/brick.png'
-import { initializeApp } from 'firebase/app';
-import { getDatabase , ref, onValue } from "firebase/database"
 import Link from 'next/link'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useEffect, useState } from 'react';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-  authDomain: "buinfoshare.firebaseapp.com",
-  databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-  projectId: "buinfoshare",
-  storageBucket: "buinfoshare.appspot.com",
-};
-
-const app =  initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const auth = getAuth();
-
-const getLeaderboard = (setter: any) => {
-  return onValue(ref(database, '/leaderboard'), (snapshot) => {
-    const leaderboardDict = snapshot.val()
-    setter(leaderboardDict)
-  }, {
-    onlyOnce: true
-  });
-}
-
-
-// createUserWithEmailAndPassword(auth, "houchic@bu.edu", "abc123")
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
+import React, { useEffect } from 'react';
 
 const Home: NextPage = () => {
-  const [leaderboard, setLeaderboard] = useState(null)
-
-  getLeaderboard(setLeaderboard)
 
   useEffect(() => {
-    console.log(leaderboard)
-  }, [leaderboard])
+    localStorage.clear()
+  }, [])
 
   return (
     <div className={styles.container}>

@@ -1,0 +1,19 @@
+@import './globalVariable.scss';
+
+.toastWrapper {
+    position: fixed;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.wrapper {
+    overflow: hidden;
+    padding: 0.5rem 3rem;
+    max-width: 80vw;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: $primary-color-light;
+}

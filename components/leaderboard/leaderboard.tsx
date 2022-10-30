@@ -1,65 +1,72 @@
 import styles  from '../../styles/Leaderboard.module.scss';
-import Image from 'next/image'
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { useEffect, useState } from 'react';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
+    authDomain: "buinfoshare.firebaseapp.com",
+    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
+    projectId: "buinfoshare",
+    storageBucket: "buinfoshare.appspot.com",
+}
+
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app);
 
 export default function Leaderboard() {
+    const [leaderboardDict, setLeaderboardDict] = useState<any>(null);
+    const [leaderboardArray, setLeaderboardArray] = useState<any>([])
+
+    const getData = () => {
+        return onValue(ref(database, '/leaderboard'), (snapshot) => {
+            const leaderboard = snapshot.val()
+            setLeaderboardDict(leaderboard)
+        }, {
+            onlyOnce: true
+        });
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+    useEffect(() => {
+        if (leaderboardDict === null) return;
+        else {
+            let tmpArray = [];
+            const length = Object.keys(leaderboardDict).length
+            for (let i = 1; i <= length; i ++) {
+                tmpArray.push(leaderboardDict[i])
+            }
+            setLeaderboardArray(tmpArray)
+        }
+
+        console.log(leaderboardDict)
+    }, [leaderboardDict])
+
     return (
         <>
 
             <div className={styles.containerTitle}>
 
                 {/* Leaderboard title */}
-
                 <div className={styles.title1}>LeaderBoard</div>
 
                 {/* Score container */}
-
                 <div className={styles.containerScores}> 
 
                     {/* Scores */}
-
-                    <br></br>
-
-                    <div className={styles.container1}>
-                        <div className={styles.rank}> 1 </div>
-                        <div className={styles.username}> Macy </div>
-                        <div className={styles.points}> 106 </div>
-                    </div>
-
-                    <div className={styles.container2}>
-                        <div className={styles.rank}> 2 </div>
-                        <div className={styles.username}> Hou </div>
-                        <div className={styles.points}> 80 </div>
-                    </div>
-
-                    <div className={styles.container3}>
-                        <div className={styles.rank}> 3 </div>
-                        <div className={styles.username}> Joe </div>
-                        <div className={styles.points}> 67 </div>
-                    </div>
-
-                    <div className={styles.container4}>
-                        <div className={styles.rank}> 4 </div>
-                        <div className={styles.username}> Jeff </div>
-                        <div className={styles.points}> 54 </div>
-                    </div>
-
-                    <div className={styles.container5}>
-                        <div className={styles.rank}> 5 </div>
-                        <div className={styles.username}> Nick </div>
-                        <div className={styles.points}> 33 </div>
-                    </div>
-
-                    <div className={styles.container6}>
-                        <div className={styles.rank}> 6 </div>
-                        <div className={styles.username}> Bob </div>
-                        <div className={styles.points}> 21 </div>
-                    </div>
-
-                    
-                    <br></br>
-                
+                    { leaderboardArray.length !== 0 && 
+                      leaderboardArray.map((object: any, idx: number) => 
+                        <div className={styles.container1} key={idx}>
+                            <div className={styles.rank} key={(idx + 1) * 100}> {idx + 1} </div>
+                            <div className={styles.username} key={(idx + 1) * 1000}> {object.userName} </div>
+                            <div className={styles.points} key={(idx + 1) * 10000}> {object.points} </div>
+                        </div>
+                      )
+                    }
                 </div>
-            
             </div>
         </>
     )
