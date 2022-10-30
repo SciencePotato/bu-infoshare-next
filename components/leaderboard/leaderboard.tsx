@@ -57,14 +57,17 @@ export default function Leaderboard() {
                 <div className={styles.containerScores}> 
 
                     {/* Scores */}
-                    { leaderboardArray.length !== 0 && 
+                    { (leaderboardArray.length !== 0)? 
                       leaderboardArray.map((object: any, idx: number) => 
                         <div className={styles.container1} key={idx}>
                             <div className={styles.rank} key={(idx + 1) * 100}> {idx + 1} </div>
                             <div className={styles.username} key={(idx + 1) * 1000}> {object.userName} </div>
                             <div className={styles.points} key={(idx + 1) * 10000}> {object.points} </div>
+                        </div>):
+
+                        <div className={styles.container1}>
+                            <div className={styles.username}> Leaderboard Coming soon </div>
                         </div>
-                      )
                     }
                 </div>
             </div>
