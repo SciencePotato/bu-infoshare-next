@@ -1,7 +1,11 @@
 import styles  from '../../styles/Post.module.scss';
 import Image from 'next/image'
-import downArrow from '../../public/downArrow.png'
-import upArrow from '../../public/upArrow.png'
+import DownArrow from '../../public/downArrow.png'
+import UpArrow from '../../public/upArrow.png'
+import Like from '../../public/like.png'
+import Comment from '../../public/comment.png'
+import Repost from '../../public/repost.png'
+
 import { NextPage } from 'next';
 
 interface commentType {
@@ -27,9 +31,9 @@ const Post: NextPage<Props> = ({data}) => {
             <div className={styles.post}>
                 {/* Upvotes */}
                 <div>
-                    <div> <Image src={upArrow}/> </div>
+                    <div> <Image src={UpArrow}/> </div>
                     <div> 0 </div>
-                    <div> <Image src={downArrow}/> </div>
+                    <div> <Image src={DownArrow}/> </div>
                 </div>
                 {/* Contents */}
                 <div>
@@ -40,9 +44,9 @@ const Post: NextPage<Props> = ({data}) => {
                 </div>
             </div>
             <div className={styles.postBot}>
-                <div> Like </div>
-                <div> Comment </div>
-                <div> Repost </div>
+                <div> <div> <Image src={Like} width={30} height={30}/> </div> Like </div>
+                <div> <Image src={Comment} width={30} height={30}/> Comment </div>
+                <div> <Image src={Repost} width={30} height={30}/> Repost </div>
             </div>
         </>
     )

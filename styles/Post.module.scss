@@ -63,7 +63,10 @@
         padding: 1rem;
         display: inline;
         font-size: 1.25rem;
-        margin: 2rem;
+        margin: 2rem;   
+        & > div {
+            display: inline;
+        }
     }
 }
 
