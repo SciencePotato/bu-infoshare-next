@@ -1,5 +1,7 @@
 import styles  from '../../styles/Post.module.scss';
 import Image from 'next/image'
+import downArrow from '../../public/downArrow.png'
+import upArrow from '../../public/upArrow.png'
 import { NextPage } from 'next';
 
 interface commentType {
@@ -25,9 +27,9 @@ const Post: NextPage<Props> = ({data}) => {
             <div className={styles.post}>
                 {/* Upvotes */}
                 <div>
-                    <div> up </div>
+                    <div> <Image src={upArrow}/> </div>
                     <div> 0 </div>
-                    <div> up </div>
+                    <div> <Image src={downArrow}/> </div>
                 </div>
                 {/* Contents */}
                 <div>
