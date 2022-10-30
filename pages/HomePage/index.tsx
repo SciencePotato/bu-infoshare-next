@@ -8,9 +8,15 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, get, child } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 
-const Home: NextPage<any> = ({dataArray}) => {
-  console.log(dataArray)
+const firebaseConfig = {
+    apiKey: process.env.FIREBASE_API,
+    authDomain: process.env.FIREBASE_AUTHDOM,
+    databaseURL: process.env.FIREBASE_DB_URL,
+    projectId: process.env.FIREBASE_PROJECTID,
+    storageBucket: process.env.FIREBASE_STORAGE,
+}
 
+const Home: NextPage<any> = ({dataArray}) => {
   return (
     <>
       <Head>
@@ -58,14 +64,6 @@ const Home: NextPage<any> = ({dataArray}) => {
 export default React.memo(Home)
 
 export async function getStaticProps() {
-
-  const firebaseConfig = {
-      apiKey: process.env.FIREBASE_API,
-      authDomain: process.env.FIREBASE_AUTHDOM,
-      databaseURL: process.env.FIREBASE_DB_URL,
-      projectId: process.env.FIREBASE_PROJECTID,
-      storageBucket: process.env.FIREBASE_STORAGE,
-  }
 
   const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);
