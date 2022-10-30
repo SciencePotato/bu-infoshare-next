@@ -6,8 +6,7 @@ import Post from '../../components/post/Post'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, get, child } from 'firebase/database';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react';
 
 
 const firebaseConfig = {
@@ -42,7 +41,6 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (data === null) return;
-    console.log("D", data)
     let tmpArray = []
 
     for (const property in data) {
@@ -55,9 +53,10 @@ const Home: NextPage = () => {
       tmpArray.push(tmpObj)
     }
 
-    console.log(data)
     setDataArray(tmpArray)
   }, [data])
+
+  console.log("P")
 
   return (
     <>
@@ -103,4 +102,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default React.memo(Home)
