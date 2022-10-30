@@ -20,43 +20,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-const Home: NextPage = () => {
-  const [data, setData] = useState<any>(null)
-  const [dataArray, setDataArray] = useState<any>([])
-
-  const getData = () => {
-      get(child(ref(database), '/major')).then((snapshot) => {
-        const val = snapshot.val();
-        setData(val);
-      }).catch((error) => {
-        console.log(error)
-      })
-  }
-
-
-  useEffect(() => {
-    const info = getData()
-    getData()
-  }, [])
-
-  useEffect(() => {
-    if (data === null) return;
-    let tmpArray = []
-
-    for (const property in data) {
-
-      let tmpObj = {
-        key: property,
-        value: data[property]
-      }
-
-      tmpArray.push(tmpObj)
-    }
-
-    setDataArray(tmpArray)
-  }, [data])
-
-  console.log("P")
+const Home: NextPage<any> = ({dataArray}) => {
+  console.log(dataArray)
 
   return (
     <>
@@ -103,3 +68,32 @@ const Home: NextPage = () => {
 }
 
 export default React.memo(Home)
+
+export async function getStaticProps() {
+  let data:any  = null;
+
+  await get(child(ref(database), '/major')).then((snapshot) => {
+    data = snapshot.val();
+  }).catch((error) => {
+    console.log(error)
+    return null
+  })
+
+  console.log(data)
+  let tmpArray:any = []
+
+  for (const property in data) {
+    let tmpObj = {
+      key: property,
+      value: data[property]
+    }
+
+    tmpArray.push(tmpObj)
+  }
+
+  return {
+    props: {
+      dataArray: tmpArray
+    }
+  }
+}
