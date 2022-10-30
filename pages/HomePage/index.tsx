@@ -63,7 +63,7 @@ const Home: NextPage<any> = ({dataArray}) => {
 
 export default React.memo(Home)
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const firebaseConfig = {
     apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
