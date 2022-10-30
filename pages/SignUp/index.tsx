@@ -64,18 +64,20 @@ const SignUp: NextPage = () => {
       }
       
       if (error) {
+        summonToast()
         return;
       } else {
         createUserWithEmailAndPassword(auth, email?.value, password?.value) 
           .then((userCredential) => {
             const user = userCredential.user
+            localStorage.setItem("user", user.uid)
             router.push("/HomePage")
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode)
-            console.log(errorMessage)
+            setToastData({toastTitle: "None", toastContent: "Invalid User", toastDelay: 500, appearMs: 500})
+            summonToast()
           }) 
       }
     }

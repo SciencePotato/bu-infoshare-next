@@ -2,17 +2,34 @@ import styles  from '../../styles/Nav.module.scss';
 import logo from '../../public/infoshare.png';
 import Link from 'next/link';
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
 
 export default function Navbar () {
+    const [userRef, setUserRef] = useState<string | null>(null);
+
+    useEffect(() => {
+        const user = localStorage.getItem('user')
+        setUserRef(user)
+    }, [])
+
     return (
         <>
             <nav className={styles.nav}>
                 {/* Logo flex: 1 */}
-                <Link href={"/"}>
-                    <div>
-                        <Image src={logo}/>
-                    </div>
-                </Link>
+                {
+                    (userRef === null)? 
+                    <Link href={"/"}>
+                        <div>
+                            <Image src={logo}/>
+                        </div>
+                    </Link>:
+                    <Link href={"/HomePage"}>
+                        <div>
+                            <Image src={logo}/>
+                        </div>
+                    </Link>
+
+                }
 
                 {/* Search flex: 6 */}
                 <div>
@@ -24,9 +41,14 @@ export default function Navbar () {
                 <div>
                     <div> Courses </div>
                     <div> Majors </div>
-                    <Link href={"/Log-in"}>
-                        <div> Login </div>
-                    </Link>
+                    { (userRef === null) ?
+                        <Link href={"/Log-in"}>
+                            <div> Login </div>
+                        </Link>: 
+                        <div>
+                            Profile
+                        </div>
+                    }
                 </div>
             </nav>
         </>

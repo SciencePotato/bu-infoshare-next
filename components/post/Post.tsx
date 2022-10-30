@@ -1,5 +1,6 @@
 import styles  from '../../styles/Post.module.scss';
 import Image from 'next/image'
+import { NextPage } from 'next';
 
 interface commentType {
     content: string,
@@ -15,10 +16,10 @@ interface dataType {
 
 interface Props {
     data: dataType | null
-    pathID: string
+    pathID: string | null
 }
 
-export default function Post() {
+const Post: NextPage<Props> = ({data}) => {
     return (
         <>
             <div className={styles.post}>
@@ -44,3 +45,5 @@ export default function Post() {
         </>
     )
 }
+
+export default Post

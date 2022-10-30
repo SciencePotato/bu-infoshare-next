@@ -19,7 +19,7 @@ interface toastType {
 }
 
 const Login: NextPage = () => {
-  const [toastData, setToastData] = useState<toastType>({toastTitle: "None", toastContent: "Lorem", toastDelay: 500, appearMs: 500});
+  const [toastData, setToastData] = useState<toastType>({toastTitle: "None", toastContent: "Invalid User", toastDelay: 500, appearMs: 500});
   const router = useRouter()
 
   const firebaseConfig = {
@@ -50,21 +50,23 @@ const Login: NextPage = () => {
       if (email.value === "" || password.value === "") {
         if (email.value === "") setToastData({toastTitle: "None", toastContent: "Email Field cannot be blank", toastDelay: 500, appearMs: 500})
         else if (password.value === "") setToastData({toastTitle: "None", toastContent: "Password Field cannot be blank", toastDelay: 500, appearMs: 500})
-
         error = true;
       }
 
       if (error) {
+        summonToast()
         return;
       } else {
         signInWithEmailAndPassword(auth, email.value, password.value)
           .then((userCredential) => {
             const user = userCredential.user;
-            router.push('/HomePage')
+            localStorage.setItem("user", user.uid)
+            router.push("/HomePage")
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            setToastData({toastTitle: "None", toastContent: "Invalid User", toastDelay: 500, appearMs: 500})
             summonToast()
           });
       }

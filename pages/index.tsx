@@ -4,23 +4,15 @@ import Image from 'next/image'
 import styles from '../styles/Splash.module.scss'
 import Navbar from '../components/navbar/navbar'
 import brick from '../public/brick.png'
-import { initializeApp } from 'firebase/app';
-import { getDatabase , ref, onValue } from "firebase/database"
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-  authDomain: "buinfoshare.firebaseapp.com",
-  databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-  projectId: "buinfoshare",
-  storageBucket: "buinfoshare.appspot.com",
-};
-
-const app =  initializeApp(firebaseConfig);
-const database = getDatabase(app);
+import React, { useEffect } from 'react';
 
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    localStorage.clear()
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>

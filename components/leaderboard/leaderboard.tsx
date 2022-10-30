@@ -51,15 +51,12 @@ export default function Leaderboard() {
             <div className={styles.containerTitle}>
 
                 {/* Leaderboard title */}
-
                 <div className={styles.title1}>LeaderBoard</div>
 
                 {/* Score container */}
-
                 <div className={styles.containerScores}> 
 
                     {/* Scores */}
-
                     { leaderboardArray.length !== 0 && 
                       leaderboardArray.map((object: any, idx: number) => 
                         <div className={styles.container1} key={idx}>
@@ -70,7 +67,6 @@ export default function Leaderboard() {
                       )
                     }
                 </div>
-            
             </div>
         </>
     )
