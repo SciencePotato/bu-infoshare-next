@@ -8,15 +8,8 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, get, child } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 
-const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API,
-    authDomain: process.env.FIREBASE_AUTHDOM,
-    databaseURL: process.env.FIREBASE_DB_URL,
-    projectId: process.env.FIREBASE_PROJECTID,
-    storageBucket: process.env.FIREBASE_STORAGE,
-}
-
 const Home: NextPage<any> = ({dataArray}) => {
+
   return (
     <>
       <Head>
@@ -64,6 +57,28 @@ const Home: NextPage<any> = ({dataArray}) => {
 export default React.memo(Home)
 
 export async function getStaticProps() {
+
+  // const firebaseConfig = {
+  //     apiKey: process.env.FIREBASE_API,
+  //     authDomain: process.env.FIREBASE_AUTHDOM,
+  //     databaseURL: process.env.FIREBASE_DB_URL,
+  //     projectId: process.env.FIREBASE_PROJECTID,
+  //     storageBucket: process.env.FIREBASE_STORAGE,
+  // }
+
+  console.log(process.env.FIREBASE_API)
+  console.log(process.env.FIREBASE_AUTHDOM)
+  console.log(process.env.FIREBASE_DB_URL)
+  console.log(process.env.FIREBASE_PROJECTID)
+  console.log(process.env.FIREBASE_STORAGE)
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
+    authDomain: "buinfoshare.firebaseapp.com",
+    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
+    projectId: "buinfoshare",
+    storageBucket: "buinfoshare.appspot.com",
+  };
 
   const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);
