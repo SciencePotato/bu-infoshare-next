@@ -2,6 +2,16 @@ import styles  from '../../styles/Leaderboard.module.scss';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useEffect, useState } from 'react';
+import { NextPage } from 'next';
+
+interface dataType {
+    userName: string
+    points: string
+}
+
+interface Props{
+    data: dataType[] | null
+}
 
 const firebaseConfig = {
     apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
@@ -14,7 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-export default function Leaderboard() {
+const Leaderboard: NextPage<Props> = ({data}) => {
     const [leaderboardDict, setLeaderboardDict] = useState<any>(null);
     const [leaderboardArray, setLeaderboardArray] = useState<any>([])
 
@@ -57,17 +67,22 @@ export default function Leaderboard() {
                 <div className={styles.containerScores}> 
 
                     {/* Scores */}
-                    { leaderboardArray.length !== 0 && 
+                    { (leaderboardArray.length !== 0)? 
                       leaderboardArray.map((object: any, idx: number) => 
                         <div className={styles.container1} key={idx}>
                             <div className={styles.rank} key={(idx + 1) * 100}> {idx + 1} </div>
                             <div className={styles.username} key={(idx + 1) * 1000}> {object.userName} </div>
                             <div className={styles.points} key={(idx + 1) * 10000}> {object.points} </div>
+                        </div>):
+
+                        <div className={styles.container1}>
+                            <div className={styles.username}> Leaderboard Coming soon </div>
                         </div>
-                      )
                     }
                 </div>
             </div>
         </>
     )
 }
+
+export default Leaderboard

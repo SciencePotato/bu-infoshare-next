@@ -6,11 +6,17 @@ import Navbar from '../components/navbar/navbar'
 import brick from '../public/brick.png'
 import Link from 'next/link'
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter();
 
   useEffect(() => {
-    localStorage.clear()
+    // Testing purpose turn this on 
+    // localStorage.clear()
+
+    if (localStorage.getItem("user") !== null) 
+      router.push("/HomePage")
   }, [])
 
   return (
