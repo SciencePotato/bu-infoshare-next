@@ -5,58 +5,18 @@ import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue } from 'firebase/database';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'
+import { getDatabase, ref, onValue, get, child } from 'firebase/database';
+import React, { useEffect, useState } from 'react';
 
+// const firebaseConfig = {
+//   apiKey: process.env.FIREBASE_API,
+//   authDomain: process.env.FIREBASE_AUTHDOM,
+//   databaseURL: process.env.FIREBASE_DB_URL,
+//   projectId: process.env.FIREBASE_PROJECTID,
+//   storageBucket: process.env.FIREBASE_STORAGE,
+// }
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-    authDomain: "buinfoshare.firebaseapp.com",
-    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-    projectId: "buinfoshare",
-    storageBucket: "buinfoshare.appspot.com",
-}
-
-const app = initializeApp(firebaseConfig)
-const database = getDatabase(app);
-
-
-const Home: NextPage = () => {
-  const [data, setData] = useState<any>(null)
-  const [dataArray, setDataArray] = useState<any>([])
-
-  const getData = () => {
-      return onValue(ref(database, '/major'), (snapshot) => {
-          const major = snapshot.val()
-          setData(major)
-      }, {
-          onlyOnce: true
-      });
-  }
-
-
-  useEffect(() => {
-    getData()
-  }, [])
-
-  useEffect(() => {
-    if (data === null) return;
-    let tmpArray = []
-
-    for (const property in data) {
-
-      let tmpObj = {
-        key: property,
-        value: data[property]
-      }
-
-      tmpArray.push(tmpObj)
-    }
-
-    setDataArray(tmpArray)
-  }, [data])
-
+const Home: NextPage<any> = ({dataArray}) => {
   return (
     <>
       <Head>
@@ -94,11 +54,51 @@ const Home: NextPage = () => {
 
         {/* Leaderboard */}
         <aside>
-          <Leaderboard></Leaderboard>
+          <Leaderboard data={null}/>
         </aside>
       </main>
     </>
   )
 }
 
-export default Home
+export default React.memo(Home)
+
+export async function getServerSideProps() {
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
+    authDomain: "buinfoshare.firebaseapp.com",
+    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
+    projectId: "buinfoshare",
+    storageBucket: "buinfoshare.appspot.com",
+  };
+
+  const app = initializeApp(firebaseConfig)
+  const database = getDatabase(app);
+
+  let data:any  = null;
+
+  await get(child(ref(database), '/major')).then((snapshot) => {
+    data = snapshot.val();
+  }).catch((error) => {
+    console.log(error)
+    return null
+  })
+
+  let tmpArray:any = []
+
+  for (const property in data) {
+    let tmpObj = {
+      key: property,
+      value: data[property]
+    }
+
+    tmpArray.push(tmpObj)
+  }
+
+  return {
+    props: {
+      dataArray: tmpArray
+    }
+  }
+}

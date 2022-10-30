@@ -22,7 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-const Course: NextPage = () => {
+const Course: NextPage = (testingData) => {
     const [course, setCourse] = useState(null)
     const [currentCourse, setCurrentCourse] = useState<any>(null)
     const [currentCourseArray, setCurrentCourseArray] = useState<any>([])
@@ -123,7 +123,7 @@ const Course: NextPage = () => {
     
             {/* Leaderboard */}
             <aside>
-                <Leaderboard></Leaderboard>
+                <Leaderboard data={null}/>
             </aside>
           </main>
         </>
@@ -131,3 +131,14 @@ const Course: NextPage = () => {
 }
 
 export default Course
+
+export async function getServerSideProps(context: any) {
+  console.log(context.params.Major)
+  console.log(context.params.Course)
+  
+  return {
+    props: {
+      testingData: {}
+    }
+  }
+}
