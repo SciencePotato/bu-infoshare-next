@@ -9,6 +9,12 @@ import { getDatabase, ref, onValue, get, child } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 
 const Home: NextPage<any> = ({dataArray}) => {
+  console.log(process.env.FIREBASE_API)
+  console.log(process.env.FIREBASE_AUTHDOM)
+  console.log(process.env.FIREBASE_DB_URL)
+  console.log(process.env.FIREBASE_PROJECTID)
+  console.log(process.env.FIREBASE_STORAGE)
+
 
   return (
     <>
@@ -65,12 +71,6 @@ export async function getStaticProps() {
   //     projectId: process.env.FIREBASE_PROJECTID,
   //     storageBucket: process.env.FIREBASE_STORAGE,
   // }
-
-  console.log(process.env.FIREBASE_API)
-  console.log(process.env.FIREBASE_AUTHDOM)
-  console.log(process.env.FIREBASE_DB_URL)
-  console.log(process.env.FIREBASE_PROJECTID)
-  console.log(process.env.FIREBASE_STORAGE)
 
   const firebaseConfig = {
     apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
