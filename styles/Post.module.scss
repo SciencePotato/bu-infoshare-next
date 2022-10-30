@@ -9,14 +9,15 @@
     display: flex;
     & > div {
         &:first-of-type {
-            margin-top: 2rem;
+            margin-top: -1rem;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             max-width: 100px;
-            padding: 1rem;
+            padding: 2rem;
+            
             & > div {
                 margin: 0.25rem 0rem;
             }
@@ -62,7 +63,10 @@
         padding: 1rem;
         display: inline;
         font-size: 1.25rem;
-        margin: 2rem;
+        margin: 2rem;   
+        & > div {
+            display: inline;
+        }
     }
 }
 

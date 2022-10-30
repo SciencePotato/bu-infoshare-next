@@ -37,6 +37,7 @@ const Leaderboard: NextPage<Props> = ({data}) => {
         });
     }
 
+    
     useEffect(() => {
         getData()
     }, [])

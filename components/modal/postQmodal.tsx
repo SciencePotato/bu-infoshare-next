@@ -1,5 +1,7 @@
 import styles  from '../../styles/postQmodal.module.scss';
-
+import Image from 'next/image'
+import Photo from '../../public/photo.png'
+import Video from '../../public/video.png'
 
 export default function postModal({ closeModal }: {closeModal: any}) {
     return (
@@ -24,8 +26,8 @@ export default function postModal({ closeModal }: {closeModal: any}) {
                     <div className={styles.modalFooter}>
 
                         <div className={styles.options}>
-                            <span className={styles.videoButton}> Video </span>
-                            <span className={styles.photoButton}> Photo </span>
+                            <span className={styles.videoButton}> <Image src={Video} width={30} height={30}/> </span>
+                            <span className={styles.photoButton}> <Image src={Photo} width={30} height={30}/> </span>
                             <button className={styles.postButton}>Post</button>
                         </div>
 
