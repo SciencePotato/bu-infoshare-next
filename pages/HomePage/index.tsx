@@ -29,6 +29,7 @@ const Home: NextPage = () => {
   const getData = () => {
       return onValue(ref(database, '/major'), (snapshot) => {
           const major = snapshot.val()
+          console.log(major)
           setData(major)
       }, {
           onlyOnce: true
@@ -54,6 +55,7 @@ const Home: NextPage = () => {
       tmpArray.push(tmpObj)
     }
 
+    console.log(data)
     setDataArray(tmpArray)
   }, [data])
 
