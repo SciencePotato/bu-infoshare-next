@@ -21,41 +21,40 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
+const getData = () => {
+    let val = null;
+    onValue(ref(database, '/major'), (snapshot) => {
+        val = snapshot.val()
+    });
+
+    return val 
+}
 
 const Home: NextPage = () => {
   const [data, setData] = useState<any>(null)
   const [dataArray, setDataArray] = useState<any>([])
 
-  const getData = () => {
-      return onValue(ref(database, '/major'), (snapshot) => {
-          const major = snapshot.val()
-          console.log(major)
-          setData(major)
-      });
-  }
-
-
   useEffect(() => {
-    getData()
+    setData(getData())
   }, [])
 
-  // useEffect(() => {
-  //   if (data === null) return;
-  //   let tmpArray = []
+  useEffect(() => {
+    if (data === null) return;
+    let tmpArray = []
 
-  //   for (const property in data) {
+    for (const property in data) {
 
-  //     let tmpObj = {
-  //       key: property,
-  //       value: data[property]
-  //     }
+      let tmpObj = {
+        key: property,
+        value: data[property]
+      }
 
-  //     tmpArray.push(tmpObj)
-  //   }
+      tmpArray.push(tmpObj)
+    }
 
-  //   console.log(data)
-  //   setDataArray(tmpArray)
-  // }, [data])
+    console.log(data)
+    setDataArray(tmpArray)
+  }, [data])
 
   return (
     <>
