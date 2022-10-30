@@ -42,11 +42,11 @@ export default Major
 export async function getServerSideProps(context: any) {
 
     const firebaseConfig = {
-        apiKey: process.env.NEXT_PUBLIC_FIREBASE_API,
-        authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTHDOM,
-        databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DB_URL,
-        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID,
-        storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE,
+        apiKey: process.env.NEXT_PUBLIC_FIREBASE_API?.toString(),
+        authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTHDOM?.toString(),
+        databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DB_URL?.toString(),
+        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID?.toString(),
+        storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE?.toString(),
     }
 
     console.log(process.env.NEXT_PUBLIC_FIREBASE_API)
