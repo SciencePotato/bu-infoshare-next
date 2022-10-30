@@ -31,8 +31,6 @@ const Home: NextPage = () => {
           const major = snapshot.val()
           console.log(major)
           setData(major)
-      }, {
-          onlyOnce: true
       });
   }
 
