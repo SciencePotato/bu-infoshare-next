@@ -5,7 +5,7 @@ import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue, get, child } from 'firebase/database';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 
@@ -21,29 +21,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-const getData = () => {
-    let val = null;
-    console.log("Before value")
-    onValue(ref(database, '/major'), (snapshot) => {
-        val = snapshot.val()
-    });
-
-    console.log("after on value")
-    return val 
-}
-
 const Home: NextPage = () => {
   const [data, setData] = useState<any>(null)
   const [dataArray, setDataArray] = useState<any>([])
 
+  const getData = () => {
+      get(child(ref(database), '/major')).then((snapshot) => {
+        const val = snapshot.val();
+        setData(val);
+      }).catch((error) => {
+        console.log(error)
+      })
+  }
+
+
   useEffect(() => {
-    console.log("Before")
-    setData(getData())
-    console.log("After")
+    const info = getData()
+    getData()
   }, [])
 
   useEffect(() => {
     if (data === null) return;
+    console.log("D", data)
     let tmpArray = []
 
     for (const property in data) {
