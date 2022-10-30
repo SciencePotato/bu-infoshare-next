@@ -123,7 +123,7 @@ const Course: NextPage = () => {
     
             {/* Leaderboard */}
             <aside>
-                <Leaderboard></Leaderboard>
+                <Leaderboard data={null}/>
             </aside>
           </main>
         </>

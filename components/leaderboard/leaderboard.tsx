@@ -2,6 +2,16 @@ import styles  from '../../styles/Leaderboard.module.scss';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useEffect, useState } from 'react';
+import { NextPage } from 'next';
+
+interface dataType {
+    userName: string
+    points: string
+}
+
+interface Props{
+    data: dataType[] | null
+}
 
 const firebaseConfig = {
     apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
@@ -14,7 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-export default function Leaderboard() {
+const Leaderboard: NextPage<Props> = ({data}) => {
     const [leaderboardDict, setLeaderboardDict] = useState<any>(null);
     const [leaderboardArray, setLeaderboardArray] = useState<any>([])
 
@@ -74,3 +84,5 @@ export default function Leaderboard() {
         </>
     )
 }
+
+export default Leaderboard
