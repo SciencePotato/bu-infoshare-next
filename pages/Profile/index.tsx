@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Navbar from '../../components/navbar/navbar'
 import Head from 'next/head'
 
-const Profile: NextPage = () => {
+const Profile: NextPage<any> = () => {
   return (
       <>
         <Head>
@@ -21,3 +21,12 @@ const Profile: NextPage = () => {
 }
 
 export default Profile
+
+export async function getServerSideProps (context: any) {
+  return {
+    props: {
+      dataArray: {},
+      dataKey: {}
+    }
+  }
+}

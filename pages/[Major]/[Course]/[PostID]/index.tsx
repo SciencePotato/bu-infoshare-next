@@ -17,7 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-const Home: NextPage = () => {
+const Home: NextPage<any> = () => {
   const [post, setPost] = useState(null);
   const router = useRouter();
 
@@ -36,3 +36,12 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export async function getServerSideProps(context: any) {
+
+  return {
+    props: {
+      dataArray: {}
+    }
+  }
+}

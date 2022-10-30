@@ -22,7 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app);
 
-const Course: NextPage = (testingData) => {
+const Course: NextPage<any> = ({dataArray, dataKey}) => {
     const [course, setCourse] = useState(null)
     const [currentCourse, setCurrentCourse] = useState<any>(null)
     const [currentCourseArray, setCurrentCourseArray] = useState<any>([])
@@ -138,7 +138,8 @@ export async function getServerSideProps(context: any) {
   
   return {
     props: {
-      testingData: {}
+      dataArray: {},
+      dataKey: {}
     }
   }
 }

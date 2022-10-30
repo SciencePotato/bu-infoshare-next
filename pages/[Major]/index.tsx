@@ -2,14 +2,18 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { initializeApp } from 'firebase/app'
-import { getDatabase , ref, onValue, child, get } from "firebase/database"
+import { getDatabase , ref, child, get } from "firebase/database"
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 
-const Major: NextPage<any> = ({dataArray, dataKey}) => {
+const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
+    const router = useRouter();
 
-    console.log(dataArray)
+    useEffect(() => {
+        if (dataDict === null) router.push("/Error")
+    }, [])
+
     return (
         <>
             <Head>
@@ -36,11 +40,11 @@ export default Major
 export async function getServerSideProps(context: any) {
 
     const firebaseConfig = {
-        apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-        authDomain: "buinfoshare.firebaseapp.com",
-        databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-        projectId: "buinfoshare",
-        storageBucket: "buinfoshare.appspot.com",
+        apiKey: process.env.FIREBASE_API,
+        authDomain: process.env.FIREBASE_AUTHDOM,
+        databaseURL: process.env.FIREBASE_DB_URL,
+        projectId: process.env.FIREBASE_PROJECTID,
+        storageBucket: process.env.FIREBASE_STORAGE,
     }
 
     const app = initializeApp(firebaseConfig)
@@ -52,7 +56,6 @@ export async function getServerSideProps(context: any) {
         data = snapshot.val();
     }).catch((error) => {
         console.log(error)
-        return null
     })
 
     let tmpArray: any = []
@@ -66,6 +69,7 @@ export async function getServerSideProps(context: any) {
 
     return {
         props: {
+            dataDict: data,
             dataArray: tmpArray,
             dataKey: context.params.Major
         }
