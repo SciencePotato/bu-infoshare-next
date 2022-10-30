@@ -1,6 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Leaderboard from '../../components/leaderboard/leaderboard'
+import Navbar from '../../components/navbar/navbar'
+import PostQ from '../../components/postQ/postquestion'
+import CourseHeader from '../../components/courseHeader/courseHeader'
+import styles from '../../styles/CoursePage.module.scss'
 import { initializeApp } from 'firebase/app'
 import { getDatabase , ref, onValue } from "firebase/database"
 import { useEffect, useState } from 'react'
@@ -58,8 +63,61 @@ const Major: NextPage = () => {
             </Head>
 
             <h1> {router.isReady? router.query.Major!.toString().toLowerCase(): "Loading..."} </h1>
-        </>
-    )
+
+            <Navbar/>
+        
+            <main className={styles.home}>
+                {/* Tags */}
+                <aside>
+                <h2> Tags </h2>
+                <div>
+                    {/* List of stuff -> Make this into custom Component that takes in Logo + Text? */}
+                    <div> Homework Help </div>
+                    <div> Mentor Help </div>
+                    <div> Internship Help </div>
+                </div>
+                </aside>
+
+        
+                {/* Posts/Feed */}
+                <section> 
+
+                <CourseHeader data={majors} courseNum={router.isReady? router.query.Course!.toString().toUpperCase(): "1"}></CourseHeader>
+
+                {/* Post a Question */}
+
+                <PostQ></PostQ>
+
+                    {currentCourseArray.length !== 0 && 
+                    currentMajorArray.map((object: any) =>
+                    <div key={`post${object.key}`}>
+                        {/* Post ID */}
+                        <div key={`key${object.key}`}> 
+                        {object.key}
+                        </div>
+                        <div key={`title${object.key}`}>
+                        {object.value.title}
+                        <div key={`op${object.key}`}>
+                            {object.value.op}
+                        </div>
+                        <div key={`content${object.key}`}>
+                            {object.value.content}
+                        </div>
+                        </div>
+                    </div>
+                    )
+                }
+                
+                
+                </section>
+        
+                {/* Leaderboard */}
+                <aside>
+                    <Leaderboard></Leaderboard>
+                </aside>
+            </main>
+            </>
+        )
 }
 
 export default Major
