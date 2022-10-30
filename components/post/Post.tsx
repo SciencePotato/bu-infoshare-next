@@ -44,7 +44,7 @@ const Post: NextPage<Props> = ({data}) => {
                 </div>
             </div>
             <div className={styles.postBot}>
-                <div> <div> <Image src={Like} width={30} height={30}/> </div> Like </div>
+                <div> <Image src={Like} width={30} height={30}/> Like </div>
                 <div> <Image src={Comment} width={30} height={30}/> Comment </div>
                 <div> <Image src={Repost} width={30} height={30}/> Repost </div>
             </div>

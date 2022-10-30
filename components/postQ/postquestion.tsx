@@ -1,5 +1,7 @@
 import styles  from '../../styles/PostQ.module.scss';
 import Image from 'next/image'
+import Photo from '../../public/photo.png'
+import Video from '../../public/video.png'
 import { useState } from 'react';
 import Modal from '../../components/modal/postQmodal'
 
@@ -17,8 +19,10 @@ export default function Post() {
                     ></input>
                   </form>
                   <div>
-                    <span> Video </span>
-                    <span> Photo </span>
+                    <span> 
+                      <Image src={Video} width={30} height={30}/>  Video 
+                    </span>
+                    <span> <Image src={Photo} width={30} height={30}/> Photo </span>
                   </div>
             </div>
             {postqModal && <Modal closeModal={setPostqmodal} />}
