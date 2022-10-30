@@ -23,10 +23,12 @@ const database = getDatabase(app);
 
 const getData = () => {
     let val = null;
+    console.log("Before value")
     onValue(ref(database, '/major'), (snapshot) => {
         val = snapshot.val()
     });
 
+    console.log("after on value")
     return val 
 }
 
@@ -35,7 +37,9 @@ const Home: NextPage = () => {
   const [dataArray, setDataArray] = useState<any>([])
 
   useEffect(() => {
+    console.log("Before")
     setData(getData())
+    console.log("After")
   }, [])
 
   useEffect(() => {
