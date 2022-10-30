@@ -16,6 +16,9 @@ const firebaseConfig = {
   storageBucket: process.env.FIREBASE_STORAGE,
 }
 
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app);
+
 const Home: NextPage<any> = ({dataArray}) => {
   console.log(process.env.FIREBASE_API)
   console.log(process.env.FIREBASE_AUTHDOM)
@@ -69,7 +72,7 @@ const Home: NextPage<any> = ({dataArray}) => {
 
 export default React.memo(Home)
 
-export async function getStaticProps(firebaseConfig: any) {
+export async function getStaticProps() {
   // const firebaseConfig = {
   //     apiKey: process.env.FIREBASE_API,
   //     authDomain: process.env.FIREBASE_AUTHDOM,
@@ -86,8 +89,6 @@ export async function getStaticProps(firebaseConfig: any) {
   //   storageBucket: "buinfoshare.appspot.com",
   // };
 
-  const app = initializeApp(firebaseConfig)
-  const database = getDatabase(app);
 
   let data:any  = null;
 
@@ -108,8 +109,6 @@ export async function getStaticProps(firebaseConfig: any) {
 
     tmpArray.push(tmpObj)
   }
-
-  console.log(process.env.FIREBASE_API)
 
   return {
     props: {
