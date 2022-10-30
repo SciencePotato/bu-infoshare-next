@@ -19,9 +19,9 @@ export default function Post() {
                     ></input>
                   </form>
                   <div>
-                    <span> 
+                    <div> 
                       <Image src={Video} width={30} height={30}/>  Video 
-                    </span>
+                    </div>
                     <span> <Image src={Photo} width={30} height={30}/> Photo </span>
                   </div>
             </div>

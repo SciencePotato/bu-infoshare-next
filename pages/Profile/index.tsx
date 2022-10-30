@@ -1,6 +1,10 @@
 import type { NextPage } from 'next'
 import Navbar from '../../components/navbar/navbar'
 import Head from 'next/head'
+import styles  from '../../styles/Profile.module.scss';
+import Post from '../../components/post/Post'
+
+
 
 const Profile: NextPage = () => {
   return (
@@ -13,8 +17,27 @@ const Profile: NextPage = () => {
 
         <Navbar/>
 
-        <div>
-            Hello
+        <div className={styles.profileContainer}>
+
+          <div className={styles.profileHead}>
+
+            <div className={styles.dot}></div>
+
+            <div className={styles.heading}>
+
+              <div className={styles.user}>Anonymous Hippo</div>
+              <div className={styles.tagline}>Tagline/One-Liner</div>
+
+            </div>
+
+          </div>
+
+          <div className={styles.bio}>
+
+            <div className={styles.bioHead}>Bio</div>
+            <div className={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a gallery of type and scrambledit to make it a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+
+          </div>
         </div>
       </>
   )
