@@ -8,18 +8,6 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, get, child } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 
-
-const firebaseConfig = {
-    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-    authDomain: "buinfoshare.firebaseapp.com",
-    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-    projectId: "buinfoshare",
-    storageBucket: "buinfoshare.appspot.com",
-}
-
-const app = initializeApp(firebaseConfig)
-const database = getDatabase(app);
-
 const Home: NextPage<any> = ({dataArray}) => {
   console.log(dataArray)
 
@@ -70,6 +58,18 @@ const Home: NextPage<any> = ({dataArray}) => {
 export default React.memo(Home)
 
 export async function getStaticProps() {
+
+  const firebaseConfig = {
+      apiKey: process.env.FIREBASE_API,
+      authDomain: process.env.FIREBASE_AUTHDOM,
+      databaseURL: process.env.FIREBASE_DB_URL,
+      projectId: process.env.FIREBASE_PROJECTID,
+      storageBucket: process.env.FIREBASE_STORAGE,
+  }
+
+  const app = initializeApp(firebaseConfig)
+  const database = getDatabase(app);
+
   let data:any  = null;
 
   await get(child(ref(database), '/major')).then((snapshot) => {
@@ -79,7 +79,6 @@ export async function getStaticProps() {
     return null
   })
 
-  console.log(data)
   let tmpArray:any = []
 
   for (const property in data) {
@@ -90,6 +89,8 @@ export async function getStaticProps() {
 
     tmpArray.push(tmpObj)
   }
+
+  console.log(process.env.FIREBASE_API)
 
   return {
     props: {
