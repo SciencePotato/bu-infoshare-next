@@ -54,6 +54,11 @@
                 font-size: 15px;
                 margin-left: 10px;
                 display: inline;
+                cursor: pointer;
+                transition: all ease-out 0.25s;
+                &:hover{
+                    color: $primary-color-superLight;
+                }
             }
         }
     }

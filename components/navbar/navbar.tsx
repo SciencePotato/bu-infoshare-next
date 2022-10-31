@@ -3,8 +3,9 @@ import logo from '../../public/infoshare.png';
 import Link from 'next/link';
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
+import { NextPage } from 'next';
 
-export default function Navbar () {
+const Navbar: NextPage<any> = () => {
     const [userRef, setUserRef] = useState<string | null>(null);
 
     useEffect(() => {
@@ -54,3 +55,5 @@ export default function Navbar () {
         </>
     )
 }
+
+export default Navbar
