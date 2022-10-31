@@ -10,7 +10,7 @@ import { initializeApp } from 'firebase/app'
 import { getDatabase , ref, get, child } from "firebase/database"
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { firebaseConfig, firebaseConfigEncrypted } from '../../../utils'
+import { firebaseConfig } from '../../../utils'
 
 const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
     const router = useRouter()
@@ -83,7 +83,7 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
 export default Course
 
 export async function getServerSideProps(context: any) {
-  const app = initializeApp(firebaseConfigEncrypted)
+  const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);
 
   let data: any = null;

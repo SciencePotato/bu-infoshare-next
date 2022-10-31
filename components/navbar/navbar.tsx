@@ -16,7 +16,6 @@ const Navbar: NextPage<any> = () => {
     return (
         <>
             <nav className={styles.nav}>
-                {/* Logo flex: 1 */}
                 {
                     (userRef === null)? 
                     <Link href={"/"}>
@@ -32,13 +31,11 @@ const Navbar: NextPage<any> = () => {
 
                 }
 
-                {/* Search flex: 6 */}
                 <div>
                     <input type={"text"} placeholder={"Search post"}> 
                     </input>
                 </div>
 
-                {/* Others flex: 1-2? */}
                 <div>
                     <div> Courses </div>
                     <div> Majors </div>
@@ -46,9 +43,9 @@ const Navbar: NextPage<any> = () => {
                         <Link href={"/Log-in"}>
                             <div> Login </div>
                         </Link>: 
-                        <div>
-                            Profile
-                        </div>
+                        <Link href={"/Profile"}>
+                        <div> Profile </div>
+                        </Link>
                     }
                 </div>
             </nav>

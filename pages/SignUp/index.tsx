@@ -3,13 +3,14 @@ import Navbar from '../../components/navbar/navbar'
 import Head from 'next/head'
 import brick from '../../public/brick.png'
 import Image from 'next/image'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../../styles/SignUp.module.scss'
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import { useState } from 'react'
 import { initializeApp } from 'firebase/app'
 import Toast from '../../components/toasts/Toasts'
+import { firebaseConfig } from '../../utils'
 
 interface toastType {
     toastTitle: string,
@@ -21,14 +22,6 @@ interface toastType {
 const SignUp: NextPage = () => {
   const [toastData, setToastData] = useState<toastType>({toastTitle: "None", toastContent: "Lorem", toastDelay: 500, appearMs: 500});
   const router = useRouter()
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-    authDomain: "buinfoshare.firebaseapp.com",
-    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-    projectId: "buinfoshare",
-    storageBucket: "buinfoshare.appspot.com",
-  };
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
