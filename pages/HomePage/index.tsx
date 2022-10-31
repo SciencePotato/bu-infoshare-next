@@ -5,16 +5,9 @@ import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue, get, child } from 'firebase/database';
-import React, { useEffect, useState } from 'react';
-
-// const firebaseConfig = {
-//   apiKey: process.env.FIREBASE_API,
-//   authDomain: process.env.FIREBASE_AUTHDOM,
-//   databaseURL: process.env.FIREBASE_DB_URL,
-//   projectId: process.env.FIREBASE_PROJECTID,
-//   storageBucket: process.env.FIREBASE_STORAGE,
-// }
+import { getDatabase, ref, get, child } from 'firebase/database';
+import React from 'react';
+import { firebaseConfig } from '../../utils'
 
 const Home: NextPage<any> = ({dataArray}) => {
   return (
@@ -64,14 +57,6 @@ const Home: NextPage<any> = ({dataArray}) => {
 export default React.memo(Home)
 
 export async function getServerSideProps() {
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-    authDomain: "buinfoshare.firebaseapp.com",
-    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-    projectId: "buinfoshare",
-    storageBucket: "buinfoshare.appspot.com",
-  };
 
   const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);

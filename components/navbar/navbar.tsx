@@ -3,8 +3,9 @@ import logo from '../../public/infoshare.png';
 import Link from 'next/link';
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
+import { NextPage } from 'next';
 
-export default function Navbar () {
+const Navbar: NextPage<any> = () => {
     const [userRef, setUserRef] = useState<string | null>(null);
 
     useEffect(() => {
@@ -15,7 +16,6 @@ export default function Navbar () {
     return (
         <>
             <nav className={styles.nav}>
-                {/* Logo flex: 1 */}
                 {
                     (userRef === null)? 
                     <Link href={"/"}>
@@ -31,13 +31,11 @@ export default function Navbar () {
 
                 }
 
-                {/* Search flex: 6 */}
                 <div>
                     <input type={"text"} placeholder={"Search post"}> 
                     </input>
                 </div>
 
-                {/* Others flex: 1-2? */}
                 <div>
                     <div> Courses </div>
                     <div> Majors </div>
@@ -45,12 +43,14 @@ export default function Navbar () {
                         <Link href={"/Log-in"}>
                             <div> Login </div>
                         </Link>: 
-                        <div>
-                            Profile
-                        </div>
+                        <Link href={"/Profile"}>
+                        <div> Profile </div>
+                        </Link>
                     }
                 </div>
             </nav>
         </>
     )
 }
+
+export default Navbar

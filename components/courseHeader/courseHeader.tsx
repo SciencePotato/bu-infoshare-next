@@ -23,7 +23,7 @@ const courseHeader: NextPage<Props> = ({ data, courseNum }) => {
 
                 {/* Course Name */}
                 <div>
-                    <div> {data !== null? data[courseNum].courseName : "None"} </div>
+                    <div> {data !== null? data.courseName : "None"} </div>
                 </div>
             
             </div>

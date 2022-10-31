@@ -10,6 +10,7 @@ import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import Toast from '../../components/toasts/Toasts'
 import { useState } from 'react'
+import { firebaseConfig } from '../../utils'
 
 interface toastType {
     toastTitle: string,
@@ -21,14 +22,6 @@ interface toastType {
 const Login: NextPage = () => {
   const [toastData, setToastData] = useState<toastType>({toastTitle: "None", toastContent: "Invalid User", toastDelay: 500, appearMs: 500});
   const router = useRouter()
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-    authDomain: "buinfoshare.firebaseapp.com",
-    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-    projectId: "buinfoshare",
-    storageBucket: "buinfoshare.appspot.com",
-  };
 
   const app = initializeApp(firebaseConfig)
   const auth = getAuth()

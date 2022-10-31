@@ -6,7 +6,7 @@ import Post from '../../components/post/Post'
 
 
 
-const Profile: NextPage = () => {
+const Profile: NextPage<any> = () => {
   return (
       <>
         <Head>
@@ -44,3 +44,12 @@ const Profile: NextPage = () => {
 }
 
 export default Profile
+
+export async function getServerSideProps (context: any) {
+  return {
+    props: {
+      dataArray: {},
+      dataKey: {}
+    }
+  }
+}
