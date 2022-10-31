@@ -88,11 +88,15 @@ export async function getServerSideProps(context: any) {
 
   let data: any = null;
 
-  await get(child(ref(database), '/major/' + context.params.Major + '/courses/' + context.params.Course.toString().toUpperCase())).then((snapshot) => {
-      data = snapshot.val();
-  }).catch((error) => {
-      console.log(error)
-  })
+  try {
+    await get(child(ref(database), '/major/' + context.params.Major + '/courses/' + context.params.Course.toString().toUpperCase())).then((snapshot) => {
+        data = snapshot.val();
+    }).catch((error) => {
+        console.log(error)
+    })
+  } catch (error) {
+    console.log("ewww more error")
+  }
 
   let tmpList = []
 
