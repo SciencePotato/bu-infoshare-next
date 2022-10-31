@@ -100,13 +100,15 @@ export async function getServerSideProps(context: any) {
 
   let tmpList = []
 
-  for (const property in data["posts"]) {
-    let tmpObj = {
-      key: property,
-      value: data["posts"][property]
-    }
+  if (data !== null) {
+    for (const property in data["posts"]) {
+      let tmpObj = {
+        key: property,
+        value: data["posts"][property]
+      }
 
-    tmpList.push(tmpObj)
+      tmpList.push(tmpObj)
+    }
   }
   
   return {
