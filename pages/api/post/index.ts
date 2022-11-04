@@ -15,9 +15,15 @@ export default async function handler(
     if (req.method === 'POST') {
       const app = initializeApp(firebaseConfig)
       const database = getDatabase(app);
-      await set(ref(database, 'maxPost'), {
-        num: Math.random() * 100
+      let data: any = null
+      await get(child(ref(database), 'maxPost')).then((snapshot) => {
+        data = snapshot.val();
       })
+
+      await set(ref(database, 'maxPost'), {
+        num: parseInt(data["num"]) + 1
+      })
+
       res.status(201).json(req.body)
     }
 }
