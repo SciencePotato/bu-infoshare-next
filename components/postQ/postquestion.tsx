@@ -2,7 +2,7 @@ import styles  from '../../styles/PostQ.module.scss';
 import Image from 'next/image'
 import Photo from '../../public/photo.png'
 import Video from '../../public/video.png'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '../../components/modal/postQmodal'
 import { firebaseConfig } from '../../utils';
 import { getDatabase, ref, set } from 'firebase/database';
@@ -17,9 +17,9 @@ export default function Post() {
     const app = initializeApp(firebaseConfig)
     const database = getDatabase(app);
 
-    set(ref(database, 'maxPost'), {
+    useEffect(() => {set(ref(database, 'maxPost'), {
       num: 512
-    });
+    })}, [])
 
     return (
         <>
