@@ -16,8 +16,10 @@ export default function handler(
       const app = initializeApp(firebaseConfig)
       const database = getDatabase(app);
       set(ref(database, 'maxPost'), {
-        num: 420
+        num: 69
       })
+      res.status(200).json({ name: 'John Doe' })
+    } else {
       res.status(200).json({ name: 'John Doe' })
     }
 }

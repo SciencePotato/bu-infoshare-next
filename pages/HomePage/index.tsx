@@ -8,15 +8,23 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect } from 'react';
 import { firebaseConfig } from '../../utils'
+import { useRouter } from 'next/router'
 
 
-const postFunction = async () => {
+
+const Home: NextPage<any> = ({dataArray}) => {
+
+  const router = useRouter();
+  useEffect(() => {
+    console.log(router?.basePath)
+  }, [router.isReady])
+
+  const postFunction = async () => {
+    console.log(document.location)
     const response = await fetch('/api/post', {
       method: "POST"
     })
-}
-
-const Home: NextPage<any> = ({dataArray}) => {
+  }
 
   return (
     <>
