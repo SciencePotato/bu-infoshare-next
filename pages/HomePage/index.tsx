@@ -14,15 +14,11 @@ const database = getDatabase(app);
 
 const postFunction = () => {
   set(ref(database, 'maxPost'), {
-    num: 512
+    num: 69
   })
 }
 
 const Home: NextPage<any> = ({dataArray}) => {
-
-  useEffect(() => {
-    postFunction()
-  })
 
   return (
     <>
@@ -33,7 +29,7 @@ const Home: NextPage<any> = ({dataArray}) => {
       </Head>
       <Navbar/>
 
-      <main className={styles.home}>
+      <main className={styles.home} onClick={postFunction}>
         {/* Tags */}
         <aside>
           <h2> Tags </h2>
