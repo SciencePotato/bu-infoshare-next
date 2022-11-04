@@ -29,7 +29,7 @@ const Home: NextPage<any> = ({dataArray}) => {
       </Head>
       <Navbar/>
 
-      <main className={styles.home} onClick={postFunction}>
+      <main className={styles.home}>
         {/* Tags */}
         <aside>
           <h2> Tags </h2>
@@ -43,6 +43,7 @@ const Home: NextPage<any> = ({dataArray}) => {
 
         {/* Posts */}
         <section>
+          <button onClick={postFunction}> CLick </button>
           {/* Post a Question */}
           <Post data={null} pathID={"1"}/>
           { dataArray.length !== 0 && 
