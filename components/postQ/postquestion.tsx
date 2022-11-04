@@ -17,8 +17,8 @@ export default function Post() {
     const app = initializeApp(firebaseConfig)
     const database = getDatabase(app);
 
-    set(ref(database, '/'), {
-      postNum: 512
+    set(ref(database, 'maxPost'), {
+      num: 512
     });
 
     return (

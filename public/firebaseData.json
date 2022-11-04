@@ -1,0 +1,30 @@
+{
+    "major" : {
+        "computerscience": {
+            "courses": {
+                "CS131": {
+                    "courseName": "Potato",
+                    "posts": {
+                        "1": {
+                            "op": "Tomato", 
+                            "title": "I Failed midterm",
+                            "content": "The midterm is unfair, I want a regrade",
+                            "comment": {
+                                "1": {
+                                    "user": "Potato",
+                                    "content": "Just git good"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "business": {},
+        "physic": {},
+        "english": {}
+    }, 
+    "leaderboard": {
+        
+    }
+}
