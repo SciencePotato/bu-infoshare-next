@@ -4,11 +4,22 @@ import Photo from '../../public/photo.png'
 import Video from '../../public/video.png'
 import { useState } from 'react';
 import Modal from '../../components/modal/postQmodal'
+import { firebaseConfig } from '../../utils';
+import { getDatabase, ref, set } from 'firebase/database';
+import { initializeApp } from 'firebase/app';
 
 
 export default function Post() {
 
     const[postqModal, setPostqmodal] = useState(false)
+
+    // Take in a Path, maxNum
+    const app = initializeApp(firebaseConfig)
+    const database = getDatabase(app);
+
+    set(ref(database, '/'), {
+      postNum: 512
+    });
 
     return (
         <>
