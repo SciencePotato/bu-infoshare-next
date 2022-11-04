@@ -16,7 +16,7 @@ export default function handler(
       const app = initializeApp(firebaseConfig)
       const database = getDatabase(app);
       set(ref(database, 'maxPost'), {
-        num: 69
+        num: Math.random() * 100
       })
       res.status(200).json({ name: 'John Doe' })
     } else {

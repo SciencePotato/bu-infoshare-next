@@ -21,7 +21,7 @@ const Home: NextPage<any> = ({dataArray}) => {
 
   const postFunction = async () => {
     console.log(document.location)
-    const response = await fetch('/api/post', {
+    const response = await fetch(`${document.location.origin}/api/post`, {
       method: "POST"
     })
   }
