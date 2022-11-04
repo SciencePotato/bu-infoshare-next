@@ -9,13 +9,21 @@ import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect } from 'react';
 import { firebaseConfig } from '../../utils'
 
-const Home: NextPage<any> = ({dataArray}) => {
-    const app = initializeApp(firebaseConfig)
-    const database = getDatabase(app);
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app);
 
-    useEffect(() => {set(ref(database, 'maxPost'), {
-      num: 512
-    })}, [])
+const postFunction = () => {
+  set(ref(database, 'maxPost'), {
+    num: 512
+  })
+}
+
+const Home: NextPage<any> = ({dataArray}) => {
+
+  useEffect(() => {
+    postFunction()
+  })
+
   return (
     <>
       <Head>
