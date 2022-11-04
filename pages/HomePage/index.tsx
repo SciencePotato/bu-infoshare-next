@@ -5,11 +5,17 @@ import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, child } from 'firebase/database';
-import React from 'react';
+import { getDatabase, ref, get, set, child } from 'firebase/database';
+import React, { useEffect } from 'react';
 import { firebaseConfig } from '../../utils'
 
 const Home: NextPage<any> = ({dataArray}) => {
+    const app = initializeApp(firebaseConfig)
+    const database = getDatabase(app);
+
+    useEffect(() => {set(ref(database, 'maxPost'), {
+      num: 512
+    })}, [])
   return (
     <>
       <Head>
