@@ -9,21 +9,22 @@ import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect } from 'react';
 import { firebaseConfig } from '../../utils'
 import { useRouter } from 'next/router'
+import { stringify } from 'querystring'
 
 
 
 const Home: NextPage<any> = ({dataArray}) => {
 
-  const router = useRouter();
-  useEffect(() => {
-    console.log(router?.basePath)
-  }, [router.isReady])
-
   const postFunction = async () => {
     console.log(document.location)
     const response = await fetch(`${document.location.origin}/api/post`, {
-      method: "POST"
+      method: 'POST',
+      body: JSON.stringify({"Potato": "1"}),
+      headers: {
+        'Content-Type': 'data',
+      },
     })
+    console.log(response.json().then((res) => console.log(res)))
   }
 
   return (

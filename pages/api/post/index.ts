@@ -17,5 +17,6 @@ export default function handler(
     set(ref(database, 'maxPost'), {
       num: Math.random() * 100
     })
-    res.status(200).json({ name: 'John Doe' })
+    console.log(req.body)
+    res.status(200).json(req.body)
 }
