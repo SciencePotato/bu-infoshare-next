@@ -9,16 +9,16 @@ import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect } from 'react';
 import { firebaseConfig } from '../../utils'
 
-const app = initializeApp(firebaseConfig)
-const database = getDatabase(app);
 
 const postFunction = () => {
+  const app = initializeApp(firebaseConfig)
+  const database = getDatabase(app);
   set(ref(database, 'maxPost'), {
     num: 69
   })
 }
 
-const Home: NextPage<any> = ({dataArray}) => {
+const Home: NextPage<any> = ({dataArray, doSomething}) => {
 
   return (
     <>
@@ -44,6 +44,7 @@ const Home: NextPage<any> = ({dataArray}) => {
         {/* Posts */}
         <section>
           <button onClick={postFunction}> CLick </button>
+          <button onClick={doSomething}> Click2 </button>
           {/* Post a Question */}
           <Post data={null} pathID={"1"}/>
           { dataArray.length !== 0 && 
@@ -92,9 +93,16 @@ export async function getServerSideProps() {
     tmpArray.push(tmpObj)
   }
 
+  const doFunction = () => {
+    set(ref(database, 'maxPost'), {
+      num: 69
+    })
+  }
+
   return {
     props: {
-      dataArray: tmpArray
+      dataArray: tmpArray,
+      doSomething: doFunction
     }
   }
 }
