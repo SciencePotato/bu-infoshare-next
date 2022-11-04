@@ -14,12 +14,12 @@ export default function Post() {
     const[postqModal, setPostqmodal] = useState(false)
 
     // Take in a Path, maxNum
-    const app = initializeApp(firebaseConfig)
-    const database = getDatabase(app);
+    // const app = initializeApp(firebaseConfig)
+    // const database = getDatabase(app);
 
-    useEffect(() => {set(ref(database, 'maxPost'), {
-      num: 512
-    })}, [])
+    // useEffect(() => {set(ref(database, 'maxPost'), {
+    //   num: 512
+    // })}, [])
 
     return (
         <>
