@@ -13,6 +13,7 @@ const Home: NextPage<any> = ({dataArray}) => {
    const [tmpDataArray, setDataArray] = useState(dataArray)
 
   const fetchFunction = async () => {
+    console.log(document.location)
     const response = await fetch(`${document.location.origin}/api/read`, {
       method: 'POST',
       body: JSON.stringify({"path": "leaderboard"}),
