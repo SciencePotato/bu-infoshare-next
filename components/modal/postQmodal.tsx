@@ -7,13 +7,6 @@ import { useState, useEffect } from 'react';
 export default function postModal({ closeModal }: {closeModal: any}) {
     const[title, setTitle] = useState<string>()
     const[content, setContent] = useState<string>()
-    const [userRef, setUserRef] = useState<string | null>(null);
-
-    useEffect(() => {
-        const user = localStorage.getItem('user')
-        setUserRef(user)
-    }, [])
-    
 
     const postFunction = async () => {
       let path = document.location.pathname
@@ -21,7 +14,7 @@ export default function postModal({ closeModal }: {closeModal: any}) {
       path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase()
       const response = await fetch(`${document.location.origin}/api/post`, {
         method: 'POST',
-        body: JSON.stringify({"path": path, "title": title, "content": content, "user": (userRef !== null)? userRef: "Anynmous"}),
+        body: JSON.stringify({"path": path, "title": title, "content": content, "user":"Anynmous"}),
         headers: {
           'Content-Type': 'application/json',
         },
