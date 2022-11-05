@@ -11,16 +11,24 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+    const { body } = req
+
     const app = initializeApp(firebaseConfig)
     const database = getDatabase(app);
     let data: any = null
-    await get(child(ref(database), 'maxPost')).then((snapshot) => {
+    
+    await get(child(ref(database), body.path)).then((snapshot) => {
       data = snapshot.val();
     })
 
-    await set(ref(database, 'maxPost'), {
-      num: parseInt(data["num"]) + 1
+    const size = data.posts.length
+    
+    await set(ref(database, `${body.path}/posts/${size}`), {
+      comment: [],
+      content: body.content,
+      op: body.user,
+      title: body.title,
     })
 
-    res.status(201).json(req.body)
+    res.status(201).json(body)
 }
