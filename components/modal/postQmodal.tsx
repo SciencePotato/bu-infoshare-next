@@ -19,8 +19,15 @@ export default function postModal({ closeModal }: {closeModal: any}) {
 
                     <hr className={styles.modalLine}></hr>
 
+                    <div className={styles.titleContainer}>
+                        <textarea className={styles.postTitle} placeholder="Title" ></textarea>
+                    </div>
+
+                    <hr className={styles.modalLine}></hr>
+
+
                     <div className={styles.modalBody}>
-                        <textarea className={styles.modalQuestion} placeholder="Enter your question here.." ></textarea>
+                        <textarea className={styles.modalQuestion} placeholder="What question do you have?" ></textarea>
                     </div>
 
                     <div className={styles.modalFooter}>
