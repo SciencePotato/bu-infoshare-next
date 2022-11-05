@@ -13,33 +13,23 @@ interface Props{
     data: dataType[] | null
 }
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD-sgjpJ5oJr1lbD7oxlgPdZbQxESPWXdw",
-    authDomain: "buinfoshare.firebaseapp.com",
-    databaseURL: "https://buinfoshare-default-rtdb.firebaseio.com/",
-    projectId: "buinfoshare",
-    storageBucket: "buinfoshare.appspot.com",
-}
-
-const app = initializeApp(firebaseConfig)
-const database = getDatabase(app);
-
 const Leaderboard: NextPage<Props> = ({data}) => {
     const [leaderboardDict, setLeaderboardDict] = useState<any>(null);
     const [leaderboardArray, setLeaderboardArray] = useState<any>([])
 
-    const getData = () => {
-        return onValue(ref(database, '/leaderboard'), (snapshot) => {
-            const leaderboard = snapshot.val()
-            setLeaderboardDict(leaderboard)
-        }, {
-            onlyOnce: true
-        });
+    const fetchFunction = async () => {
+        const response = await fetch(`${document.location.origin}/api/read`, {
+            method: 'POST',
+            body: JSON.stringify({"path": "leaderboard"}),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        response.json().then((res) => {setLeaderboardDict(res); console.log(res)})
     }
 
-    
     useEffect(() => {
-        getData()
+        fetchFunction()
     }, [])
 
     useEffect(() => {
@@ -47,7 +37,7 @@ const Leaderboard: NextPage<Props> = ({data}) => {
         else {
             let tmpArray = [];
             const length = Object.keys(leaderboardDict).length
-            for (let i = 1; i <= length; i ++) {
+            for (let i = 0; i < length; i ++) {
                 tmpArray.push(leaderboardDict[i])
             }
             setLeaderboardArray(tmpArray)

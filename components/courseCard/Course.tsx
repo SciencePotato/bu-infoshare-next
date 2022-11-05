@@ -5,6 +5,7 @@ import UpArrow from '../../public/upArrow.png'
 import Like from '../../public/like.png'
 import Comment from '../../public/comment.png'
 import Repost from '../../public/repost.png'
+
 import { NextPage } from 'next';
 
 interface commentType {
@@ -24,7 +25,7 @@ interface Props {
     pathID: string | null
 }
 
-const Post: NextPage<Props> = ({data}) => {
+const CourseCard: NextPage<Props> = ({data}) => {
     return (
         <>
             <div className={styles.post}>
@@ -51,4 +52,4 @@ const Post: NextPage<Props> = ({data}) => {
     )
 }
 
-export default Post
+export default CourseCard
