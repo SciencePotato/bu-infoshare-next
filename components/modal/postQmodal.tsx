@@ -5,16 +5,21 @@ import Video from '../../public/video.png'
 import { useState, useEffect } from 'react';
 
 export default function postModal({ closeModal }: {closeModal: any}) {
-    const[title, setTitle] = useState<string>()
-    const[content, setContent] = useState<string>()
-
     const postFunction = async () => {
       let path = document.location.pathname
       let pathArray = path.split("/").slice(1)
       path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase()
+
+      let titleWrapper = document.getElementById("title")  as HTMLInputElement | null;
+      let contentWrapper = document.getElementById("content")  as HTMLInputElement | null;
+
       const response = await fetch(`${document.location.origin}/api/post`, {
         method: 'POST',
-        body: JSON.stringify({"path": path, "title": title, "content": content, "user":"Anynmous"}),
+        body: JSON.stringify({
+            "path": path, 
+            "title": (titleWrapper !== null)? titleWrapper.value: "NULL", 
+            "content": (contentWrapper !== null)? contentWrapper.value: "NULL", 
+            "user":(localStorage.getItem("user") !== null)? localStorage.getItem("user"): "Anynmous"}),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -35,13 +40,13 @@ export default function postModal({ closeModal }: {closeModal: any}) {
                     <hr className={styles.modalLine}></hr>
 
                     <div className={styles.titleContainer}>
-                        <textarea className={styles.postTitle} placeholder="Title" onChange={(e) => setTitle(e.target.value)}></textarea>
+                        <textarea className={styles.postTitle} placeholder="Title" id={"title"}></textarea>
                     </div>
 
                     <hr className={styles.modalLine}></hr>
 
                     <div className={styles.modalBody}>
-                        <textarea className={styles.modalQuestion} placeholder="What question do you have?" onChange={(e) => setContent(e.target.value)}></textarea>
+                        <textarea className={styles.modalQuestion} placeholder="What question do you have?" id={"content"}></textarea>
                     </div>
 
                     <div className={styles.modalFooter}>
