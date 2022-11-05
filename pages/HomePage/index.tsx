@@ -58,8 +58,6 @@ const Home: NextPage<any> = ({dataArray}) => {
 
         {/* Posts */}
         <section>
-          <button onClick={postFunction}> Post </button>
-          <button onClick={fetchFunction}> Fetch </button>
           {/* Post a Question */}
           <Post data={null} pathID={"1"}/>
           { tmpDataArray.length !== 0 && 

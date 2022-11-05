@@ -16,20 +16,6 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
     const router = useRouter()
     const [tmpDataArray, setDataArray] = useState(dataArray);
 
-    const fetchFunction = async () => {
-      let path = document.location.pathname
-      let pathArray = path.split("/").slice(1)
-      path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase()
-      const response = await fetch(`${document.location.origin}/api/read`, {
-        method: 'POST',
-        body: JSON.stringify({"path": path}),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      console.log(response.json().then((res) => console.log(res)))
-    }
-
     useEffect(() => {
       if (curData === null) {router.push("/Error")}
     }, [])
@@ -62,7 +48,6 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
 
               {/* Post a Question */}
 
-              <button onClick={fetchFunction}> Fetch </button>
               <PostQ></PostQ>
 
               { dataArray.length !== 0 && 

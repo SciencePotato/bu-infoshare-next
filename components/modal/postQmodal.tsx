@@ -2,7 +2,6 @@ import styles  from '../../styles/postQmodal.module.scss';
 import Image from 'next/image'
 import Photo from '../../public/photo.png'
 import Video from '../../public/video.png'
-import { useState, useEffect } from 'react';
 
 export default function postModal({ closeModal }: {closeModal: any}) {
     const postFunction = async () => {

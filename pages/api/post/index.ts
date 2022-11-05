@@ -30,5 +30,7 @@ export default async function handler(
       title: body.title,
     })
 
+    // Fetch the new one so we can rerender.
+
     res.status(201).json(body)
 }
