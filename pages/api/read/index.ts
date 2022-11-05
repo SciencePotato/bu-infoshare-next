@@ -1,5 +1,6 @@
+
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { firebaseConfig } from '../../../utils'
+import { firebaseConfig, firebaseConfigEncrypted } from '../../../utils'
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set, child } from 'firebase/database';
 
@@ -11,16 +12,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+    const { body } = req
     const app = initializeApp(firebaseConfig)
     const database = getDatabase(app);
     let data: any = null
-    await get(child(ref(database), 'maxPost')).then((snapshot) => {
-      data = snapshot.val();
-    })
 
-    await set(ref(database, 'maxPost'), {
-      num: parseInt(data["num"]) + 1
+    await get(child(ref(database), body.path)).then((snapshot) => {
+        data = snapshot.val();
     })
-
-    res.status(201).json(req.body)
+    
+    res.status(201).json(data)
 }
