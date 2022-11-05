@@ -207,7 +207,7 @@
                             "user": "Anonymous Bee",
                             "time": "5 mins ago",
                             "comment_upvotes": 10,
-                            "comment": "CS411 is the the easiest cs class i've ever taken.'"
+                            "comment": "CS411 is the the easiest cs class i've ever taken."
                         },
         
                         {
@@ -977,18 +977,6 @@
                             "comment_upvotes": 6,
                             "comment": "I've never taken a CS course that didn’t curve."
                             
-                        },
-        
-                        {
-                            "user": "Anonymous Jaguar",
-                            "time": "25 mins ago",
-                            "comment": "BFS searches adjacent nodes, so it will find the shortest path quicker, since we will run out of nodes to add to the queue sooner for that path."
-                        },
-        
-                        {
-                            "user": "Anonymous Whale",
-                            "time": "45 mins ago",
-                            "comment": "DFS is better for decision based problems and is quicker than BFS, since it doesn't search all neighbors."
                         }
                     ]
                 }
