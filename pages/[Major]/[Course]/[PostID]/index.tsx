@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { initializeApp } from 'firebase/app'
 import { getDatabase , ref, get, child } from "firebase/database"
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '../../../../components/navbar/navbar'
 import { firebaseConfig } from '../../../../utils'

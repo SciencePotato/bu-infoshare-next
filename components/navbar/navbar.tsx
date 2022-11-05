@@ -14,15 +14,10 @@ const Navbar: NextPage<any> = ({data, tmpData, setData}) => {
     }, [])
 
     const renderData = (input: any) => {
-        console.log("Render", tmpData)
-        const newData = data.filter((object:any) => object.key.toString().indexOf(input) != -1)
+        const newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
         setData(newData)
 
     }
-
-    useEffect(() => {
-        console.log("Child:", data)
-    }, [tmpData])
 
     return (
         <>

@@ -23,10 +23,6 @@ const Home: NextPage<any> = ({dataArray}) => {
     console.log(response.json().then((res) => console.log(res)))
   }
 
-  useEffect(() => {
-    console.log("Parent:", tmpDataArray)
-  }, [tmpDataArray])
-
   return (
     <>
       <Head>
