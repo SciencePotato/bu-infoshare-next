@@ -5,13 +5,24 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
 
-const Navbar: NextPage<any> = () => {
+const Navbar: NextPage<any> = ({data, tmpData, setData}) => {
     const [userRef, setUserRef] = useState<string | null>(null);
 
     useEffect(() => {
         const user = localStorage.getItem('user')
         setUserRef(user)
     }, [])
+
+    const renderData = (input: any) => {
+        console.log("Render", tmpData)
+        const newData = data.filter((object:any) => object.key.toString().indexOf(input) != -1)
+        setData(newData)
+
+    }
+
+    useEffect(() => {
+        console.log("Child:", data)
+    }, [tmpData])
 
     return (
         <>
@@ -28,11 +39,10 @@ const Navbar: NextPage<any> = () => {
                             <Image src={logo}/>
                         </div>
                     </Link>
-
                 }
 
                 <div>
-                    <input type={"text"} placeholder={"Search post"}> 
+                    <input type={"text"} placeholder={"Search post"} onChange={(e) => renderData(e.target.value)}> 
                     </input>
                 </div>
 
