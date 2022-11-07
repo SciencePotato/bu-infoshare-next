@@ -65,11 +65,10 @@ const Home: NextPage<any> = ({dataArray}) => {
 
           { tmpDataArray.length !== 0 && 
             tmpDataArray.map((object: any) => 
-              <Coursecard data={object} pathID={"1"}></Coursecard>
           
-              /*<div key={object.key}>
-                {object.key}
-              </div>    */        
+              <div key={object.key}>
+                <Coursecard data={object} pathID={"1"}></Coursecard>
+              </div>          
             )
 
           }
