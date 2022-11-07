@@ -49,7 +49,7 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
           {
                 (dataArray === null)? <h1> Null </h1>:
                 tmpDataArray.map((object: any) => 
-                    <Majorcard data={object} pathID={"1"}></Majorcard>
+                    <Majorcard key={object.id} data={object} pathID={"1"}></Majorcard>
                     /*<div key={object.key}> {object.key} </div>
                     <div key={`content-${object.key}`}> {object.value.courseName} </div>
                     */
