@@ -6,6 +6,7 @@ import Like from '../../public/like.png'
 import Comment from '../../public/comment.png'
 import Repost from '../../public/repost.png'
 import { NextPage } from 'next';
+import { title } from 'process';
 
 interface commentType {
     content: string,
@@ -36,10 +37,10 @@ const Post: NextPage<Props> = ({data}) => {
                 </div>
                 {/* Contents */}
                 <div>
-                    <div className={styles.name}> <h2> Anonymous Hippo </h2> </div>
+                    <div className={styles.name}> <h2> {data.value.op} </h2> </div>
                     <div className={styles.time}> <h3> 30 mins ago </h3></div>
-                    <div className={styles.title}> <h1> Questions about the difficulty </h1> </div>
-                    <div className={styles.content}> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi sapiente ratione voluptates eum eligendi tenetur impedit, cupiditate dolorem culpa quis amet possimus tempore ipsa quidem molestiae, totam quibusdam labore.</div>
+                    <div className={styles.title} > <h1> {data.value.title} </h1> </div>
+                    <div className={styles.content}>{data.value.content} </div>
                 </div>
             </div>
             <div className={styles.postBot}>
