@@ -68,7 +68,10 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
               { dataArray.length !== 0 && 
                 dataArray.map((object: any) =>
 
+                <div key={`post${object.key}`}>
                   <Post data={object} pathID={"1"}></Post>
+                </div>
+
                   
                   /* <div key={`post${object.key}`}>
                     
