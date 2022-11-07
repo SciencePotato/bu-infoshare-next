@@ -11,6 +11,8 @@ import { getDatabase , ref, get, child } from "firebase/database"
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { firebaseConfig } from '../../../utils'
+import React from 'react'
+
 
 const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
     const router = useRouter()
@@ -68,7 +70,11 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
               { dataArray.length !== 0 && 
                 dataArray.map((object: any) =>
 
-                  <Post key={object.key} data={object} pathID={"1"}></Post>
+                <React.Fragment key={object.key}>
+
+                  <Post data={object} pathID={"1"}></Post>
+
+                </React.Fragment>
                   
                   /* <div key={`post${object.key}`}>
                     

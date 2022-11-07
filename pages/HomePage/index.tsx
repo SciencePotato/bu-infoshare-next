@@ -10,6 +10,7 @@ import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect, useState }from 'react';
 import { firebaseConfig } from '../../utils'
 
+
 const Home: NextPage<any> = ({dataArray}) => {
    const [tmpDataArray, setDataArray] = useState(dataArray)
 
@@ -65,7 +66,11 @@ const Home: NextPage<any> = ({dataArray}) => {
 
           { tmpDataArray.length !== 0 && 
             tmpDataArray.map((object: any) => 
-              <Coursecard key={object.key} data={object} pathID={"1"}></Coursecard>
+            <React.Fragment key={object.key}>
+
+              <Coursecard data={object} pathID={"1"}></Coursecard>
+
+            </React.Fragment>
             )
 
           }

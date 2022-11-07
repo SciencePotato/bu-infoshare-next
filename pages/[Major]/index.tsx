@@ -8,6 +8,7 @@ import { firebaseConfig } from '../../utils'
 import Navbar from '../../components/navbar/navbar'
 import Majorcard from '../../components/majorCard/Major'
 import styles from '../../styles/HomePage.module.scss'
+import React from 'react'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 
 
@@ -49,7 +50,11 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
           {
                 (dataArray === null)? <h1> Null </h1>:
                 tmpDataArray.map((object: any) => 
-                    <Majorcard key={object.key} data={object} pathID={"1"}></Majorcard>
+                <React.Fragment key={object.key}>
+
+                    <Majorcard data={object} pathID={"1"}></Majorcard>
+
+                </React.Fragment>
                     /*<div key={object.key}> {object.key} </div>
                     <div key={`content-${object.key}`}> {object.value.courseName} </div>
                     */
