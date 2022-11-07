@@ -3,11 +3,13 @@ import Head from 'next/head'
 import Navbar from '../../components/navbar/navbar'
 import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
+import Coursecard from '../../components/courseCard/Course'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect, useState }from 'react';
 import { firebaseConfig } from '../../utils'
+
 
 const Home: NextPage<any> = ({dataArray}) => {
    const [tmpDataArray, setDataArray] = useState(dataArray)
@@ -61,12 +63,14 @@ const Home: NextPage<any> = ({dataArray}) => {
           <button onClick={postFunction}> Post </button>
           <button onClick={fetchFunction}> Fetch </button>
           {/* Post a Question */}
-          <Post data={null} pathID={"1"}/>
+
           { tmpDataArray.length !== 0 && 
             tmpDataArray.map((object: any) => 
-              <div key={object.key}>
-                {object.key}
-              </div>
+            <div key={object.key}>
+
+              <Coursecard data={object} pathID={"1"}></Coursecard>
+
+            </div>
             )
 
           }
