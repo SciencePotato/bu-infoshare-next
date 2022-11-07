@@ -32,6 +32,10 @@ const CourseCard: NextPage<Props> = ({data}) => {
 
     if (course == "computerscience") {
         course = "Computer Science"
+    } else if (course == "datascience") {
+        course = "Data Science"
+    } else if (course == "computerengineering") {
+        course = "Computer Engineering"
     } else {
         course = course.charAt(0).toUpperCase() + course.slice(1).toLowerCase()
     }
