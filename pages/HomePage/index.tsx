@@ -66,11 +66,11 @@ const Home: NextPage<any> = ({dataArray}) => {
 
           { tmpDataArray.length !== 0 && 
             tmpDataArray.map((object: any) => 
-            <React.Fragment key={object.key}>
+            <div key={object.key}>
 
               <Coursecard data={object} pathID={"1"}></Coursecard>
 
-            </React.Fragment>
+            </div>
             )
 
           }

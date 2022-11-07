@@ -70,11 +70,11 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
               { dataArray.length !== 0 && 
                 dataArray.map((object: any) =>
 
-                <React.Fragment key={object.key}>
+                <div key={object.key}>
 
                   <Post data={object} pathID={"1"}></Post>
 
-                </React.Fragment>
+                </div>
                   
                   /* <div key={`post${object.key}`}>
                     
