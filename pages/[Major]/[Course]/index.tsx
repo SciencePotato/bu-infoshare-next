@@ -68,7 +68,7 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
               { dataArray.length !== 0 && 
                 dataArray.map((object: any) =>
 
-                  <Post key={object.id} data={object} pathID={"1"}></Post>
+                  <Post key={object.key} data={object} pathID={"1"}></Post>
                   
                   /* <div key={`post${object.key}`}>
                     
