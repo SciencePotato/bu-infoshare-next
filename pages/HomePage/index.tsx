@@ -60,8 +60,6 @@ const Home: NextPage<any> = ({dataArray}) => {
 
         {/* Posts */}
         <section>
-          <button onClick={postFunction}> Post </button>
-          <button onClick={fetchFunction}> Fetch </button>
           {/* Post a Question */}
 
           { tmpDataArray.length !== 0 && 
