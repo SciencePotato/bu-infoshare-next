@@ -16,7 +16,6 @@ const Navbar: NextPage<any> = ({data, tmpData, setData}) => {
     const renderData = (input: any) => {
         const newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
         setData(newData)
-
     }
 
     return (
