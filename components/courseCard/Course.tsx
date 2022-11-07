@@ -21,7 +21,8 @@ interface dataType {
 }
 
 interface Props {
-    data: dataType | null
+    /*data: dataType | null */
+    data: any,
     pathID: string | null
 }
 
