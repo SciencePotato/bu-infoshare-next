@@ -6,7 +6,6 @@ import Like from '../../public/like.png'
 import Comment from '../../public/comment.png'
 import Repost from '../../public/repost.png'
 import { NextPage } from 'next';
-import { title } from 'process';
 
 interface commentType {
     content: string,
