@@ -30,7 +30,12 @@ export default async function handler(
       title: body.title,
     })
 
+    let newData: any = null
+    await get(child(ref(database), body.path)).then((snapshot) => {
+      newData = snapshot.val();
+    })
+
     // Fetch the new one so we can rerender.
 
-    res.status(201).json(body)
+    res.status(201).json(newData)
 }

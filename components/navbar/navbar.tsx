@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
 
-const Navbar: NextPage<any> = ({data, tmpData, setData}) => {
+const Navbar: NextPage<any> = ({data, tmpData, setData, filterPost}) => {
     const [userRef, setUserRef] = useState<string | null>(null);
 
     useEffect(() => {
@@ -14,7 +14,12 @@ const Navbar: NextPage<any> = ({data, tmpData, setData}) => {
     }, [])
 
     const renderData = (input: any) => {
-        const newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
+        let newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
+        if (filterPost === true) 
+            newData = data.filter((object: any) => 
+                object.value.content.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 
+                || object.value.title.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 )
+
         setData(newData)
     }
 

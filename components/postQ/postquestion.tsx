@@ -4,9 +4,10 @@ import Photo from '../../public/photo.png'
 import Video from '../../public/video.png'
 import { useState, useEffect } from 'react';
 import Modal from '../../components/modal/postQmodal'
+import { NextPage } from 'next';
 
 
-export default function Post() {
+const Post: NextPage<any> = ({tmpData, setData}) => {
 
     const[postqModal, setPostqmodal] = useState(false)
 
@@ -25,7 +26,9 @@ export default function Post() {
                     <span> <Image src={Photo} width={30} height={30}/> Photo </span>
                   </div>
             </div>
-            {postqModal && <Modal closeModal={setPostqmodal} />}
+            {postqModal && <Modal closeModal={setPostqmodal} tmpData={tmpData} setData={setData}/>}
         </>
     )
 }
+
+export default Post
