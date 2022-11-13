@@ -3,12 +3,14 @@ import Head from 'next/head'
 import Navbar from '../../components/navbar/navbar'
 import styles from '../../styles/HomePage.module.scss'
 import Post from '../../components/post/Post'
-import Coursecard from '../../components/courseCard/Course'
+import Majorcard from '../../components/majorCard/Major'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect, useState }from 'react';
 import { firebaseConfig } from '../../utils'
+import Link from 'next/link'
+
 
 
 const Home: NextPage<any> = ({dataArray}) => {
@@ -59,19 +61,19 @@ const Home: NextPage<any> = ({dataArray}) => {
         </aside>
 
         {/* Posts */}
-        <section>
+        <section><div>
           {/* Post a Question */}
 
           { tmpDataArray.length !== 0 && 
             tmpDataArray.map((object: any) => 
             <div key={object.key}>
-
-              <Coursecard data={object} pathID={"1"}></Coursecard>
-
+          
+                <Majorcard data={object} pathID={"/" + object.key}></Majorcard>
+            
             </div>
             )
 
-          }
+          }        </div>
         </section>
 
         {/* Leaderboard */}
