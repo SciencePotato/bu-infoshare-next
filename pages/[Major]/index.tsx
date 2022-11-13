@@ -53,7 +53,7 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
                 tmpDataArray.map((object: any) => 
                 <div key={object.key}>
 
-                    <Coursecard data={object} pathID={"1"}></Coursecard>
+                    <Coursecard data={object} pathID={"/" + dataKey}></Coursecard>
 
                 </div>
                     /*<div key={object.key}> {object.key} </div>

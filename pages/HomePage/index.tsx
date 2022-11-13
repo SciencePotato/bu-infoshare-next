@@ -9,6 +9,8 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, set, child } from 'firebase/database';
 import React, { useEffect, useState }from 'react';
 import { firebaseConfig } from '../../utils'
+import Link from 'next/link'
+
 
 
 const Home: NextPage<any> = ({dataArray}) => {
@@ -65,9 +67,9 @@ const Home: NextPage<any> = ({dataArray}) => {
           { tmpDataArray.length !== 0 && 
             tmpDataArray.map((object: any) => 
             <div key={object.key}>
-
-              <Majorcard data={object} pathID={"1"}></Majorcard>
-
+          
+                <Majorcard data={object} pathID={"/" + object.key}></Majorcard>
+            
             </div>
             )
 
