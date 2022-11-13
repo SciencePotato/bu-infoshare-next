@@ -14,7 +14,7 @@ import { firebaseConfig } from '../../../utils'
 import React from 'react'
 
 
-const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
+const Course: NextPage<any> = ({dataArray, dataKey, dataKeyMajor, curData}) => {
     const router = useRouter()
     const [tmpDataArray, setDataArray] = useState(dataArray);
     const [originalState, setOriginalState] = useState(dataArray)
@@ -52,8 +52,6 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
     
             {/* Posts/Feed */}
             <section> 
-
-              <CourseHeader data={curData} courseNum={dataKey.toString().toUpperCase()}></CourseHeader>
 
               {/* Post a Question */}
 
@@ -114,6 +112,7 @@ export async function getServerSideProps(context: any) {
   return {
     props: {
       dataArray: tmpList.reverse(),
+      dataKeyMajor: context.params.Major,
       dataKey: context.params.Course,
       curData: data
     }

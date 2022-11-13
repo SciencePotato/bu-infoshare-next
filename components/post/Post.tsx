@@ -6,6 +6,8 @@ import Like from '../../public/like.png'
 import Comment from '../../public/comment.png'
 import Repost from '../../public/repost.png'
 import { NextPage } from 'next';
+import Link from 'next/link'
+
 
 interface commentType {
     content: string,
@@ -22,12 +24,14 @@ interface dataType {
 interface Props {
     /*data: dataType | null */
     data: any,
-    pathID: string | null
+    pathID: string 
 }
 
-const Post: NextPage<Props> = ({data}) => {
+const Post: NextPage<Props> = ({data, pathID}) => {
     return (
         <>
+        <div style={{"cursor": "pointer"}}>
+        <Link href={pathID + '/1'}>
             <div className={styles.post}>
                 {/* Upvotes */}
                 <div>
@@ -43,11 +47,15 @@ const Post: NextPage<Props> = ({data}) => {
                     <div className={styles.content}>{data.value.content} </div>
                 </div>
             </div>
+            </Link>
             <div className={styles.postBot}>
                 <div> <Image src={Like} width={30} height={30}/> Like </div>
-                <div> <Image src={Comment} width={30} height={30}/> Comment </div>
+                
+                    <div> <Image src={Comment} width={30} height={30}/> Comment </div>
+                
                 <div> <Image src={Repost} width={30} height={30}/> Repost </div>
             </div>
+        </div>
         </>
     )
 }

@@ -7,15 +7,18 @@
                     "posts": {
                         "1": {
                             "op": "Anonymous Hippo", 
+                            "votes": 10, 
                             "title": "Question about Difficulty of Class CS 320",
                             "content": "Hello, my name is Joe and I am a rising junior planning to take CS 320 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 320 and its difficulty compared to previous courses. Thanks!",
                             "comment": {
                                 "1": {
                                     "user": "Anonymous Bee",
+                                    "votes": 2,
                                     "content": "CS320 is moderately difficult. Not too easy, not too bad, but expect to commit a decent amount of hours each week for the psets."
                                 },
                                 "2": {
                                     "user": "Anonymous Cow",
+                                    "votes": 1,
                                     "content": "CS320 wasn't that bad, the course covers the OCaml language, which is very similar to Java. The problem sets which involve theory and coding aren't bad, but take time."
                                 }
                             }
@@ -28,19 +31,23 @@
                         "1": {
                             "op": "Anonymous Hippo", 
                             "title": "Question about Difficulty of Class CS 330",
+                            "votes": 10, 
                             "content": "Hello, my name is Joe and I am a rising junior planning to take CS 330 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 330 and its difficulty compared to previous courses. Thanks!",
                             "comment": {
                                 "1": {
                                     "user": "Anonymous Bee",
-                                    "content": "CS330 is the the hardest class i took at BU."
+                                    "content": "CS330 is the the hardest class i took at BU.",
+                                    "votes": 3 
                                 },
                                 "2": {
                                     "user": "Anonymous Cow",
-                                    "content": "CS330 wasn't that bad."
+                                    "content": "CS330 wasn't that bad.",
+                                    "votes": 2
                                 },
                                 "3": {
                                     "user": "Anonymous Tree",
-                                    "content": "CS 330 goes in depth with data structures and algorithms, such as graphs, BFS, DFS, Djikstra's, greedy, dynamic programming, etc... There will be coding and written parts on the HW that will be extremely time-consuming. You will want to put the most effort into this class."
+                                    "content": "CS 330 goes in depth with data structures and algorithms, such as graphs, BFS, DFS, Djikstra's, greedy, dynamic programming, etc... There will be coding and written parts on the HW that will be extremely time-consuming. You will want to put the most effort into this class.",
+                                    "votes": 1
                                 }
                             }
                         },
@@ -48,18 +55,22 @@
                             "op": "Anonymous Hippo", 
                             "title": "Clarifying time complexity of this algorithm",
                             "content": "",
+                            "votes": 8,
                             "comment": {
                                 "1": {
                                     "user": "Anonymous Bee",
-                                    "content": "Should be O(n)"
+                                    "content": "Should be O(n)",
+                                    "votes": 4
                                 },
                                 "2": {
                                     "user": "Anonymous Cow",
-                                    "content": "I would that a look specifically at lecture 7 slide 78."
+                                    "content": "I would that a look specifically at lecture 7 slide 78.",
+                                    "votes": 2
                                 },
                                 "3": {
                                     "user": "Anonymous Tree",
-                                    "content": "The time complexity would be O(n) because we are traversing through each element at most once."
+                                    "content": "The time complexity would be O(n) because we are traversing through each element at most once.",
+                                    "votes": 1
                                 }
                             }
                         },
@@ -67,6 +78,7 @@
                             "op": "Anonymous Hippo", 
                             "title": "BFS vs DFS",
                             "content": "When should I use BFS over DFS in graph problems?",
+                            "votes": 7,
                             "comment": {
                                 "1": {
                                     "user": "Anonymous Lizard",
@@ -671,8 +683,7 @@
                     }
                 }
             }
-        },
-        "mathematics": {}
+        }
     },
     
     "leaderboard" : {
@@ -683,6 +694,10 @@
         "1" : {
             "points": 99,
             "userName": "Hou"
+        },
+        "2" : {
+            "points": 98,
+            "userName": "Joe"
         }
     }
 }

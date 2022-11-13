@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { firebaseConfig } from '../../utils'
 import Navbar from '../../components/navbar/navbar'
-import Majorcard from '../../components/majorCard/Major'
-import styles from '../../styles/HomePage.module.scss'
+import Coursecard from '../../components/courseCard/Course'
+import styles from '../../styles/MajorPage.module.scss'
 import React from 'react'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 
@@ -44,6 +44,7 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
 
         {/* Posts */}
         <section>
+          <div>
           
           {/* Post a Question */}
 
@@ -52,7 +53,7 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
                 tmpDataArray.map((object: any) => 
                 <div key={object.key}>
 
-                    <Majorcard data={object} pathID={"1"}></Majorcard>
+                    <Coursecard data={object} pathID={"/" + dataKey}></Coursecard>
 
                 </div>
                     /*<div key={object.key}> {object.key} </div>
@@ -60,6 +61,7 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
                     */
                 )
             }
+          </div>
         </section>
 
         {/* Leaderboard */}
