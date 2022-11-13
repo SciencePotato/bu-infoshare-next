@@ -7,6 +7,10 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '../../../../components/navbar/navbar'
 import { firebaseConfig } from '../../../../utils'
+import styles from '../../../../styles/Thread.module.scss'
+import Leaderboard from '../../../../components/leaderboard/leaderboard'
+
+
 
 const PostPage: NextPage<any> = ({dataDict, dataArray}) => {
   const router = useRouter();
@@ -24,6 +28,20 @@ const PostPage: NextPage<any> = ({dataDict, dataArray}) => {
       </Head>
       <Navbar/>
 
+      <main className={styles.home}>
+        {/* Tags */}
+        <aside>
+          <h2> Tags </h2>
+          <div>
+            {/* List of stuff -> Make this into custom Component that takes in Logo + Text? */}
+            <div> Homework Help </div>
+            <div> Mentor Help </div>
+            <div> Internship Help </div>
+          </div>
+        </aside>
+
+      <section>
+
       <h1> {dataDict.title} </h1>
       <h2> {dataDict.op} </h2>
       <h3> {dataDict.content} </h3>
@@ -37,6 +55,12 @@ const PostPage: NextPage<any> = ({dataDict, dataArray}) => {
             </div>
         )
       }
+      </section>
+      {/* Leaderboard */}
+        <aside>
+          <Leaderboard data={null}/>
+        </aside>
+      </main>
     </>
   )
 }
