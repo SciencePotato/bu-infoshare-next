@@ -31,7 +31,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
     return (
         <>
         <div style={{"cursor": "pointer"}}>
-        <Link href={pathID + '/1'}>
+        <Link href={pathID}>
             <div className={styles.post}>
                 {/* Upvotes */}
                 <div>

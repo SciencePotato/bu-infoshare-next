@@ -62,7 +62,7 @@ const Course: NextPage<any> = ({dataArray, dataKey, dataKeyMajor, curData}) => {
 
                 (object.value !== null && 
                   <div key={object.key}>
-                    <Post data={object} pathID={"1"}></Post>
+                    <Post data={object} pathID={"/" + dataKeyMajor + "/" + dataKey + "/" + object.key}></Post>
                   </div>)
                 )
               }
