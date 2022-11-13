@@ -13,37 +13,39 @@ const postModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
         let titleWrapper = document.getElementById("title")  as HTMLInputElement | null;
         let contentWrapper = document.getElementById("content")  as HTMLInputElement | null;
 
-        const response = await fetch(`${document.location.origin}/api/post`, {
-            method: 'POST',
-            body: JSON.stringify({
-                "path": path, 
-                "title": (titleWrapper !== null)? titleWrapper.value: "NULL", 
-                "content": (contentWrapper !== null)? contentWrapper.value: "NULL", 
-                "user":(localStorage.getItem("user") !== null)? localStorage.getItem("user"): "Anynmous"}),
-            headers: {
-            'Content-Type': 'application/json',
-            },
-        })
+        if (localStorage.getItem("user") !== null) {
+            const response = await fetch(`${document.location.origin}/api/post`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    "path": path, 
+                    "title": (titleWrapper !== null)? titleWrapper.value: "NULL", 
+                    "content": (contentWrapper !== null)? contentWrapper.value: "NULL", 
+                    "user":(localStorage.getItem("user") !== null)? localStorage.getItem("user"): "Anynmous"}),
+                headers: {
+                'Content-Type': 'application/json',
+                },
+            })
 
-        let data: any = null
-        response.json().then((res) => {
-            data = res
-            let tmpList = []
+            let data: any = null
+            response.json().then((res) => {
+                data = res
+                let tmpList = []
 
-            if (data !== null) {
-                for (const property in data["posts"]) {
-                let tmpObj = {
-                    key: property,
-                    value: data["posts"][property]
+                if (data !== null) {
+                    for (const property in data["posts"]) {
+                    let tmpObj = {
+                        key: property,
+                        value: data["posts"][property]
+                    }
+
+                    tmpList.push(tmpObj)
+                    }
                 }
+                tmpList = tmpList.filter((object: any) => object.value != null)
+                setData(tmpList.reverse())
+            })}
 
-                tmpList.push(tmpObj)
-                }
-            }
-            setData(tmpList.reverse())
-        })
-
-        console.log(tmpData)
+        closeModal(false)
     }
 
     return (

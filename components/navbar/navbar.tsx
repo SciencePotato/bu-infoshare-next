@@ -15,10 +15,12 @@ const Navbar: NextPage<any> = ({data, tmpData, setData, filterPost}) => {
 
     const renderData = (input: any) => {
         let newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
-        if (filterPost === true) 
+        if (filterPost === true) {
             newData = data.filter((object: any) => 
-                object.value.content.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 
-                || object.value.title.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 )
+                object.value.content.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 ||
+                object.value.title.toString().toUpperCase().indexOf(input.toUpperCase()) != -1
+            )
+        }
 
         setData(newData)
     }
