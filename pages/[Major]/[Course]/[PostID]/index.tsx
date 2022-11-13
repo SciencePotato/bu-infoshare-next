@@ -14,7 +14,7 @@ import UpArrow from '../../../../public/upArrow.png'
 
 
 
-const PostPage: NextPage<any> = ({dataDict, dataArray}) => {
+const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -45,7 +45,6 @@ const PostPage: NextPage<any> = ({dataDict, dataArray}) => {
       <section>
 
       <div className={styles.original}>
-
 
         <h1> {dataDict.title} </h1>
         <h2> {dataDict.op} </h2>
@@ -117,7 +116,8 @@ export async function getServerSideProps(context: any) {
   return {
     props: {
       dataArray: tmpList,
-      dataDict: data
+      dataDict: data,
+      dataKeyPath: context.params.PostID
     }
   }
 }
