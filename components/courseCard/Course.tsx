@@ -5,9 +5,7 @@ import UpArrow from '../../public/upArrow.png'
 import Like from '../../public/like.png'
 import Comment from '../../public/comment.png'
 import Repost from '../../public/repost.png'
-
 import { NextPage } from 'next';
-
 interface commentType {
     content: string,
     user: string
@@ -27,25 +25,13 @@ interface Props {
 }
 
 const CourseCard: NextPage<Props> = ({data}) => {
-
-    let course = data.key;
-
-    if (course == "computerscience") {
-        course = "Computer Science"
-    } else if (course == "datascience") {
-        course = "Data Science"
-    } else if (course == "computerengineering") {
-        course = "Computer Engineering"
-    } else {
-        course = course.charAt(0).toUpperCase() + course.slice(1).toLowerCase()
-    }
-
     return (
         <>
             <div className={styles.post}>
              
                 <div>
-                    <div className={styles.name}> <h2> {course} </h2> </div>  
+                    <div className={styles.name}> <h2> {data.key} </h2> </div>  
+                    <div className={styles.courseTitle}>  {data.value.courseName}  </div>  
                 </div>
             </div>
             

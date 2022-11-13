@@ -46,8 +46,6 @@ const Course: NextPage<any> = ({dataArray, dataKey, curData}) => {
             {/* Posts/Feed */}
             <section> 
 
-              <CourseHeader data={curData} courseNum={dataKey.toString().toUpperCase()}></CourseHeader>
-
               {/* Post a Question */}
 
               <PostQ></PostQ>
