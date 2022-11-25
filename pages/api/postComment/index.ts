@@ -16,26 +16,22 @@ export default async function handler(
     const app = initializeApp(firebaseConfig)
     const database = getDatabase(app);
     let data: any = null
-    
+
     await get(child(ref(database), body.path)).then((snapshot) => {
       data = snapshot.val();
     })
 
-    const size = data.posts.length
-    
-    await set(ref(database, `${body.path}/posts/${size}`), {
-      comment: [],
+    const size = (data === null)? 1: data.length  
+
+    await set(ref(database, `${body.path}/${size}`), {
       content: body.content,
-      op: body.user,
-      title: body.title,
+      user: body.user,
     })
 
     let newData: any = null
     await get(child(ref(database), body.path)).then((snapshot) => {
       newData = snapshot.val();
     })
-
-    // Fetch the new one so we can rerender.
 
     res.status(201).json(newData)
 }
