@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
 
-const Navbar: NextPage<any> = ({data, tmpData, setData, filterPost}) => {
+const Navbar: NextPage<any> = ({data, tmpData, setData, filterPost, filterComment}) => {
     const [userRef, setUserRef] = useState<string | null>(null);
 
     useEffect(() => {
@@ -14,12 +14,19 @@ const Navbar: NextPage<any> = ({data, tmpData, setData, filterPost}) => {
     }, [])
 
     const renderData = (input: any) => {
-        let newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
-        if (filterPost === true) {
+        let newData = null
+        if  (filterComment) {
             newData = data.filter((object: any) => 
-                object.value.content.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 ||
-                object.value.title.toString().toUpperCase().indexOf(input.toUpperCase()) != -1
+                object.content.toString().toUpperCase().indexOf(input.toUpperCase()) != -1
             )
+        } else {
+            newData = data.filter((object:any) => object.key.toString().toUpperCase().indexOf(input.toUpperCase()) != -1)
+            if (filterPost === true) {
+                newData = data.filter((object: any) => 
+                    object.value.content.toString().toUpperCase().indexOf(input.toUpperCase()) != -1 ||
+                    object.value.title.toString().toUpperCase().indexOf(input.toUpperCase()) != -1
+                )
+            }
         }
 
         setData(newData)
