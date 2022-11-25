@@ -89,18 +89,28 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
       <section>
 
       <div className={styles.original}>
+        <div className={styles.side}>
+          <div> <Image src={UpArrow} width={35} height={35}/> </div>
+          <div className={styles.score}>{dataDict.votes}</div>
+          <div> <Image src={DownArrow} width={35} height={35}/> </div>
+        </div>
+        <div>
+          <h1> {dataDict.title} </h1>
+          <h2> {dataDict.op} </h2>
+          <h3> {dataDict.content} </h3>
+        </div>
+      </div>
 
-        <h1> {dataDict.title} </h1>
-        <h2> {dataDict.op} </h2>
-        <h3> {dataDict.content} </h3>
-
-        <div className={styles.replyContainer}>
+      <div className={styles.replyContainer}>
+        <div className={styles.replyBox}>
           <textarea className={styles.reply} placeholder="What are your thoughts?" id={"title"}></textarea>
         </div>
-
         <button className={styles.postReply} onClick={postFunction}> Post </button>
-
       </div>
+
+      
+
+      
 
       
       <div className={styles.otherReply}>
