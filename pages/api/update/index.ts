@@ -23,6 +23,8 @@ export default async function handler(
     
     await update((ref(database, `${body.path}`)), {
       votes: body.votes,
+      upvoters: body.upvoters,
+      downvoters: body.downvoters
     })
 
     let newData: any = null

@@ -25,6 +25,8 @@ export default async function handler(
     
     await set(ref(database, `${body.path}/posts/${size}`), {
       comment: [],
+      upvoters: {"rand":false},
+      downvoters: {"rand":false},
       content: body.content,
       op: body.user,
       votes: body.votes,

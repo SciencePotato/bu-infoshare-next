@@ -32,11 +32,13 @@ interface Props {
 const Post: NextPage<Props> = ({data, pathID}) => {
 
     const [vote, setVote] = useState(data.value.votes)
-    const [voters, setVoters] = useState(data.value.voters)
+    const [upvote, setUpvote] = useState(data.value.upvoters)
+    const [downvote, setDownvote] = useState(data.value.downvoters)
 
     const upFunction = async () => {
 
-        console.log(voters)
+        console.log(upvote)
+        console.log(downvote)
 
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
@@ -44,25 +46,263 @@ const Post: NextPage<Props> = ({data, pathID}) => {
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
         
         if (localStorage.getItem("user") !== null) {
-            const response = await fetch(`${document.location.origin}/api/update`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "path": path,
-                    "votes": vote + 1
-                })
-            })
-            response.json().then((res) => {
-                
-                console.log(res)
-                setVote(res["votes"])
 
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+            let upvoter:string = localStorage.getItem("user")!
+
+            if (upvoter in upvote === true){
+
+                if (upvoter in downvote === true){
+
+                    if (upvote[upvoter] === false && downvote[upvoter] === false){
+                        let voterList = upvote
+                        voterList[upvoter] = true
+                        setUpvote(voterList)
+
+                        console.log(upvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else if (upvote[upvoter] === false && downvote[upvoter] === true) {
+                        
+                        let voterList = upvote
+                        let voterList2 = downvote
+                        voterList[upvoter] = true
+                        voterList2[upvoter] = false
+                        setUpvote(voterList)
+                        setDownvote(voterList2)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 2,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else if (upvote[upvoter] === true && downvote[upvoter] === false) {
+                        
+                        let voterList = upvote
+                        voterList[upvoter] = false
+                        setUpvote(voterList)
+
+                        console.log(upvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+
+                } else {
+
+                    if (upvote[upvoter] === false){
+                        let voterList = upvote
+                        voterList[upvoter] = true
+                        setUpvote(voterList)
+
+                        console.log(upvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else if (upvote[upvoter] === true) {
+
+                        let voterList = upvote
+                        voterList[upvoter] = false
+                        setUpvote(voterList)
+
+                        console.log(upvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+                }
+
+            } else {
+
+                if (upvoter in downvote === true){
+
+                    if (downvote[upvoter] === true) {
+
+                        let voterList = upvote
+                        let voterList2 = downvote
+                        voterList[upvoter] = true
+                        voterList2[upvoter] = false
+                        setUpvote(voterList)
+                        setDownvote(voterList2)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 2,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            console.log(res)
+                            setVote(res["votes"])
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else {
+
+                        let voterList = upvote
+                        voterList[upvoter] = true
+                        setUpvote(voterList)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            console.log(res)
+                            setVote(res["votes"])
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+
+                } else {
+
+                        let voterList = upvote
+                        voterList[upvoter] = true
+                        setUpvote(voterList)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            console.log(res)
+                            setVote(res["votes"])
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                }
+            }
+
         }
     }
 
@@ -74,25 +314,261 @@ const Post: NextPage<Props> = ({data, pathID}) => {
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
         
         if (localStorage.getItem("user") !== null) {
-            const response = await fetch(`${document.location.origin}/api/update`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "path": path,
-                    "votes": vote - 1
-                })
-            })
-            response.json().then((res) => {
-                
-                console.log(res)
-                setVote(res["votes"])
 
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+            let downvoter:string = localStorage.getItem("user")!
+
+            if (downvoter in downvote === true){
+
+                if (downvoter in upvote === true){
+
+                    if (upvote[downvoter] === false && downvote[downvoter] === false){
+                        let voterList = downvote
+                        voterList[downvoter] = true
+                        setDownvote(voterList)
+
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else if (upvote[downvoter] === true && downvote[downvoter] === false) {
+                        
+                        let voterList = upvote
+                        let voterList2 = downvote
+                        voterList[downvoter] = false
+                        voterList2[downvoter] = true
+                        setUpvote(voterList)
+                        setDownvote(voterList2)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 2,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else if (upvote[downvoter] === false && downvote[downvoter] === true) {
+                        
+                        let voterList = downvote
+                        voterList[downvoter] = false
+                        setDownvote(voterList)
+
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+
+                } else {
+
+                    if (downvote[downvoter] === false){
+                        let voterList = downvote
+                        voterList[downvoter] = true
+                        setDownvote(voterList)
+
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else if (downvote[downvoter] === true) {
+
+                        let voterList = downvote
+                        voterList[downvoter] = false
+                        setDownvote(voterList)
+
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote + 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            
+                            console.log(res)
+                            setVote(res["votes"])
+
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+                }
+
+            } else {
+
+                if (downvoter in upvote === true){
+
+                    if (upvote[downvoter] === true) {
+
+                        let voterList = upvote
+                        let voterList2 = downvote
+                        voterList[downvoter] = false
+                        voterList2[downvoter] = true
+                        setUpvote(voterList)
+                        setDownvote(voterList2)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 2,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            console.log(res)
+                            setVote(res["votes"])
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    } else {
+                        let voterList = downvote
+                        voterList[downvoter] = true
+                        setDownvote(voterList)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            console.log(res)
+                            setVote(res["votes"])
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+                } else {
+
+                        let voterList = downvote
+                        voterList[downvoter] = true
+                        setDownvote(voterList)
+
+                        console.log(upvote)
+                        console.log(downvote)
+
+                        const response = await fetch(`${document.location.origin}/api/update`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                "path": path,
+                                "votes": vote - 1,
+                                "upvoters": upvote,
+                                "downvoters": downvote
+                            })
+                        })
+                        response.json().then((res) => {
+                            console.log(res)
+                            setVote(res["votes"])
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                }
+            }
+
         }
     }
 
