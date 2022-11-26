@@ -21,7 +21,34 @@
       "courses": {
         "AC221": {
           "courseName": "Financial Accounting",
-          "posts": ""
+          "posts": [
+            {
+              "comment": [
+                null,
+                {
+                  "content": "1",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                }
+              ],
+              "content": "asdf",
+              "downvoters": {
+                "rand": false
+              },
+              "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+              "title": "asdf",
+              "upvoters": {
+                "rand": false
+              },
+              "votes": 1
+            }
+          ]
         },
         "AC222": {
           "courseName": "Managerial Accounting",
@@ -30,13 +57,40 @@
               "comment": [
                 null,
                 {
-                  "content": "Sucks",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                  "content": "1",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 2
+                },
+                {
+                  "content": "I think this",
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 0
                 }
               ],
-              "content": "Science",
+              "content": "12",
+              "downvoters": {
+                "rand": false
+              },
               "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
-              "title": "Potato"
+              "title": "1234",
+              "upvoters": {
+                "rand": false
+              },
+              "votes": 1
             }
           ]
         },
@@ -89,11 +143,25 @@
                 null,
                 {
                   "content": "It's everything until Lecture 13",
-                  "user": "Anonymous Bean"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bean",
+                  "votes": 1
                 },
                 {
                   "content": "Make sure to focus on goods, services, labor, and capital concepts.",
-                  "user": "Anonymous Snail"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Snail",
+                  "votes": 1
                 }
               ],
               "content": "What topics will be convered in the Midterm 1 exam?",
@@ -112,11 +180,25 @@
                 null,
                 {
                   "content": "Slide 78 on lecture 20",
-                  "user": "Anonymous Snake"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Snake",
+                  "votes": 1
                 },
                 {
                   "content": "I would focus on types of markets.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 }
               ],
               "content": "What topics will be convered in the Midterm 2 exam?",
@@ -141,11 +223,25 @@
                 null,
                 {
                   "content": "It's everything until Lecture 15",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 },
                 {
                   "content": "Focus on cash flow streams and formulas.",
-                  "user": "Anonymous Lion"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lion",
+                  "votes": 1
                 }
               ],
               "content": "What topics will be convered in the Midterm 1 exam?",
@@ -164,11 +260,25 @@
                 null,
                 {
                   "content": "Last slide on lecture 50",
-                  "user": "Anonymous Dog"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Dog",
+                  "votes": 1
                 },
                 {
                   "content": "I would focus on stock and bond valuation.",
-                  "user": "Anonymous Cat"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cat",
+                  "votes": 1
                 }
               ],
               "content": "What topics will be convered in the Midterm 2 exam?",
@@ -199,8 +309,15 @@
           "posts": [
             {
               "content": "dea",
+              "downvoters": {
+                "rand": false
+              },
               "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
-              "title": "dea"
+              "title": "dea",
+              "upvoters": {
+                "rand": false
+              },
+              "votes": 1
             }
           ]
         },
@@ -225,11 +342,15 @@
                 {
                   "content": "asdf",
                   "op": "asf"
+                },
+                {
+                  "content": "1234",
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
                 }
               ],
               "content": "asdf",
               "downvoters": {
-                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "asdf": false
               },
               "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
@@ -237,7 +358,7 @@
               "upvoters": {
                 "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false
               },
-              "votes": 15
+              "votes": 16
             },
             {
               "comment": [
@@ -270,6 +391,14 @@
                 {
                   "content": "12",
                   "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                },
+                {
+                  "content": "1",
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                },
+                {
+                  "content": "2",
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
                 }
               ],
               "content": "Help",
@@ -296,19 +425,40 @@
                 null,
                 {
                   "content": "It's a pretty big step up from 111 based on personal experience. The homework will take around 5-15 hours/week depending on the material.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "112 is not easy but very important as it covers basic data structures. It can be considered a weed out course, so do your absolutely best.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 0
                 },
                 {
                   "content": "It's much more difficult.",
-                  "user": "Anonymous Cow"
-                },
-                {
-                  "content": "It's Easy",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 2
                 }
               ],
               "content": "Hello, my name is Josh and I am a rising sophomore planning to take CS 112 in the fall. How does the class compare to CS111? To put it into context, I did not struggle at all in CS111.",
@@ -327,7 +477,14 @@
                 null,
                 {
                   "content": "Make sure to know the time complexities of all of the sorting algorithms as well as be ready to provide the run time complexity of a given function.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 }
               ],
               "content": "Will we need to know time complexity for the midterm?",
@@ -346,15 +503,39 @@
                 null,
                 {
                   "content": "One reason is security, so that sensitive information such as usernames or passwords cannot be changed.",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 2
                 },
                 {
                   "content": "Another reason is synchronization or concurrency---being immutable also means that String is thread safe which resolves issues with synchronization.",
-                  "user": "Anonymous Deer"
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Deer",
+                  "votes": 0
                 },
                 {
                   "content": "Another reason is caching. The compiler recognizes that only one string object is needed, when we have two objects with the same value.",
-                  "user": "Anonymous Lion"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "user": "Anonymous Lion",
+                  "votes": 2
                 }
               ],
               "content": "What is the difference between a list and a tuple?",
@@ -373,11 +554,25 @@
                 null,
                 {
                   "content": "Reach out to the professor.",
-                  "user": "Anonymous Gorilla"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Gorilla",
+                  "votes": 1
                 },
                 {
                   "content": "It states in the problem that they want the iterative solution.",
-                  "user": "Anonymous Jaguar"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Jaguar",
+                  "votes": 1
                 }
               ],
               "content": "Can I just use iteration instead of recursion for the homework?",
@@ -396,23 +591,43 @@
                 null,
                 {
                   "content": "Use a stack when you want to reverse the order of items that you added, and use a queue when you want to maintain the order of items that you added",
-                  "user": "Anonymous Bean"
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "user": "Anonymous Bean",
+                  "votes": 1
                 },
                 {
                   "content": "Stack is a first in first out data structure (FIFO), while queue is a last in first out data structure(LIFO).",
-                  "user": "Anonymous Snail"
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "user": "Anonymous Snail",
+                  "votes": 0
                 }
               ],
               "content": "How do I decide when to use a stack vs queue?",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "op": "Anonymous Moose",
               "title": "Stack vs Queue",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                 "rand": false
               },
-              "votes": 10
+              "votes": 11
             }
           ]
         },
@@ -425,11 +640,25 @@
                 null,
                 {
                   "content": "131 is pretty difficult , although it is curved pretty heavily.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "131 is primarily proofs and discrete math",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Jeff and I am a freshman planning to take CS 131 next semester. In context, I struggled with CS 111, and I was wondering if anyone could share experiences with CS 131 and its difficulty compared to 111. Thanks!",
@@ -448,7 +677,14 @@
                 null,
                 {
                   "content": "Either one should work. ",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 }
               ],
               "content": "With the simplification rule of inference, would (not q and (p and r)) become (not q), (p and r), or just one of them?",
@@ -467,7 +703,14 @@
                 null,
                 {
                   "content": "Consider how you could incorporate the XOR operator into this problem.",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 }
               ],
               "content": "Any tips for starting the first problem on HW2?",
@@ -492,15 +735,36 @@
                 null,
                 {
                   "content": "CS 132 is essentially linear algebra with a bit of coding in python. It would be a good idea to brush up on Python concepts and expect a lot of math.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes ": 1
                 },
                 {
                   "content": "About the same amount of material as 131, but the material is much easier to comprehend. There are around 15 problems per problem set, with most of it being written and a small portion being coding/computational. Expect to spend at least 5 hours/week on problem sets.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "The first few weeks of 132 cover parts of 131.",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Jake and I am a rising junior planning to take CS 132 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 132 and its difficulty compared to previous courses. Thanks!",
@@ -519,7 +783,14 @@
                 null,
                 {
                   "content": "Here is the link for the online lecture notes for the current professor that teaches 132 (Crovella): https://mcrovella.github.io/CS132-Geometric-Algorithms/landing-page.html",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 }
               ],
               "content": "Where can I find the lecture notes for this class?",
@@ -538,7 +809,14 @@
                 null,
                 {
                   "content": "Consider how you could incorporate the XOR operator into this problem.",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 }
               ],
               "content": "Any tips for starting the first problem on HW2?",
@@ -563,15 +841,36 @@
                 null,
                 {
                   "content": "210 is definitely moderately difficult, but there is a lot of time given to understand the material.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "When I took it, there were 5 problem sets with sufficient time in between to complete them. Definitely utilize office hours for help on the homework. ",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "210 is divided into two parts. The first half focuses on Linux/Unix. The second half delves deep into the von Neumann architecture, and towards the end, the course touches on C programming.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Brandon and I am a rising junior planning to take CS 210 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 210 and its difficulty compared to previous courses. Thanks!",
@@ -590,11 +889,25 @@
                 null,
                 {
                   "content": "Start early.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "Don't start it last minute. Go to office hours if you can. It's not something you can finish in one day, so don't wait.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 }
               ],
               "content": "Any tips for the Calculator Assignment?",
@@ -613,15 +926,36 @@
                 null,
                 {
                   "content": "Malloc stands for memory allocation and is a C library function that allocates memory from the heap. Malloc returns a pointer that is used to access the memory that was allocated.",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 },
                 {
                   "content": "The general syntax of 'malloc' is ptr = (cast-type*) malloc(byte-size).",
-                  "user": "Anonymous Deer"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Deer",
+                  "votes": 1
                 },
                 {
                   "content": "An example to add on would be 'ptr = (int*) malloc(100 * sizeof(int));', which allocates 400 bytes of memory.",
-                  "user": "Anonymous Lion"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lion",
+                  "votes": 1
                 }
               ],
               "content": "Could someone please explain what 'malloc' is in C?",
@@ -640,7 +974,14 @@
                 null,
                 {
                   "content": "It should be formatted just like the practice midterm that was provided.",
-                  "user": "Anonymous Gorilla"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Gorilla",
+                  "votes": 1
                 }
               ],
               "content": "What is the format of the midterms?",
@@ -669,15 +1010,36 @@
                 null,
                 {
                   "content": "The class is homework-heavy, but grading usually generous. There are programming assignments on top of the written assignments, but nothing terrible if you did well in CS 111.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "In advance, it might be helpful to take a look at MIT's online intro to probability course.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "If you understand probability and statistics well, this class should be pretty easy.",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Joe and I am a rising sophomore planning to take CS 237 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 237 and its difficulty compared to previous courses. Thanks!",
@@ -696,11 +1058,25 @@
                 null,
                 {
                   "content": "The key takeaway from the Monty Hall problem is that decisions are heavily influenced by previous decisions.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "In an example with 3 doors, we have a 2/3 of selecting a wrong door and 1/3 chance of choosing the right door. There is a 2/3 chance that we pick the wrong door initially then switch to the right door, but only a 1/3 chance of picking the right door initially then switching to a wrong door.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 }
               ],
               "content": "I'm still confused on the Monty Hall problem. Could someone please elaborate?",
@@ -719,7 +1095,14 @@
                 null,
                 {
                   "content": "Yes, and you can find the schedules of different sections on piazza.",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 }
               ],
               "content": "Can we attend a discussion we're not registered for and mark the section we normally attend to get attendance points?",
@@ -738,7 +1121,14 @@
                 null,
                 {
                   "content": "I've never taken a CS course that didn’t curve.",
-                  "user": "Anonymous Gorilla"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Gorilla",
+                  "votes": 1
                 }
               ],
               "content": "Are there any curves in CS 237?",
@@ -763,11 +1153,25 @@
                 null,
                 {
                   "content": "CS320 is moderately difficult. Not too easy, not too bad, but expect to commit a decent amount of hours each week for the psets.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "CS320 wasn't that bad, the course covers the OCaml language, which is very similar to Java. The problem sets which involve theory and coding aren't bad, but take time.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Joe and I am a rising junior planning to take CS 320 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 320 and its difficulty compared to previous courses. Thanks!",
@@ -792,15 +1196,36 @@
                 null,
                 {
                   "content": "CS330 is the the hardest class i took at BU.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "CS330 wasn't that bad.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "CS 330 goes in depth with data structures and algorithms, such as graphs, BFS, DFS, Djikstra's, greedy, dynamic programming, etc... There will be coding and written parts on the HW that will be extremely time-consuming. You will want to put the most effort into this class.",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Joe and I am a rising junior planning to take CS 330 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 330 and its difficulty compared to previous courses. Thanks!",
@@ -819,15 +1244,36 @@
                 null,
                 {
                   "content": "Should be O(n)",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "I would that a look specifically at lecture 7 slide 78.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "The time complexity would be O(n) because we are traversing through each element at most once.",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "",
@@ -846,15 +1292,36 @@
                 null,
                 {
                   "content": "Use BFS to find shortest path",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 },
                 {
                   "content": "BFS searches adjacent nodes, so it will find the shortest path quicker, since we will run out of nodes to add to the queue sooner for that path.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "DFS is better for decision based problems and is quicker than BFS, since it doesn't search all neighbors.",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "When should I use BFS over DFS in graph problems?",
@@ -873,7 +1340,14 @@
                 null,
                 {
                   "content": "Simply put, Dijkstra's algorithm allows us to find the shortest path between any two vertices of a graph.",
-                  "user": "Anonymous Gorilla"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Gorilla",
+                  "votes": 1
                 }
               ],
               "content": "Could someone explain Djikstra's algorithm in simple terms?",
@@ -892,15 +1366,36 @@
                 null,
                 {
                   "content": "stack is a first in first out data structure (FIFO).",
-                  "user": "Anonymous Bean"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bean",
+                  "votes": 1
                 },
                 {
                   "content": "A queue is a last in first out data structure (LIFO).",
-                  "user": "Anonymous Snail"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Snail",
+                  "votes": 1
                 },
                 {
                   "content": "a stack and queue are implemented the same way in python",
-                  "user": "Anonymous Fish"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Fish",
+                  "votes": 1
                 }
               ],
               "content": "How do I decide when to use a stack vs queue?",
@@ -941,11 +1436,25 @@
                 null,
                 {
                   "content": "CS411 is the the easiest cs class i've ever taken.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "It is very straightforward. You learn about the software development life cycle, and do a semester long group project.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Adam and I am a rising junior planning to take CS 411 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 411 and its difficulty compared to previous courses. Thanks!",
@@ -964,15 +1473,36 @@
                 null,
                 {
                   "content": "We made a spotify to apple music converter.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 },
                 {
                   "content": "We created a mobile app that returns a list of recommended nearby stores based on what items you need.",
-                  "user": "Anonymous Cow"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Cow",
+                  "votes": 1
                 },
                 {
                   "content": "We created a course availability web app for BU students using web scrapers and Python.",
-                  "user": "Anonymous Tree"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Tree",
+                  "votes": 1
                 }
               ],
               "content": "Could anyone who has taken this class before describe their projects?",
@@ -991,11 +1521,25 @@
                 null,
                 {
                   "content": "I believe it's cumulative, so review all lectures slides from Piazza.",
-                  "user": "Anonymous Lizard"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Lizard",
+                  "votes": 1
                 },
                 {
                   "content": "It focuses on second half of the course. I would focus on the SDLC.",
-                  "user": "Anonymous Deer"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Deer",
+                  "votes": 1
                 }
               ],
               "content": "How should I prepare for the 411 Final",
@@ -1014,15 +1558,36 @@
                 null,
                 {
                   "content": "Review the differences between software development processes.",
-                  "user": "Anonymous Gorilla"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Gorilla",
+                  "votes": 1
                 },
                 {
                   "content": "Make sure you know all of the basic git commands like push, pull, rebase, commit.",
-                  "user": "Anonymous Jaguar"
+                  "downvotes": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Jaguar",
+                  "votes": 1
                 },
                 {
                   "content": "Understand tech stacks well, like databases, frontend, backend..",
-                  "user": "Anonymous Whale"
+                  "downvotes": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Whale",
+                  "votes": 1
                 }
               ],
               "content": "How should I prepare for Midterm 1?",
@@ -1047,7 +1612,14 @@
                 null,
                 {
                   "content": "CS412 is both easy and fun, structured similarly to 411, but delving into more of the specifics of web development.",
-                  "user": "Anonymous Bee"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "Anonymous Bee",
+                  "votes": 1
                 }
               ],
               "content": "Hello, my name is Joe and I am a rising junior planning to take CS 412 next semester. In context, I struggled with CS 112 and CS 131, and I was wondering if anyone could share experiences with CS 412 and its difficulty compared to previous courses. Thanks!",
