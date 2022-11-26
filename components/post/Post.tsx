@@ -310,9 +310,9 @@ const Post: NextPage<Props> = ({data, pathID}) => {
 
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
-
+        console.log(path)
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
-        
+        console.log(path)
         if (localStorage.getItem("user") !== null) {
 
             let downvoter:string = localStorage.getItem("user")!
