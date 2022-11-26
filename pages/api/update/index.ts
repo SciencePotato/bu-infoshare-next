@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { firebaseConfig } from '../../../utils'
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, set, child } from 'firebase/database';
+import { getDatabase, ref, get, set, child, update } from 'firebase/database';
 
 type Data = {
   name: string
@@ -20,17 +20,11 @@ export default async function handler(
     await get(child(ref(database), body.path)).then((snapshot) => {
       data = snapshot.val();
     })
-
-    const size = data.posts.length
     
-    await set(ref(database, `${body.path}/posts/${size}`), {
-      comment: [],
-      upvoters: {"rand":false},
-      downvoters: {"rand":false},
-      content: body.content,
-      op: body.user,
+    await update((ref(database, `${body.path}`)), {
       votes: body.votes,
-      title: body.title,
+      upvoters: body.upvoters,
+      downvoters: body.downvoters
     })
 
     let newData: any = null

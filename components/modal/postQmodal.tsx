@@ -18,9 +18,10 @@ const postModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
                 method: 'POST',
                 body: JSON.stringify({
                     "path": path, 
+                    "votes": 1,
                     "title": (titleWrapper !== null)? titleWrapper.value: "NULL", 
                     "content": (contentWrapper !== null)? contentWrapper.value: "NULL", 
-                    "user":(localStorage.getItem("user") !== null)? localStorage.getItem("user"): "Anynmous"}),
+                    "user":(localStorage.getItem("user") !== null)? localStorage.getItem("user"): "Anonymous"}),
                 headers: {
                 'Content-Type': 'application/json',
                 },

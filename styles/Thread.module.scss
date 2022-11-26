@@ -46,18 +46,31 @@
     }
 }
 
-.replyContainer {
-    text-align: center;
-    background-color: $primary-color-light;
-    min-height: 80px;
-    margin-bottom: rem;
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+.side {
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    min-height: 100px;
+    padding: 1.5rem;
+}
 
+.replyContainer {
+    background-color: $primary-color-light;
+    min-height: 125px;
+    max-height: 125px;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.score {
+    margin-left: .7rem;
+    margin-bottom: .3rem;
+}
+
+.replyBox {
+    text-align: center;
 }
 
 .reply {
-    margin-top: 2rem;
-    width: 100%;
+    margin-top: 1rem;
+    width: 95%;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
     background-color: rgb(46, 61, 80);
     border: none;
@@ -79,6 +92,7 @@
     background-color: $primary-color-light;
     padding: 1rem;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
 }
 
 .replies {
@@ -87,6 +101,7 @@
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
 }
 
 .postReply {
@@ -97,6 +112,8 @@
     color:rgb(46, 61, 80);
     border-radius: 5px;
     height: 25px;
+    float: right;
+    margin-right: 1.5rem;
     }
     
 

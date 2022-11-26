@@ -1,41 +1,37 @@
-import styles  from '../../styles/Post.module.scss';
-import Image from 'next/image'
+import { NextPage } from 'next';
 import DownArrow from '../../public/downArrow.png'
 import UpArrow from '../../public/upArrow.png'
-import Like from '../../public/like.png'
-import Comment from '../../public/comment.png'
-import Repost from '../../public/repost.png'
-import { NextPage } from 'next';
-import Link from 'next/link'
+import styles  from '../../styles/Comment.module.scss';
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 
 
-interface commentType {
-    content: string,
-    user: string
-}
-
-interface dataType {
-    title: string,
-    op: string,
-    content: string,
-    comment: commentType [] | null
-}
-
 interface Props {
     /*data: dataType | null */
     data: any,
-    pathID: string 
+    commentID: number,
+    first: boolean
 }
 
-const Post: NextPage<Props> = ({data, pathID}) => {
+const Comment: NextPage<Props> = ({data, commentID, first}) => {
 
-    const [vote, setVote] = useState(data.value.votes)
-    const [upvote, setUpvote] = useState(data.value.upvoters)
-    const [downvote, setDownvote] = useState(data.value.downvoters)
+    const [vote, setVote] = useState(data.votes)
+    const [upvote, setUpvote] = useState(data.upvoters)
+    const [downvote, setDownvote] = useState(data.downvoters)
+
+    const [one, SetOne] = useState(first)
+
+    useEffect(() => {
+        console.log(commentID)
+        if (one === true) {
+            setVote(data.votes)
+        }
+    })
 
     const upFunction = async () => {
+
+        SetOne(false)
 
         console.log(upvote)
         console.log(downvote)
@@ -43,8 +39,8 @@ const Post: NextPage<Props> = ({data, pathID}) => {
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
 
-        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
-        
+        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + String(commentID+1)
+        console.log(path)
         if (localStorage.getItem("user") !== null) {
 
             let upvoter:string = localStorage.getItem("user")!
@@ -308,10 +304,12 @@ const Post: NextPage<Props> = ({data, pathID}) => {
 
     const downFunction = async () => {
 
+        SetOne(false)
+
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
         console.log(path)
-        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
+        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + String(commentID+1)
         console.log(path)
         if (localStorage.getItem("user") !== null) {
 
@@ -574,37 +572,19 @@ const Post: NextPage<Props> = ({data, pathID}) => {
 
 
     return (
-        <>
-        <div>
-        
-            <div className={styles.post}>
-                {/* Upvotes */}
-                <div>
-                    <div> <Image src={UpArrow} onClick={upFunction}/> </div>
-                    <div> {vote} </div>
-                    <div> <Image src={DownArrow} onClick={downFunction}/> </div>
-                </div>
-                {/* Contents */}
-                <Link href={pathID}>
-                <div style={{"cursor": "pointer"}}>
-                    <div className={styles.name}> <h2> {data.value.op} </h2> </div>
-                    <div className={styles.time}> <h3> 30 mins ago </h3></div>
-                    <div className={styles.title} > <h1> {data.value.title} </h1> </div>
-                    <div className={styles.content}>{data.value.content} </div>
-                </div>
-                </Link>
+        <div className={styles.container}>
+            <div className={styles.side}>
+                <div> <Image src={UpArrow} width={30} height={30} onClick={upFunction}/> </div>
+                <div className={styles.score}>{vote}</div>
+                <div> <Image src={DownArrow} width={30} height={30} onClick={downFunction}/> </div>
             </div>
-           
-            <div className={styles.postBot}>
-                <div> <Image src={Like} width={30} height={30}/> Like </div>
-                
-                    <div> <Image src={Comment} width={30} height={30}/> Comment </div>
-                
-                <div> <Image src={Repost} width={30} height={30}/> Repost </div>
+            <div>
+                <h1> {data.user} </h1>
+                <h2> {data.content} </h2>
             </div>
         </div>
-        </>
     )
+
 }
 
-export default Post
+export default Comment
