@@ -1,0 +1,16 @@
+@import './globalVariable.scss';
+
+.side {
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    min-height: 100px;
+    padding: 1.5rem;
+}
+
+.container {
+    display: flex;
+}
+
+.score {
+    margin-left: .7rem;
+    margin-bottom: .3rem;
+}

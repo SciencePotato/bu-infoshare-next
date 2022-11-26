@@ -11,6 +11,8 @@ import styles from '../../../../styles/Thread.module.scss'
 import Leaderboard from '../../../../components/leaderboard/leaderboard'
 import DownArrow from '../../../../public/downArrow.png'
 import UpArrow from '../../../../public/upArrow.png'
+import Comment from '../../../../components/comment/Comment'
+
 
 
 const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
@@ -36,7 +38,8 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
         body: JSON.stringify({
           "path": path,
           "content": (titleWrapper !== null)? titleWrapper.value: "NULL",
-          "user": (localStorage.getItem("user"))
+          "user": (localStorage.getItem("user")),
+          "votes": 1
         }), 
         headers: {
           'Content-Type': 'application/json'
@@ -55,7 +58,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
         }
 
           tmpList = tmpList.filter((object: any) => object != null)
-          setTmpDataArray(tmpList.reverse())
+          setTmpDataArray(tmpList)
       })
     }
   }
@@ -649,17 +652,14 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
       </div>
 
       
-
-      
-
-      
       <div className={styles.otherReply}>
       {
         tmpDataArray.length !== 0 && 
         tmpDataArray.map((object: any, idx: number) => 
-            <div key={`container-${idx}`} className={styles.replies}>
-              <h1 key={`user}${idx}`}> {object.user} </h1>
-              <h2 key={`content-${idx}`}> {object.content} </h2>
+            <div key={idx} className={styles.replies}>
+
+              <Comment data={object} commentID={idx} first={true}></Comment>
+              
             </div>
         )
       }
@@ -709,7 +709,7 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
-      dataArray: tmpList.reverse(),
+      dataArray: tmpList,
       dataDict: data,
       dataKeyPath: context.params.PostID
     }

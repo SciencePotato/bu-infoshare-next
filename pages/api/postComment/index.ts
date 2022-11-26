@@ -26,6 +26,9 @@ export default async function handler(
     await set(ref(database, `${body.path}/${size}`), {
       content: body.content,
       user: body.user,
+      votes: body.votes,
+      upvoters: {"rand":false},
+      downvoters: {"rand":false} 
     })
 
     let newData: any = null
