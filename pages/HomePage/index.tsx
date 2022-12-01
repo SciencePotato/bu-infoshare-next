@@ -2,42 +2,17 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from '../../components/navbar/navbar'
 import styles from '../../styles/HomePage.module.scss'
-import Post from '../../components/post/Post'
 import Majorcard from '../../components/majorCard/Major'
 import Leaderboard from '../../components/leaderboard/leaderboard'
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, set, child } from 'firebase/database';
-import React, { useEffect, useState }from 'react';
+import { getDatabase, ref, get, child } from 'firebase/database';
+import React, { useState }from 'react';
 import { firebaseConfig } from '../../utils'
-import Link from 'next/link'
 
 
 
 const Home: NextPage<any> = ({dataArray}) => {
-   const [tmpDataArray, setDataArray] = useState(dataArray)
-
-  const fetchFunction = async () => {
-    console.log(document.location)
-    const response = await fetch(`${document.location.origin}/api/read`, {
-      method: 'POST',
-      body: JSON.stringify({"path": "leaderboard"}),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-    console.log(response.json().then((res) => console.log(res)))
-  }
-
-  const postFunction = async () => {
-    const response = await fetch(`${document.location.origin}/api/post`, {
-      method: 'POST',
-      body: JSON.stringify({"Potato": "1"}),
-      headers: {
-        'Content-Type': 'data',
-      },
-    })
-    console.log(response.json().then((res) => console.log(res)))
-  }
+  const [tmpDataArray, setDataArray] = useState(dataArray)
 
   return (
     <>

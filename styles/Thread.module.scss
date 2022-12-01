@@ -54,8 +54,8 @@
 
 .replyContainer {
     background-color: $primary-color-light;
-    min-height: 125px;
-    max-height: 125px;
+    min-height: 200px;
+    max-height: 200px;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
@@ -70,12 +70,14 @@
 
 .reply {
     margin-top: 1rem;
+    resize: none;
     width: 95%;
+    padding: 1rem;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
     background-color: rgb(46, 61, 80);
     border: none;
     color: white;
-    height: 50px;
+    height: 125px;
 }
 
 .reply::placeholder {

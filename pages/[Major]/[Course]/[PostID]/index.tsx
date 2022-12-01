@@ -677,9 +677,6 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 export default PostPage
 
 export async function getServerSideProps(context: any) {
-  console.log(context.params.Major)
-  console.log(context.params.Course)
-  console.log(context.params.PostID)
 
   const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);
@@ -705,11 +702,10 @@ export async function getServerSideProps(context: any) {
     }
   }
 
-  console.log(tmpList)
 
   return {
     props: {
-      dataArray: tmpList,
+      dataArray: tmpList.reverse(),
       dataDict: data,
       dataKeyPath: context.params.PostID
     }
