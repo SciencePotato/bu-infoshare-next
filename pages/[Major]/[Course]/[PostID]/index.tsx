@@ -22,7 +22,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
   const [vote, setVote] = useState(dataDict.votes)
   const [upvote, setUpvote] = useState(dataDict.upvoters)
-    const [downvote, setDownvote] = useState(dataDict.downvoters)
+  const [downvote, setDownvote] = useState(dataDict.downvoters)
 
 
   const postFunction = async () => {
@@ -604,7 +604,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
   useEffect(() => {
     if (tmpDataArray.length > originalState.length)
-      setOriginalState(tmpDataArray)
+      setOriginalState(tmpDataArray.reverse())
   }, [tmpDataArray])
 
   return (

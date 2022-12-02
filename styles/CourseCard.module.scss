@@ -74,5 +74,10 @@
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
     font-size: 1rem;
     font-weight: bolder;
+    transition: ease-out 0.125s all;
+    &:hover {
+        background-color: $primary-color;
+        color: rgb(202, 219, 239)
     }
+}
 
