@@ -1,12 +1,5 @@
 import styles  from '../../styles/MajorCard.module.scss';
-import Image from 'next/image'
-import DownArrow from '../../public/downArrow.png'
-import UpArrow from '../../public/upArrow.png'
-import Like from '../../public/like.png'
-import Comment from '../../public/comment.png'
-import Repost from '../../public/repost.png'
 import Link from 'next/link'
-
 
 import { NextPage } from 'next';
 

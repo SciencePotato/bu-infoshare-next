@@ -7,8 +7,8 @@
     min-height: 300px;
     max-height: 300px;
     padding: 2rem;
-    min-width: 260px;
-    max-width: 260px;
+    min-width: 18.5vw;
+    max-width: 18.5vw;
     & > div {
         &:first-of-type {
             margin-top: -3.5em;
@@ -63,10 +63,10 @@
 
 .nextPage {
     position:absolute; 
-    margin-left:-50px;
+    margin-left:-4vw;
     left:25%;
     right: 25%;
-    width:200px;
+    width:15vw;
     bottom:0px;
     height: 2rem;
     background-color: rgb(202, 219, 239);
@@ -74,5 +74,10 @@
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
     font-size: 1rem;
     font-weight: bolder;
+    transition: ease-out 0.125s all;
+    &:hover {
+        background-color: $primary-color;
+        color: rgb(202, 219, 239)
     }
+}
 

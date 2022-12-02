@@ -37,9 +37,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
 
     const upFunction = async () => {
 
-        console.log(upvote)
-        console.log(downvote)
-
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
 
@@ -58,8 +55,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         voterList[upvoter] = true
                         setUpvote(voterList)
 
-                        console.log(upvote)
-
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
                             headers: {
@@ -73,10 +68,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
-
                         })
                         .catch((err) => {
                             console.log(err);
@@ -89,9 +81,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         voterList2[upvoter] = false
                         setUpvote(voterList)
                         setDownvote(voterList2)
-
-                        console.log(upvote)
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -106,10 +95,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
-
                         })
                         .catch((err) => {
                             console.log(err);
@@ -119,8 +105,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = upvote
                         voterList[upvoter] = false
                         setUpvote(voterList)
-
-                        console.log(upvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -135,8 +119,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
 
                         })
@@ -152,8 +134,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         voterList[upvoter] = true
                         setUpvote(voterList)
 
-                        console.log(upvote)
-
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
                             headers: {
@@ -167,10 +147,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
-
                         })
                         .catch((err) => {
                             console.log(err);
@@ -180,8 +157,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = upvote
                         voterList[upvoter] = false
                         setUpvote(voterList)
-
-                        console.log(upvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -196,8 +171,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
 
                         })
@@ -220,9 +193,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         setUpvote(voterList)
                         setDownvote(voterList2)
 
-                        console.log(upvote)
-                        console.log(downvote)
-
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
                             headers: {
@@ -236,7 +206,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            console.log(res)
                             setVote(res["votes"])
                         })
                         .catch((err) => {
@@ -247,9 +216,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = upvote
                         voterList[upvoter] = true
                         setUpvote(voterList)
-
-                        console.log(upvote)
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -264,7 +230,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            console.log(res)
                             setVote(res["votes"])
                         })
                         .catch((err) => {
@@ -278,9 +243,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         voterList[upvoter] = true
                         setUpvote(voterList)
 
-                        console.log(upvote)
-                        console.log(downvote)
-
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
                             headers: {
@@ -294,7 +256,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            console.log(res)
                             setVote(res["votes"])
                         })
                         .catch((err) => {
@@ -310,9 +271,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
 
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
-        console.log(path)
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
-        console.log(path)
         if (localStorage.getItem("user") !== null) {
 
             let downvoter:string = localStorage.getItem("user")!
@@ -325,8 +284,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = downvote
                         voterList[downvoter] = true
                         setDownvote(voterList)
-
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -341,10 +298,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
-
                         })
                         .catch((err) => {
                             console.log(err);
@@ -357,9 +311,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         voterList2[downvoter] = true
                         setUpvote(voterList)
                         setDownvote(voterList2)
-
-                        console.log(upvote)
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -374,8 +325,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
 
                         })
@@ -387,8 +336,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = downvote
                         voterList[downvoter] = false
                         setDownvote(voterList)
-
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -403,10 +350,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
-
                         })
                         .catch((err) => {
                             console.log(err);
@@ -419,8 +363,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = downvote
                         voterList[downvoter] = true
                         setDownvote(voterList)
-
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -435,8 +377,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
 
                         })
@@ -448,8 +388,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = downvote
                         voterList[downvoter] = false
                         setDownvote(voterList)
-
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -464,8 +402,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            
-                            console.log(res)
                             setVote(res["votes"])
 
                         })
@@ -488,9 +424,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         setUpvote(voterList)
                         setDownvote(voterList2)
 
-                        console.log(upvote)
-                        console.log(downvote)
-
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
                             headers: {
@@ -504,7 +437,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            console.log(res)
                             setVote(res["votes"])
                         })
                         .catch((err) => {
@@ -514,9 +446,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         let voterList = downvote
                         voterList[downvoter] = true
                         setDownvote(voterList)
-
-                        console.log(upvote)
-                        console.log(downvote)
 
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
@@ -531,7 +460,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            console.log(res)
                             setVote(res["votes"])
                         })
                         .catch((err) => {
@@ -544,9 +472,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                         voterList[downvoter] = true
                         setDownvote(voterList)
 
-                        console.log(upvote)
-                        console.log(downvote)
-
                         const response = await fetch(`${document.location.origin}/api/update`, {
                             method: 'PATCH',
                             headers: {
@@ -560,7 +485,6 @@ const Post: NextPage<Props> = ({data, pathID}) => {
                             })
                         })
                         response.json().then((res) => {
-                            console.log(res)
                             setVote(res["votes"])
                         })
                         .catch((err) => {
@@ -596,11 +520,23 @@ const Post: NextPage<Props> = ({data, pathID}) => {
             </div>
            
             <div className={styles.postBot}>
-                <div> <Image src={Like} width={30} height={30}/> Like </div>
+                <div> 
+                    <div>
+                        <Image src={Like} width={30} height={30}/> <p>Like </p>
+                    </div>
+                </div>
                 
-                    <div> <Image src={Comment} width={30} height={30}/> Comment </div>
-                
-                <div> <Image src={Repost} width={30} height={30}/> Repost </div>
+                <div> 
+                    <div>
+                        <Image src={Comment} width={30} height={30}/> <p> Comment</p>
+                    </div>
+                </div>
+
+                <div> 
+                    <div>
+                        <Image src={Repost} width={30} height={30}/> <p> Repost </p>
+                    </div>
+                </div>
             </div>
         </div>
         </>

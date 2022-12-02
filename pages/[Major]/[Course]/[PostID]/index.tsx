@@ -22,7 +22,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
   const [vote, setVote] = useState(dataDict.votes)
   const [upvote, setUpvote] = useState(dataDict.upvoters)
-    const [downvote, setDownvote] = useState(dataDict.downvoters)
+  const [downvote, setDownvote] = useState(dataDict.downvoters)
 
 
   const postFunction = async () => {
@@ -604,7 +604,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
   useEffect(() => {
     if (tmpDataArray.length > originalState.length)
-      setOriginalState(tmpDataArray)
+      setOriginalState(tmpDataArray.reverse())
   }, [tmpDataArray])
 
   return (
@@ -677,9 +677,6 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 export default PostPage
 
 export async function getServerSideProps(context: any) {
-  console.log(context.params.Major)
-  console.log(context.params.Course)
-  console.log(context.params.PostID)
 
   const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);
@@ -705,11 +702,10 @@ export async function getServerSideProps(context: any) {
     }
   }
 
-  console.log(tmpList)
 
   return {
     props: {
-      dataArray: tmpList,
+      dataArray: tmpList.reverse(),
       dataDict: data,
       dataKeyPath: context.params.PostID
     }
