@@ -2,6 +2,8 @@ import styles  from '../../styles/Post.module.scss';
 import Image from 'next/image'
 import DownArrow from '../../public/downArrow.png'
 import UpArrow from '../../public/upArrow.png'
+import UpArrowFilled from '../../public/filledup.png'
+import downArrowFilled from '../../public/filleddown.png'
 import Like from '../../public/like.png'
 import Comment from '../../public/comment.png'
 import Repost from '../../public/repost.png'
@@ -34,6 +36,18 @@ const Post: NextPage<Props> = ({data, pathID}) => {
     const [vote, setVote] = useState(data.value.votes)
     const [upvote, setUpvote] = useState(data.value.upvoters)
     const [downvote, setDownvote] = useState(data.value.downvoters)
+    const [currUp, setCurrup] = useState(false)
+    const [currdown, setcurrdown] = useState(false)
+
+    useEffect (() => {
+        let voter:string = localStorage.getItem("user")!
+        if (voter in upvote === true){
+            setCurrup(upvote[voter])
+        }
+        if (voter in downvote === true){
+            setcurrdown(downvote[voter])
+        }
+    })
 
     const upFunction = async () => {
 
@@ -42,7 +56,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
 
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
         
-        if (localStorage.getItem("user") !== null) {
+        if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== data.value.op) {
 
             let upvoter:string = localStorage.getItem("user")!
 
@@ -272,7 +286,7 @@ const Post: NextPage<Props> = ({data, pathID}) => {
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + `${data.key}`
-        if (localStorage.getItem("user") !== null) {
+        if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== data.value.op) {
 
             let downvoter:string = localStorage.getItem("user")!
 
@@ -504,9 +518,9 @@ const Post: NextPage<Props> = ({data, pathID}) => {
             <div className={styles.post}>
                 {/* Upvotes */}
                 <div>
-                    <div> <Image src={UpArrow} onClick={upFunction}/> </div>
+                    <div> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} className={styles.upvotearrow}/>} </div>
                     <div> {vote} </div>
-                    <div> <Image src={DownArrow} onClick={downFunction}/> </div>
+                    <div> {currdown ? <Image src={downArrowFilled} onClick={downFunction} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} className={styles.downvotearrow}/>} </div>
                 </div>
                 {/* Contents */}
                 <Link href={pathID}>
