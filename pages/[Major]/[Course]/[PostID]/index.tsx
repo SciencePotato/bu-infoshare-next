@@ -667,7 +667,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
       </section>
       {/* Leaderboard */}
         <aside>
-          <Leaderboard data={null}/>
+          {/* <Leaderboard data={null}/> */}
         </aside>
       </main>
     </>

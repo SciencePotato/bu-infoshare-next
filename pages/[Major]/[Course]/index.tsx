@@ -70,7 +70,7 @@ const Course: NextPage<any> = ({dataArray, dataKey, dataKeyMajor, curData}) => {
     
             {/* Leaderboard */}
             <aside>
-                <Leaderboard data={null}/>
+                {/* <Leaderboard data={null}/> */}
             </aside>
           </main>
         </>
