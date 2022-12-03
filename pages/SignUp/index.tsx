@@ -93,8 +93,8 @@ const SignUp: NextPage = () => {
           <section>
             <div>
               <Image src={brick}/>
-              <h1> Sign In</h1>
-              <h2> Sign In and start exploring courses</h2>
+              <h1> Sign Up</h1>
+              <h2> Sign Up and start exploring courses</h2>
             </div>
             <div>
               <input type="text" placeholder={"Email"} id={"email"}/>

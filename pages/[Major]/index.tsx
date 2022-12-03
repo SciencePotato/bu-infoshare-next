@@ -66,7 +66,7 @@ const Major: NextPage<any> = ({dataDict, dataArray, dataKey}) => {
 
         {/* Leaderboard */}
         <aside>
-          <Leaderboard data={null}/>
+          {/* <Leaderboard data={null}/> */}
         </aside>
       </main>
     </>

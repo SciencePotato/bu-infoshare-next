@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     // Testing purpose turn this on 
-    // localStorage.clear()
+    localStorage.clear()
 
     if (localStorage.getItem("user") !== null) 
       router.push("/HomePage")

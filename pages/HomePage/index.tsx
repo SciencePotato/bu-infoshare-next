@@ -53,7 +53,7 @@ const Home: NextPage<any> = ({dataArray}) => {
 
         {/* Leaderboard */}
         <aside>
-          <Leaderboard data={null}/>
+          {/* <Leaderboard data={null}/> */}
         </aside>
       </main>
     </>
