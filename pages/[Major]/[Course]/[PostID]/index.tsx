@@ -8,9 +8,10 @@ import { useRouter } from 'next/router'
 import Navbar from '../../../../components/navbar/navbar'
 import { firebaseConfig } from '../../../../utils'
 import styles from '../../../../styles/Thread.module.scss'
-import Leaderboard from '../../../../components/leaderboard/leaderboard'
 import DownArrow from '../../../../public/downArrow.png'
 import UpArrow from '../../../../public/upArrow.png'
+import UpArrowFilled from '../../../../public/filledup.png'
+import downArrowFilled from '../../../../public/filleddown.png'
 import Comment from '../../../../components/comment/Comment'
 
 
@@ -23,6 +24,18 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
   const [vote, setVote] = useState(dataDict.votes)
   const [upvote, setUpvote] = useState(dataDict.upvoters)
   const [downvote, setDownvote] = useState(dataDict.downvoters)
+  const [currUp, setCurrup] = useState(false)
+  const [currdown, setcurrdown] = useState(false)
+
+  useEffect (() => {
+    let voter:string = localStorage.getItem("user")!
+    if (voter in upvote === true){
+        setCurrup(upvote[voter])
+    }
+    if (voter in downvote === true){
+        setcurrdown(downvote[voter])
+    }
+  })
 
 
   const postFunction = async () => {
@@ -73,7 +86,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
     path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2]
     
-    if (localStorage.getItem("user") !== null) {
+    if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== dataDict.op) {
 
         let upvoter:string = localStorage.getItem("user")!
 
@@ -339,7 +352,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
     let path = document.location.pathname
     let pathArray = path.split("/").slice(1)
     path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2]
-    if (localStorage.getItem("user") !== null) {
+    if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== dataDict.op) {
 
         let downvoter:string = localStorage.getItem("user")!
 
@@ -633,9 +646,9 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
       <div className={styles.original}>
         <div className={styles.side}>
-          <div> <Image src={UpArrow} width={35} height={35} onClick={upFunction}/> </div>
+          <div> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} width={35} height={35} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} width={35} height={35} className={styles.upvotearrow}/>} </div>
           <div className={styles.score}>{vote}</div>
-          <div> <Image src={DownArrow} width={35} height={35} onClick={downFunction}/> </div>
+          <div> {currdown ? <Image src={downArrowFilled} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>} </div>
         </div>
         <div>
           <h1> {dataDict.title} </h1>
@@ -705,7 +718,7 @@ export async function getServerSideProps(context: any) {
 
   return {
     props: {
-      dataArray: tmpList.reverse(),
+      dataArray: tmpList,
       dataDict: data,
       dataKeyPath: context.params.PostID
     }

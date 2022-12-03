@@ -1,6 +1,8 @@
 import { NextPage } from 'next';
 import DownArrow from '../../public/downArrow.png'
 import UpArrow from '../../public/upArrow.png'
+import UpArrowFilled from '../../public/filledup.png'
+import DownArrowFilled from '../../public/filleddown.png'
 import styles  from '../../styles/Comment.module.scss';
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -22,6 +24,19 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
 
     const [one, SetOne] = useState(first)
 
+    const [currUp, setCurrup] = useState(false)
+    const [currdown, setcurrdown] = useState(false)
+
+    useEffect (() => {
+        let voter:string = localStorage.getItem("user")!
+        if (voter in upvote === true){
+            setCurrup(upvote[voter])
+        }
+        if (voter in downvote === true){
+            setcurrdown(downvote[voter])
+        }
+    })
+
     useEffect(() => {
         console.log(commentID)
         if (one === true) {
@@ -41,7 +56,7 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
 
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + String(commentID+1)
         console.log(path)
-        if (localStorage.getItem("user") !== null) {
+        if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== data.user) {
 
             let upvoter:string = localStorage.getItem("user")!
 
@@ -311,7 +326,7 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
         console.log(path)
         path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + String(commentID+1)
         console.log(path)
-        if (localStorage.getItem("user") !== null) {
+        if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== data.user) {
 
             let downvoter:string = localStorage.getItem("user")!
 
@@ -574,9 +589,9 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
     return (
         <div className={styles.container}>
             <div className={styles.side}>
-                <div> <Image src={UpArrow} width={30} height={30} onClick={upFunction}/> </div>
+                <div> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} width={30} height={30} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} width={30} height={30} className={styles.upvotearrow}/>} </div>
                 <div className={styles.score}>{vote}</div>
-                <div> <Image src={DownArrow} width={30} height={30} onClick={downFunction}/> </div>
+                <div> {currdown ? <Image src={DownArrowFilled} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>} </div>
             </div>
             <div>
                 <h1> {data.user} </h1>
