@@ -93,7 +93,7 @@ const MajorCard: NextPage<Props> = ({data, pathID}) => {
         major = "Public Relations"
     } else if (major == "middleeast") {
         major = "Middle East South Asian Literatures"
-    } else if (major == "theaterprod") {
+    } else if (major == "theatreprod") {
         major = "Theater Production"
     } else if (major == "theatrearts") {
         major = "Theatre Arts"
