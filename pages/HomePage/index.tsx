@@ -26,13 +26,12 @@ const Home: NextPage<any> = ({dataArray}) => {
       <main className={styles.home}>
         {/* Tags */}
         <aside>
-          <h2> Tags </h2>
-          <div>
-            {/* List of stuff -> Make this into custom Component that takes in Logo + Text? */}
+          {/* <h2> Tags </h2> */}
+          {/* <div>
             <div> Homework Help </div>
             <div> Mentor Help </div>
             <div> Internship Help </div>
-          </div>
+          </div> */}
         </aside>
 
         {/* Posts */}

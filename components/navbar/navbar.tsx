@@ -55,8 +55,12 @@ const Navbar: NextPage<any> = ({data, tmpData, setData, filterPost, filterCommen
                 </div>
 
                 <div>
-                    <div> Courses </div>
-                    <div> Majors </div>
+                    <Link href={"/HomePage"}>
+                        <div> Home </div>
+                    </Link>
+                    <Link href={"/"}>
+                        <div> Logout </div>
+                    </Link>
                     { (userRef === null) ?
                         <Link href={"/Log-in"}>
                             <div> Login </div>
