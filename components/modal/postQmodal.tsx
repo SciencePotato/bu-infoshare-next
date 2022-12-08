@@ -74,8 +74,8 @@ const postModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
                     <div className={styles.modalFooter}>
 
                         <div className={styles.options}>
-                            <span className={styles.videoButton}> <Image src={Video} width={30} height={30}/> </span>
-                            <span className={styles.photoButton}> <Image src={Photo} width={30} height={30}/> </span>
+                            {/* <span className={styles.videoButton}> <Image src={Video} width={30} height={30}/> </span>
+                            <span className={styles.photoButton}> <Image src={Photo} width={30} height={30}/> </span> */}
                             <button className={styles.postButton} onClick={postFunction}> Post </button>
                         </div>
 

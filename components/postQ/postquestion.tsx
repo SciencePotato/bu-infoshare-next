@@ -20,10 +20,10 @@ const Post: NextPage<any> = ({tmpData, setData}) => {
                     ></input>
                   </form>
                   <div>
-                    <div> 
+                    {/* <div> 
                       <Image src={Video} width={30} height={30}/>  Video 
                     </div>
-                    <span> <Image src={Photo} width={30} height={30}/> Photo </span>
+                    <span> <Image src={Photo} width={30} height={30}/> Photo </span> */}
                   </div>
             </div>
             {postqModal && <Modal closeModal={setPostqmodal} tmpData={tmpData} setData={setData}/>}

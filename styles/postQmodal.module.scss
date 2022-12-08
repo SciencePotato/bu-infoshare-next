@@ -11,7 +11,6 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 .postqModal {
     background-color: $primary-color-light;
     border-radius: .5rem;
@@ -115,4 +114,8 @@
 
 .postButton:active {
     background-color: rgb(202, 219, 239);
+}
+
+.postTitle, .modalQuestion {
+    resize: none;
 }
