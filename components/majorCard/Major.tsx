@@ -68,7 +68,7 @@ const MajorCard: NextPage<Props> = ({data, pathID}) => {
     } else if (major == "health") {
         major = "Health Science"
     } else if (major == "hospitality") {
-        major = "Hospitality Administration"
+        major = "Hospitality Admin."
     } else if (major == "physiology") {
         major = "Human Physiology"
     } else if (major == "ir") {
@@ -77,8 +77,6 @@ const MajorCard: NextPage<Props> = ({data, pathID}) => {
         major = "Latin American Studies"
     } else if (major == "lightingdesign") {
         major = "Lighting Design"
-    } else if (major == "manufacturing") {
-        major = "Manufacturing Engineering"
     } else if (major == "marine") {
         major = "Marine Science"
     } else if (major == "mechanical") {
@@ -105,8 +103,10 @@ const MajorCard: NextPage<Props> = ({data, pathID}) => {
         major = "Scene Design"
     } else if (major == "scienceeducation") {
         major = "Science Education"
-    } else if (major == "speech") {
-        major = "Speech, Language & Hearing Sciences"
+    } else if (major == "mathematics") {
+        major = "Mathematics Statistics"
+    } else if (major == "northafrica") {
+        major = "Middle East North Africa Studies"
     } else {
         major = major.charAt(0).toUpperCase() + major.slice(1).toLowerCase()
     }
@@ -118,8 +118,7 @@ const MajorCard: NextPage<Props> = ({data, pathID}) => {
              
                 <div className={styles.contentContainer}>
                     <div className={styles.name}> <h2> {major} </h2> </div> 
-                    <div className={styles.school}><h3>College of Arts and Science</h3></div>
-                    <div className={styles.description}><h4>Description of Major: Lorem Ipsum placeholder text and placeholder paragraphs</h4></div>
+                    <div className={styles.description}><h4>{data.value.school}</h4></div>
                     <Link href={pathID} >
                         <button style={{"cursor": "pointer"}} className={styles.nextPage}>Go To Page</button>
                     </Link>

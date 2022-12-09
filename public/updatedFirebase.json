@@ -14,8 +14,61 @@
     }
   ],
   "major": {
+    "acting": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
+    },
+    "advertising": {
+      "courses": "",
+      "school": "College of Communication"
+    },
+    "aerospace": {
+      "courses": "",
+      "school": "College of Engineering"
+    },
+    "africanamericanstudies": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "americanstudies": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "anthropology": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "archaeology": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "architecture": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "art": {
+      "courses": "",
+      "school": "College of Fine Arts"
+    },
+    "asianstudies": {
+      "courses": "",
+      "school": "Frederick S. Pardee School of Global Studies"
+    },
+    "astronomy": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "behaviorandhealth": {
+      "courses": "",
+      "school": "College of Health & Rehabilitation Sciences: Sargent College"
+    },
     "biology": {
-      "courses": ""
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "biomedical": {
+      "courses": "",
+      "school": "College of Engineering"
     },
     "business": {
       "courses": {
@@ -47,6 +100,34 @@
                 "rand": false
               },
               "votes": 1
+            },
+            {
+              "comment": [
+                null,
+                {
+                  "content": "Potato",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                }
+              ],
+              "content": "YEs.",
+              "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                "rand": false
+              },
+              "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+              "title": "Potato",
+              "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                "rand": false
+              },
+              "votes": 2
             }
           ]
         },
@@ -79,15 +160,50 @@
                   },
                   "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
                   "votes": 0
+                },
+                {
+                  "content": "Potaot",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                },
+                {
+                  "content": "Today",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                },
+                {
+                  "content": "Todayd",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
                 }
               ],
               "content": "12",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
               "title": "1234",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "votes": 1
@@ -294,13 +410,36 @@
             }
           ]
         }
-      }
+      },
+      "school": "Questrom School of Business"
     },
     "chemistry": {
-      "courses": ""
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "chinese": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "cinema": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "civilization": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "classics": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "composition": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Music"
     },
     "computerengineering": {
-      "courses": ""
+      "courses": "",
+      "school": "College of Engineering"
     },
     "computerscience": {
       "courses": {
@@ -323,7 +462,20 @@
         },
         "CS103": {
           "courseName": "Introduction to Internet Technologies and Web Programming",
-          "posts": ""
+          "posts": [
+            {
+              "content": "Yessir",
+              "downvoters": {
+                "rand": false
+              },
+              "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+              "title": "Hello",
+              "upvoters": {
+                "rand": false
+              },
+              "votes": 1
+            }
+          ]
         },
         "CS105": {
           "courseName": "Introduction to Databases and Data Mining",
@@ -341,11 +493,36 @@
                 null,
                 {
                   "content": "asdf",
-                  "op": "asf"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "asdf",
+                  "votes": 1
                 },
                 {
                   "content": "1234",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                },
+                {
+                  "content": "456",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
                 }
               ],
               "content": "asdf",
@@ -365,11 +542,25 @@
                 null,
                 {
                   "content": "123",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
                 },
                 {
                   "content": "1234",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
                 }
               ],
               "content": "1",
@@ -390,15 +581,14 @@
                 null,
                 {
                   "content": "12",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
-                },
-                {
-                  "content": "1",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
-                },
-                {
-                  "content": "2",
-                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1"
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
                 }
               ],
               "content": "Help",
@@ -410,9 +600,41 @@
               "title": "CS 111 ",
               "upvoters": {
                 "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                "jRUDjPj3JXVvWmh9Y6FKckM9U7z1": false,
                 "rand": false
               },
-              "votes": 1
+              "votes": 0
+            },
+            {
+              "comment": [
+                null,
+                {
+                  "content": "Goku",
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                }
+              ],
+              "content": "?",
+              "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                "rand": false
+              },
+              "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+              "title": "Goku",
+              "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                "jRUDjPj3JXVvWmh9Y6FKckM9U7z1": true,
+                "rand": false
+              },
+              "votes": 4
             }
           ]
         },
@@ -468,9 +690,10 @@
               "op": "Anonymous Hippo",
               "title": "CS112 vs CS111",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                 "rand": false
               },
-              "votes": 10
+              "votes": 11
             },
             {
               "comment": [
@@ -489,6 +712,7 @@
               ],
               "content": "Will we need to know time complexity for the midterm?",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                 "rand": false
               },
               "op": "Anonymous Hippo",
@@ -496,7 +720,7 @@
               "upvoters": {
                 "rand": false
               },
-              "votes": 8
+              "votes": 7
             },
             {
               "comment": [
@@ -545,9 +769,10 @@
               "op": "Anonymous Bear",
               "title": "Immutable String",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                 "rand": false
               },
-              "votes": 7
+              "votes": 8
             },
             {
               "comment": [
@@ -558,21 +783,24 @@
                     "rand": false
                   },
                   "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                     "rand": false
                   },
                   "user": "Anonymous Gorilla",
-                  "votes": 1
+                  "votes": 0
                 },
                 {
                   "content": "It states in the problem that they want the iterative solution.",
                   "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                     "rand": false
                   },
                   "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                     "rand": false
                   },
                   "user": "Anonymous Jaguar",
-                  "votes": 1
+                  "votes": -1
                 }
               ],
               "content": "Can I just use iteration instead of recursion for the homework?",
@@ -582,9 +810,10 @@
               "op": "Anonymous Tiger",
               "title": "Recursion vs iteration",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                 "rand": false
               },
-              "votes": 4
+              "votes": 5
             },
             {
               "comment": [
@@ -596,24 +825,24 @@
                     "rand": false
                   },
                   "upvoters": {
-                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                     "rand": false
                   },
                   "user": "Anonymous Bean",
-                  "votes": 1
+                  "votes": 2
                 },
                 {
                   "content": "Stack is a first in first out data structure (FIFO), while queue is a last in first out data structure(LIFO).",
                   "downvoters": {
-                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
-                    "rand": false
-                  },
-                  "upvoters": {
                     "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                     "rand": false
                   },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
                   "user": "Anonymous Snail",
-                  "votes": 0
+                  "votes": 2
                 }
               ],
               "content": "How do I decide when to use a stack vs queue?",
@@ -659,6 +888,19 @@
                   },
                   "user": "Anonymous Tree",
                   "votes": 1
+                },
+                {
+                  "content": "Test",
+                  "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 0
                 }
               ],
               "content": "Hello, my name is Jeff and I am a freshman planning to take CS 131 next semester. In context, I struggled with CS 111, and I was wondering if anyone could share experiences with CS 131 and its difficulty compared to 111. Thanks!",
@@ -689,14 +931,16 @@
               ],
               "content": "With the simplification rule of inference, would (not q and (p and r)) become (not q), (p and r), or just one of them?",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "op": "Anonymous Hippo",
               "title": "Simplification Rule",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
-              "votes": 3
+              "votes": 2
             },
             {
               "comment": [
@@ -704,9 +948,11 @@
                 {
                   "content": "Consider how you could incorporate the XOR operator into this problem.",
                   "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                     "rand": false
                   },
                   "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                     "rand": false
                   },
                   "user": "Anonymous Lizard",
@@ -715,14 +961,16 @@
               ],
               "content": "Any tips for starting the first problem on HW2?",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "op": "Anonymous Bear",
               "title": "Tips on Problem 1",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
-              "votes": 2
+              "votes": 1
             }
           ]
         },
@@ -795,11 +1043,13 @@
               ],
               "content": "Where can I find the lecture notes for this class?",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "op": "Anonymous Hippo",
               "title": "Lecture Notes?",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "votes": 6
@@ -1370,21 +1620,24 @@
                     "rand": false
                   },
                   "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                     "rand": false
                   },
                   "user": "Anonymous Bean",
-                  "votes": 1
+                  "votes": 2
                 },
                 {
                   "content": "A queue is a last in first out data structure (LIFO).",
                   "downvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                     "rand": false
                   },
                   "upvoters": {
+                    "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                     "rand": false
                   },
                   "user": "Anonymous Snail",
-                  "votes": 1
+                  "votes": 0
                 },
                 {
                   "content": "a stack and queue are implemented the same way in python",
@@ -1400,14 +1653,16 @@
               ],
               "content": "How do I decide when to use a stack vs queue?",
               "downvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": false,
                 "rand": false
               },
               "op": "Anonymous Moose",
               "title": "Stack vs Queue",
               "upvoters": {
+                "NUWn74IwUyRRy4FUUuJi2Cdvyis1": true,
                 "rand": false
               },
-              "votes": 2
+              "votes": 3
             }
           ]
         },
@@ -1721,7 +1976,34 @@
         },
         "CS542": {
           "courseName": "Principles of Machine Learning",
-          "posts": ""
+          "posts": [
+            {
+              "comment": [
+                null,
+                {
+                  "content": "Why is it so hard",
+                  "downvoters": {
+                    "rand": false
+                  },
+                  "upvoters": {
+                    "rand": false
+                  },
+                  "user": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+                  "votes": 1
+                }
+              ],
+              "content": "It's really hard",
+              "downvoters": {
+                "rand": false
+              },
+              "op": "NUWn74IwUyRRy4FUUuJi2Cdvyis1",
+              "title": "How hard is ML",
+              "upvoters": {
+                "rand": false
+              },
+              "votes": 1
+            }
+          ]
         },
         "CS543": {
           "courseName": "Algorithmic Techniques for Taming Big Data",
@@ -1767,7 +2049,12 @@
           "courseName": "Advanced Topics in Computer Science",
           "posts": ""
         }
-      }
+      },
+      "school": "College of Arts & Sciences"
+    },
+    "costume": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
     },
     "datascience": {
       "courses": {
@@ -1947,13 +2234,108 @@
           "courseName": "Computing & Data Sciences Research Rotation",
           "posts": ""
         }
-      }
+      },
+      "school": "Faculty of Computing & Data Sciences"
+    },
+    "dietetics": {
+      "courses": "",
+      "school": "College of Health & Rehabilitation Sciences: Sargent College"
     },
     "economics": {
-      "courses": ""
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "education": {
+      "courses": "",
+      "school": "Wheelock College of Education & Human Development"
+    },
+    "electrical": {
+      "courses": "",
+      "school": "College of Engineering"
+    },
+    "english": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "environment": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "european": {
+      "courses": "",
+      "school": "Frederick S. Pardee School of Global Studies"
+    },
+    "film": {
+      "courses": "",
+      "school": "College of Communication"
+    },
+    "french": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "german": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "graphic": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Visual Arts"
+    },
+    "greek": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "health": {
+      "courses": "",
+      "school": "College of Health & Rehabilitation Sciences: Sargent College"
+    },
+    "history": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "hospitality": {
+      "courses": "",
+      "school": "School of Hospitality Administration"
+    },
+    "ir": {
+      "courses": "",
+      "school": "Frederick S. Pardee School of Global Studies"
+    },
+    "italian": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "japanese": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "journalism": {
+      "courses": "",
+      "school": "College of Communication"
+    },
+    "latin": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "latinamerican": {
+      "courses": "",
+      "school": "Frederick S. Pardee School of Global Studies"
+    },
+    "lightingdesign": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
     },
     "linguistics": {
-      "courses": ""
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "literature": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "marine": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
     },
     "mathematics": {
       "courses": {
@@ -2208,13 +2590,119 @@
           "courseName": "Introduction to Causal Inference",
           "posts": ""
         }
-      }
+      },
+      "school": "College of Arts & Sciences"
+    },
+    "mechanical": {
+      "courses": "",
+      "school": "College of Engineering"
+    },
+    "media": {
+      "courses": "",
+      "school": "College of Communication"
+    },
+    "middleeast": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "music": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Music"
     },
     "neuroscience": {
-      "courses": ""
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "northafrica": {
+      "courses": "",
+      "school": "Frederick S. Pardee School of Global Studies"
+    },
+    "nutrition": {
+      "courses": "",
+      "school": "College of Health & Rehabilitation Sciences: Sargent College"
+    },
+    "painting": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Visual Arts"
+    },
+    "philosophy": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "physicaltherapy": {
+      "courses": "",
+      "school": "College of Health & Rehabilitation Sciences: Sargent College"
     },
     "physics": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "physiology": {
       "courses": ""
+    },
+    "political": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "printmaking": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Visual Arts"
+    },
+    "psychology": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "publicrelations": {
+      "courses": "",
+      "school": "College of Communication"
+    },
+    "religion": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "russian": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "scenedesign": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
+    },
+    "scienceeducation": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "sculpture": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Visual Arts"
+    },
+    "sociology": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "sounddesign": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
+    },
+    "spanish": {
+      "courses": "",
+      "school": "College of Arts & Sciences"
+    },
+    "speech": {
+      "courses": "",
+      "school": "College of Health & Rehabilitation Sciences: Sargent College"
+    },
+    "stagemanagement": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
+    },
+    "theatrearts": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
+    },
+    "theatreprod": {
+      "courses": "",
+      "school": "College of Fine Arts, School of Theatre"
     }
   }
 }
