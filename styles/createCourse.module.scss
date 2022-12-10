@@ -1,0 +1,41 @@
+@import './globalVariable.scss';
+
+
+// Question Post
+.postContainer {
+    background-color: $primary-color-light;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    min-width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.postqText {
+    
+    color: white;
+    display: grid;
+    border-radius: 1.5rem;
+    background-color: $primary-color-light;
+    border: solid $WHITE 2px;
+    margin: 1.6rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    min-width: 30rem;
+    max-width: 0rem;
+    font-weight: bold;
+
+}
+
+.postqText:focus{
+    outline:none;
+}
+
+.postqText::placeholder {
+    color: white;
+}
+
+

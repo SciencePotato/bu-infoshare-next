@@ -589,9 +589,9 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
     return (
         <div className={styles.container}>
             <div className={styles.side}>
-                <div> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} width={30} height={30} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} width={30} height={30} className={styles.upvotearrow}/>} </div>
+                <div style={{"cursor": "pointer"}}> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} width={30} height={30} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} width={30} height={30} className={styles.upvotearrow}/>} </div>
                 <div className={styles.score}>{vote}</div>
-                <div> {currdown ? <Image src={DownArrowFilled} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>} </div>
+                <div style={{"cursor": "pointer"}}> {currdown ? <Image src={DownArrowFilled} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>} </div>
             </div>
             <div>
                 <h1> {data.user} </h1>

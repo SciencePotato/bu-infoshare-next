@@ -35,7 +35,7 @@ const CourseCard: NextPage<Props> = ({data, pathID}) => {
             <div className={styles.contentContainer}>
                     <div className={styles.name}> <h2> {data.key} </h2> </div>  
                     <div className={styles.courseTitle}>  <h3>{data.value.courseName}</h3>  </div>  
-                    <div className={styles.description}><h4>Description of Course: Lorem Ipsum placeholder text and placeholder paragraphs</h4></div>
+                    <div className={styles.description}><h4></h4></div>
                     <Link href={pathID + '/' + data.key} >
                         <button style={{"cursor": "pointer"}} className={styles.nextPage}>Go To Page</button>
                     </Link>
