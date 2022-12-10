@@ -1,0 +1,121 @@
+@import './globalVariable.scss';
+
+.modal {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    min-width: 200%; 
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.postqModal {
+    background-color: $primary-color-light;
+    border-radius: .5rem;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%; 
+    height: 55%;
+}
+
+.modalLine {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+}
+
+.modalContent {
+    padding: 1.5rem;
+    
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalTitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.close {
+    background-color: $primary-color-light;
+    border: none;
+    color: white;
+    background-color: rgb(137, 154, 174);
+    border-radius: 5px;
+    color:rgb(46, 61, 80);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.close:active {
+    background-color: rgb(202, 219, 239);
+}
+
+.postTitle::placeholder {
+    color: rgb(136, 146, 159)
+}
+
+.postTitle {
+    min-width: 100%;
+    border: none;
+    background-color: $primary-color-light;
+    color: white;
+}
+
+.postTitle:focus{
+    border:none;
+    outline: none;
+}
+
+.modalQuestion::placeholder{
+    color: rgb(136, 146, 159);
+}
+
+.modalQuestion {
+    min-width: 100%;
+    border: none;
+    background-color: $primary-color-light;
+    color: white;
+    width: 300px;
+    height: 150px;
+}
+
+.modalQuestion:focus{
+    border:none;
+    outline: none;
+}
+
+.modalFooter {
+    margin-top: 1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.postButton {
+    border: none;
+    background-color: rgb(137, 154, 174);
+    font-weight: bold;
+    color:rgb(46, 61, 80);
+    border-radius: 5px;
+    height: 25px;
+    min-width: 12%;
+}
+
+.postButton:active {
+    background-color: rgb(202, 219, 239);
+}
+
+.postTitle, .modalQuestion {
+    resize: none;
+}

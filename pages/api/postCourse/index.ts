@@ -21,13 +21,9 @@ export default async function handler(
       data = snapshot.val();
     })
 
-    const size = (data === null)? 1: data.length  
-    await set(ref(database, `${body.path}/${size}`), {
-      content: body.content,
-      user: body.user,
-      votes: body.votes,
-      upvoters: {"rand":false},
-      downvoters: {"rand":false} 
+    await set(ref(database, `${body.path}/courses/${body.courseID}`), {
+      posts: [],
+      courseName: body.courseName,
     })
 
     let newData: any = null

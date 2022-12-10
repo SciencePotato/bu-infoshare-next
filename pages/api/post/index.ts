@@ -17,11 +17,11 @@ export default async function handler(
     const database = getDatabase(app);
     let data: any = null
     
-    await get(child(ref(database), body.path)).then((snapshot) => {
+    await get(child(ref(database), `${body.path}/posts/`)).then((snapshot) => {
       data = snapshot.val();
     })
 
-    const size = data.posts.length
+    const size = (data === null) ? 0: data.length  
     
     await set(ref(database, `${body.path}/posts/${size}`), {
       comment: [],

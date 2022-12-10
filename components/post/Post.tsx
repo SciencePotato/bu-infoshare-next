@@ -518,9 +518,9 @@ const Post: NextPage<Props> = ({data, pathID}) => {
             <div className={styles.post}>
                 {/* Upvotes */}
                 <div>
-                    <div> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} className={styles.upvotearrow}/>} </div>
+                    <div style={{"cursor": "pointer"}}> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} className={styles.upvotearrow}/>} </div>
                     <div> {vote} </div>
-                    <div> {currdown ? <Image src={downArrowFilled} onClick={downFunction} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} className={styles.downvotearrow}/>} </div>
+                    <div style={{"cursor": "pointer"}}> {currdown ? <Image src={downArrowFilled} onClick={downFunction} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} className={styles.downvotearrow}/>} </div>
                 </div>
                 {/* Contents */}
                 <Link href={pathID}>

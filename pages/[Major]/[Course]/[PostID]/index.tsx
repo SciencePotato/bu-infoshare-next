@@ -645,9 +645,9 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
       <div className={styles.original}>
         <div className={styles.side}>
-          <div> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} width={35} height={35} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} width={35} height={35} className={styles.upvotearrow}/>} </div>
+          <div style={{"cursor": "pointer"}}> {currUp ? <Image src={UpArrowFilled} onClick={upFunction} width={35} height={35} className={styles.upvotearrow}/>: <Image src={UpArrow} onClick={upFunction} width={35} height={35} className={styles.upvotearrow}/>} </div>
           <div className={styles.score}>{vote}</div>
-          <div> {currdown ? <Image src={downArrowFilled} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>} </div>
+          <div style={{"cursor": "pointer"}}> {currdown ? <Image src={downArrowFilled} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>: <Image src={DownArrow} onClick={downFunction} width={35} height={35} className={styles.downvotearrow}/>} </div>
         </div>
         <div>
           <h1> {dataDict.title} </h1>
