@@ -66,7 +66,7 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
 
         if (data !== null) {
           for (const object in data) {
-            if (object !== null) tmpList.push(data[object])
+            if (data[object] != null) tmpList.push({ ...data[object], commentKey: object })
           }
         }
 
@@ -667,10 +667,10 @@ const PostPage: NextPage<any> = ({dataDict, dataArray, dataKeyPath}) => {
       <div className={styles.otherReply}>
       {
         tmpDataArray.length !== 0 && 
-        tmpDataArray.map((object: any, idx: number) => 
-            <div key={idx} className={styles.replies}>
+        tmpDataArray.map((object: any) =>
+            <div key={object.commentKey} className={styles.replies}>
 
-              <Comment data={object} commentID={idx} first={true}></Comment>
+              <Comment data={object} commentID={object.commentKey} first={true}></Comment>
               
             </div>
         )
@@ -710,7 +710,7 @@ export async function getServerSideProps(context: any) {
   let tmpList: any = []
   if (data !== null) {
     for (const object in data["comment"]) {
-      if (object !== null) tmpList.push(data["comment"][object])
+      if (data["comment"][object] != null) tmpList.push({ ...data["comment"][object], commentKey: object })
     }
   }
 

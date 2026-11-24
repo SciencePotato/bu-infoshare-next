@@ -18,6 +18,17 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Reply identity regression
+
+From the repository root:
+
+```bash
+npm ci --ignore-scripts
+node --test tests/comment-identity.test.cjs
+```
+
+This executes the post page's SSR handoff, filtered/reordered reply rendering, reply refresh and both comment vote handlers with local Firebase/request doubles. It does not contact Firebase. Each reply keeps its original database key rather than deriving vote targets from its displayed position.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
