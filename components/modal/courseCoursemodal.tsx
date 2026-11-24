@@ -7,6 +7,8 @@ import { tmpdir } from 'os';
 const CourseModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
 
     const [existing, setExisting] = useState<string[]>([]); 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     
     useEffect(() => {
 
@@ -19,7 +21,10 @@ const CourseModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
     }, [])
         
     const postFunction = async () => {
-
+        if (isSubmitting) return;
+        setError(null);
+        setIsSubmitting(true);
+        try {
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
         path = "/major/" + pathArray[0].toLowerCase()
@@ -28,7 +33,18 @@ const CourseModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
         let contentWrapper = document.getElementById("courseName")  as HTMLInputElement;
         console.log(titleWrapper)
 
-        if ((localStorage.getItem("user") !== null) && (existing.includes(titleWrapper.value) === false) && (titleWrapper !== null && contentWrapper !== null)) {
+        if (localStorage.getItem("user") === null) {
+            setError("Please sign in before adding a course.");
+            return;
+        }
+        if (!titleWrapper || !contentWrapper) {
+            setError("Unable to read the course draft. Please try again.");
+            return;
+        }
+        if (existing.includes(titleWrapper.value)) {
+            setError("That course already exists.");
+            return;
+        }
             
             const response = await fetch(`${document.location.origin}/api/postCourse`, {
                 method: 'POST',
@@ -42,10 +58,11 @@ const CourseModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
                 },
             })
 
-            let data: any = null
-            response.json().then((res) => {
-                data = res
-                console.log(data)
+            if (!response.ok) throw new Error("Course request failed");
+            const data = await response.json();
+            if (!data || !data.courses || typeof data.courses !== "object") {
+                throw new Error("Invalid course response");
+            }
                 let tmpList = []
 
                 if (data !== null) {
@@ -60,9 +77,12 @@ const CourseModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
                 }
                 tmpList = tmpList.filter((object: any) => object.value != null)
                 setData(tmpList)
-            })}
-
         closeModal(false)
+        } catch {
+            setError("Unable to add your course. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     return (
@@ -88,11 +108,14 @@ const CourseModal: NextPage<any> = ({ closeModal, tmpData, setData}) => {
                     </div>
 
                     <div className={styles.modalFooter}>
+                        {error && <p role="alert">{error}</p>}
 
                         <div className={styles.options}>
                             {/* <span className={styles.videoButton}> <Image src={Video} width={30} height={30}/> </span>
                             <span className={styles.photoButton}> <Image src={Photo} width={30} height={30}/> </span> */}
-                            <button className={styles.postButton} onClick={postFunction}> Add </button>
+                            <button className={styles.postButton} onClick={postFunction} disabled={isSubmitting}>
+                                {isSubmitting ? "Adding..." : "Add"}
+                            </button>
                         </div>
 
                     </div>
