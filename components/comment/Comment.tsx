@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react'
 interface Props {
     /*data: dataType | null */
     data: any,
-    commentID: number,
+    commentID: string,
     first: boolean
 }
 
@@ -54,7 +54,7 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
 
-        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + String(commentID+1)
+        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + commentID
         console.log(path)
         if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== data.user) {
 
@@ -324,7 +324,7 @@ const Comment: NextPage<Props> = ({data, commentID, first}) => {
         let path = document.location.pathname
         let pathArray = path.split("/").slice(1)
         console.log(path)
-        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + String(commentID+1)
+        path = "/major/" + pathArray[0].toLowerCase() + "/courses/" + pathArray[1].toUpperCase() + "/posts/" + pathArray[2] + "/comment/" + commentID
         console.log(path)
         if (localStorage.getItem("user") !== null && localStorage.getItem("user") !== data.user) {
 
