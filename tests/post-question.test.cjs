@@ -4,10 +4,10 @@ const assert = require("node:assert/strict");
 const { test } = require("node:test");
 const ts = require("typescript");
 
-function renderModal(fetchResponse, user = "test-user") {
+function renderModal(fetchResponse, user = "test-user", file = "postQmodal") {
   let state = [], hook = 0, closed = [], updates = [];
   const exports = {};
-  const code = ts.transpileModule(fs.readFileSync("components/modal/postQmodal.tsx", "utf8"), {
+  const code = ts.transpileModule(fs.readFileSync(`components/modal/${file}.tsx`, "utf8"), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
   }).outputText;
   const jsx = (type, props) => ({ type, props });
@@ -21,7 +21,7 @@ function renderModal(fetchResponse, user = "test-user") {
     fetch: fetchResponse,
     require: name => {
       if (name === "react/jsx-runtime") return { jsx, jsxs: jsx, Fragment: "fragment" };
-      if (name === "react") return { useState: initial => {
+      if (name === "react") return { useEffect() {}, useState: initial => {
         const i = hook++;
         if (!(i in state)) state[i] = initial;
         return [state[i], value => state[i] = value];
@@ -31,7 +31,7 @@ function renderModal(fetchResponse, user = "test-user") {
   });
   function render() {
     hook = 0;
-    return exports.default({ closeModal: value => closed.push(value), setData: data => updates.push(data) });
+    return exports.default({ closeModal: value => closed.push(value), setData: data => updates.push(data), tmpData: [] });
   }
   function all(node, predicate) {
     if (!node || typeof node !== "object") return [];
@@ -89,4 +89,30 @@ test("pending submission disables Post and a failed request can be retried", asy
   resolve({ ok: true, json: async () => ({ posts: { 0: { title: "retry succeeded" } } }) });
   await retry;
   assert.equal(modal.closed.length, 1);
+});
+
+test("the coupled course modal also preserves drafts on HTTP, network and JSON failures", async () => {
+  for (const fetchResponse of [
+    async () => ({ ok: false }),
+    async () => { throw Error("offline"); },
+    async () => ({ ok: true, json: async () => { throw Error("bad json"); } }),
+    async () => ({ ok: true, json: async () => ({}) }),
+  ]) {
+    const modal = renderModal(fetchResponse, "test-user", "courseCoursemodal");
+    await assert.doesNotReject(modal.submit());
+    assert.equal(modal.closed.length, 0);
+    assert.equal(modal.updates.length, 0);
+    assert.equal(modal.all(modal.render(), n => n.props?.role === "alert").length, 1);
+  }
+});
+
+test("the coupled course modal closes only after decoding the refreshed course list", async () => {
+  const modal = renderModal(async () => ({
+    ok: true,
+    json: async () => ({ courses: { CS111: { courseName: "Intro" }, CS999: null } }),
+  }), "test-user", "courseCoursemodal");
+  await modal.submit();
+  assert.equal(modal.closed.length, 1);
+  assert.equal(modal.updates[0].length, 1);
+  assert.equal(modal.updates[0][0].key, "CS111");
 });
