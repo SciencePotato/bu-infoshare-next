@@ -693,18 +693,13 @@ export async function getServerSideProps(context: any) {
   const app = initializeApp(firebaseConfig)
   const database = getDatabase(app);
 
-  let data: any = null;
+  const snapshot = await get(child(ref(database), '/major/' + context.params.Major + '/courses/'
+    + context.params.Course.toString().toUpperCase() + "/posts/"
+    + context.params.PostID))
+  const data = snapshot.val()
 
-  try {
-    await get(child(ref(database), '/major/' + context.params.Major + '/courses/' 
-      + context.params.Course.toString().toUpperCase() + "/posts/"
-      + context.params.PostID)).then((snapshot) => {
-        data = snapshot.val();
-    }).catch((error) => {
-        console.log(error)
-    })
-  } catch (error) {
-    console.log("ewww more error")
+  if (data === null) {
+    return { notFound: true }
   }
 
   let tmpList: any = []
