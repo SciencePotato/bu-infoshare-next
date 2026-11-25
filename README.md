@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Post-loader regression checks
+
+After installing dependencies:
+
+```bash
+node --test tests/post-not-found.test.cjs
+```
+
+These execute the actual post loader with database I/O replaced, covering missing
+posts, populated posts and rejected reads. They never access Firebase.
+
 ## Getting Started
 
 First, run the development server:
